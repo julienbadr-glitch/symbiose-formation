@@ -1,0 +1,313 @@
+// ============================================
+// Symbiose Formation — Authentification + Sync
+// ============================================
+
+const API_BASE = '/api';
+let currentUser = null;
+var authToken = null;
+let saveTimer = null;
+
+// --- SPIDER SSO ---
+const SPIDER_API = 'https://backend.prod.spider.mercato-emploi.com/api/formation/logged-user';
+
+async function trySpiderSSO() {
+    try {
+        const res = await fetch(SPIDER_API, {
+            method: 'GET',
+            credentials: 'include',
+            headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) return false;
+        const su = await res.json();
+        if (su.error || !su.email) return false;
+
+        const lr = await fetch(API_BASE + '/spider-login.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: su.email,
+                firstname: su.firstname,
+                lastname: su.lastname,
+                profilePicture: su.profilePicture || null
+            })
+        });
+        const data = await lr.json();
+        if (!lr.ok || !data.success) return false;
+
+        currentUser = data.user;
+        authToken = data.token;
+        localStorage.setItem('symbiose_session', JSON.stringify({
+            email: data.user.email,
+            token: data.token,
+            isAdmin: data.isAdmin || false
+        }));
+        if (data.state) {
+            localStorage.setItem('symbiose_state', JSON.stringify(data.state));
+        }
+        return true;
+    } catch (err) {
+        console.log('Spider SSO not available:', err.message);
+        return false;
+    }
+}
+
+// --- LOGIN SCREEN ---
+function showLoginScreen() {
+    window.location.href = '/login.html';
+}
+
+// --- HANDLE LOGIN (via API) ---
+async function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const errorEl = document.getElementById('loginError');
+    const btn = document.querySelector('.login-btn');
+    errorEl.classList.add('hidden');
+    btn.textContent = 'Connexion...';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch(API_BASE + '/login.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.success) {
+            errorEl.textContent = data.error || 'Adresse non autorisee. Contactez votre responsable.';
+            errorEl.classList.remove('hidden');
+            btn.textContent = 'Acceder a ma formation';
+            btn.disabled = false;
+            return;
+        }
+
+        currentUser = data.user;
+        authToken = data.token;
+        localStorage.setItem('symbiose_session', JSON.stringify({
+            email: data.user.email,
+            token: data.token,
+            isAdmin: data.isAdmin || false
+        }));
+        if (data.state) {
+            localStorage.setItem('symbiose_state', JSON.stringify(data.state));
+        }
+        startApp();
+    } catch (err) {
+        errorEl.textContent = 'Erreur de connexion au serveur. Reessayez.';
+        errorEl.classList.remove('hidden');
+        btn.textContent = 'Acceder a ma formation';
+        btn.disabled = false;
+    }
+}
+
+// --- RESTORE SESSION ---
+async function restoreSession() {
+    const raw = localStorage.getItem('symbiose_session');
+    if (!raw) return false;
+    try {
+        const session = JSON.parse(raw);
+        if (!session.token) return false;
+
+        const res = await fetch(API_BASE + '/state.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Auth-Token': session.token
+            },
+            body: JSON.stringify({ _action: 'restore' })
+        });
+
+        if (!res.ok) {
+            localStorage.removeItem('symbiose_session');
+            return false;
+        }
+
+        const data = await res.json();
+        currentUser = data.user;
+        authToken = session.token;
+        if (data.state) {
+            localStorage.setItem('symbiose_state', JSON.stringify(data.state));
+        }
+        return true;
+    } catch (err) {
+        // Fallback : session locale minimale
+        try {
+            const session = JSON.parse(raw);
+            if (session.email && session.token) {
+                authToken = session.token;
+                currentUser = { email: session.email };
+                return true;
+            }
+        } catch (e) {}
+        return false;
+    }
+}
+
+// --- SAVE STATE TO SERVER ---
+async function saveStateToServer() {
+    if (!authToken) return;
+    const stateRaw = localStorage.getItem('symbiose_state');
+    if (!stateRaw) return;
+    try {
+        const state = JSON.parse(stateRaw);
+        await fetch(API_BASE + '/state.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Auth-Token': authToken
+            },
+            body: JSON.stringify({ state })
+        });
+    } catch (err) { /* silent */ }
+}
+
+// --- AUTO-SAVE : intercepter les ecritures localStorage ---
+const _origSetItem = localStorage.setItem.bind(localStorage);
+localStorage.setItem = function (key, value) {
+    _origSetItem(key, value);
+    if (key === 'symbiose_state' && authToken) {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveStateToServer, 2000);
+    }
+};
+
+// --- LOGOUT ---
+function clearSession() {
+    localStorage.removeItem('symbiose_session');
+    localStorage.removeItem('symbiose_state');
+    currentUser = null;
+    authToken = null;
+    window.location.reload();
+}
+
+// --- RENDER USER INFO IN DOM ---
+function renderUserUI() {
+    if (!currentUser) return;
+
+    const firstName = currentUser.firstName || currentUser.email.split('@')[0];
+    const lastName = currentUser.lastName || '';
+    const fullName = (firstName + ' ' + lastName).trim();
+    const shortName = firstName + (lastName ? ' ' + lastName[0] + '.' : '');
+    const initials = (firstName[0] || '').toUpperCase() + (lastName ? lastName[0].toUpperCase() : '');
+
+    // Observer pour mettre a jour le DOM quand le contenu change
+    const updateUserElements = () => {
+        // Greeting
+        document.querySelectorAll('.home-greeting, [class*="greeting"]').forEach(el => {
+            if (!el.dataset.userPatched) {
+                const match = el.textContent.match(/bonjour|bienvenue|hello/i);
+                if (match) {
+                    el.textContent = el.textContent.replace(/bonjour\s+\w+/i, 'Bonjour ' + firstName)
+                        .replace(/bienvenue\s+\w+/i, 'Bienvenue ' + firstName);
+                    el.dataset.userPatched = 'true';
+                }
+            }
+        });
+
+        // User name displays
+        document.querySelectorAll('.user-name, #userName, [class*="user-name"], .header-profile-name').forEach(el => {
+            if (!el.dataset.userPatched) {
+                if (el.classList.contains('user-name') || el.classList.contains('header-profile-name')) {
+                    el.textContent = shortName;
+                } else {
+                    el.textContent = fullName;
+                }
+                el.dataset.userPatched = 'true';
+            }
+        });
+
+        // Avatars
+        document.querySelectorAll('.user-avatar, .header-avatar, [class*="avatar"]').forEach(el => {
+            if (!el.dataset.userPatched && el.textContent.trim().length <= 3) {
+                el.textContent = initials;
+                el.dataset.userPatched = 'true';
+            }
+        });
+
+        // Certificats
+        document.querySelectorAll('[class*="certificate"], [class*="cert"]').forEach(el => {
+            if (el.textContent && el.textContent.includes('Charlotte Danzon')) {
+                el.textContent = el.textContent.replace(/Charlotte Danzon/g, fullName);
+            }
+        });
+    };
+
+    const observer = new MutationObserver(updateUserElements);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Injection sidebar : bouton logout + lien admin (une seule fois)
+    setTimeout(() => {
+        const sidebar = document.querySelector('.sidebar-footer, .sidebar nav');
+        if (!sidebar) return;
+
+        // Bouton logout
+        if (!document.getElementById('logoutBtn')) {
+            const btn = document.createElement('button');
+            btn.id = 'logoutBtn';
+            btn.className = 'nav-logout';
+            btn.textContent = 'Se deconnecter';
+            btn.onclick = clearSession;
+            sidebar.appendChild(btn);
+        }
+
+        // Lien admin (basé sur la session locale)
+        if (!document.getElementById('adminPanelLink')) {
+            try {
+                const sess = JSON.parse(localStorage.getItem('symbiose_session') || '{}');
+                if (sess.isAdmin) {
+                    const link = document.createElement('a');
+                    link.href = '/admin.html';
+                    link.id = 'adminPanelLink';
+                    link.style.cssText = 'display:block;margin-top:10px;text-align:center;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:8px;padding:12px 16px;text-decoration:none;font-weight:600;font-size:14px;cursor:pointer;';
+                    link.textContent = 'Espace Admin';
+                    sidebar.appendChild(link);
+                }
+            } catch (e) { /* silent */ }
+        }
+    }, 1000);
+}
+
+// --- SAVE ON PAGE CLOSE ---
+window.addEventListener('beforeunload', () => {
+    if (authToken) {
+        const stateRaw = localStorage.getItem('symbiose_state');
+        if (stateRaw) {
+            navigator.sendBeacon(
+                API_BASE + '/state.php',
+                new Blob(
+                    [JSON.stringify({ state: JSON.parse(stateRaw), _token: authToken })],
+                    { type: 'application/json' }
+                )
+            );
+        }
+    }
+});
+
+// --- START APP ---
+function startApp() {
+    const ls = document.getElementById('loginScreen');
+    if (ls) ls.style.display = 'none';
+    document.getElementById('app').style.display = '';
+    renderUserUI();
+
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = '/main.js?v=81';
+    document.body.appendChild(script);
+}
+
+// --- INIT ---
+(async function init() {
+    const restored = await restoreSession();
+    if (restored) {
+        startApp();
+    } else {
+        const ssoOk = await trySpiderSSO();
+        if (ssoOk) {
+            startApp();
+        } else {
+            showLoginScreen();
+        }
+    }
+})();

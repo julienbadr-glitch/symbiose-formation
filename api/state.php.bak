@@ -1,0 +1,33 @@
+<?php
+require_once __DIR__.'/config.php';
+require_once __DIR__ . '/rate_limit.php';
+require_once __DIR__.'/db.php';
+setApiHeaders();
+$token=getTokenFromHeader();
+$rawBody=file_get_contents('php://input');
+$input=json_decode($rawBody,true);
+if(!$token&&$_SERVER['REQUEST_METHOD']==='POST'&&$input&&isset($input['_token']))$token=$input['_token'];
+if(!$token)jsonError('Token manquant',401);
+$user=validateToken($token);
+if(!$user)jsonError('Token invalide',401);
+
+$email=strtolower($user['email']);
+
+if($_SERVER['REQUEST_METHOD']==='GET'){
+    $s=dbGetState($email);
+    jsonResponse(['success'=>true,'state'=>$s,'user'=>['email'=>$user['email'],'firstName'=>$user['firstName'],'lastName'=>$user['lastName']]]);
+}
+
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    if($input&&isset($input['_action'])&&$input['_action']==='restore'){$s=dbGetState($email);jsonResponse(['success'=>true,'state'=>$s,'user'=>['email'=>$user['email'],'firstName'=>$user['firstName'],'lastName'=>$user['lastName']]]);}
+    if(!$input||!isset($input['state']))jsonError('State requis');
+    $s=$input['state'];
+    $s['_lastSaved']=date('c');
+    $s['_email']=$email;
+    $json=json_encode($s,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+    $ok=dbSaveState(getDB(),$email,$json,$s['_lastSaved']);
+    if(!$ok)jsonError('Erreur sauvegarde',500);
+    jsonResponse(['success'=>true,'message'=>'OK','savedAt'=>$s['_lastSaved']]);
+}
+
+jsonError('Method not allowed',405);

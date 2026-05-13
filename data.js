@@ -1,0 +1,1502 @@
+export const LEVELS = [
+  { name: 'Recrue', min: 0, max: 199, icon: '\u{1F6E1}\u{FE0F}' },
+  { name: 'Explorateur', min: 200, max: 399, icon: '\u{2694}\u{FE0F}' },
+  { name: 'Strat\u00e8ge', min: 400, max: 649, icon: '\u{1F5E1}\u{FE0F}' },
+  { name: 'Expert', min: 650, max: 974, icon: '\u{1F451}' },
+  { name: 'Ma\u00eetre Symbiose', min: 975, max: 1500, icon: '\u{1F48E}' },
+];
+
+export const BADGES = [
+  { id: 'b1', name: 'D\u00e9couvreur', desc: 'Module 1 compl\u00e9t\u00e9', icon: '\u{1F50D}' },
+  { id: 'b2', name: 'Architecte', desc: 'Module 2 compl\u00e9t\u00e9', icon: '\u{1F3D7}\u{FE0F}' },
+  { id: 'b3', name: 'Recruteur', desc: 'Module 3 compl\u00e9t\u00e9', icon: '\u{1F3AF}' },
+  { id: 'b4', name: 'Ambassadeur', desc: 'Module 4 compl\u00e9t\u00e9', icon: '\u{1F91D}' },
+  { id: 'b5', name: 'D\u00e9monstrateur', desc: 'Module 5 compl\u00e9t\u00e9', icon: '\u{1F3AC}' },
+  { id: 'b6', name: 'N\u00e9gociateur', desc: 'Module 6 compl\u00e9t\u00e9', icon: '\u{1F6E1}\u{FE0F}' },
+  { id: 'b7', name: 'Closer', desc: 'Module 7 compl\u00e9t\u00e9', icon: '\u{1F3C6}' },
+  { id: 'b8', name: 'Top Performer', desc: 'Module 8 compl\u00e9t\u00e9', icon: '\u{2B50}' },
+];
+
+export const LEADERBOARD = [
+  { name: 'Joshua Versier', initials: 'JV', level: 'Recrue', xp: 60, me: false },
+  { name: 'Yann Soliveres', initials: 'YS', level: 'Recrue', xp: 36, me: false },
+  { name: 'Christophe Lecrivain', initials: 'CL', level: 'Recrue', xp: 30, me: false },
+  { name: 'Julien Badr', initials: 'JB', level: 'Recrue', xp: 6, me: false },
+  { name: 'Laure Leleu', initials: 'LL', level: 'Recrue', xp: 0, me: true },
+  { name: 'Jenny Gaultier', initials: 'JG', level: 'Recrue', xp: 0, me: false },
+];
+
+export const STEP_META = [
+  {xp: 60, badge: "quiz-1"},
+  {xp: 60, badge: "quiz-2"},
+  {xp: 60, badge: "quiz-3"},
+  {xp: 60, badge: "quiz-4"},
+  {xp: 60, badge: "quiz-5"},
+  {xp: 60, badge: "quiz-6"},
+  {xp: 60, badge: "quiz-7"},
+  {xp: 60, badge: "quiz-8"}
+];
+
+export const TAB3_LABELS = {
+  1: 'Simulation',
+  2: 'Jeu',
+  3: 'Jeu',
+  4: 'Jeu',
+  5: 'Jeu',
+  6: 'Simulation',
+  7: 'Simulation',
+  8: 'Jeu',
+};
+
+export const STEPS = [
+  {
+    id: 1,
+    title: 'D\u00e9couverte Client & Douleurs RH',
+    subtitle: 'Ma\u00eetrisez les 7 douleurs RH des PME et le framework QQOQCP pour qualifier un prospect en 15 minutes.',
+    icon: 'fa-magnifying-glass',
+    videoId: '1180509104',
+        cours: [
+            {
+                title: 'Les 7 douleurs RH des PME',
+                icon: 'fa-heart-crack',
+                body: `<p>Symbiose a \u00e9t\u00e9 cr\u00e9\u00e9e pour r\u00e9pondre aux besoins concrets des entreprises fran\u00e7aises. Chaque prospect est soumis \u00e0 <strong>une \u00e0 sept douleurs RH majeures</strong> qui d\u00e9terminent l\u2019achat de nos solutions\u00a0:</p>
+                <ol>
+                <li><strong>Surcharge administrative</strong> \u2014 Les dirigeants de PME consacrent jusqu\u2019\u00e0 <em>40\u00a0% de leur temps</em> aux t\u00e2ches RH manuelles (paie, cong\u00e9s, documents).</li>
+                <li><strong>Turnover subi</strong> \u2014 D\u00e9parts non anticip\u00e9s faute d\u2019indicateurs de satisfaction et d\u2019engagement.</li>
+                <li><strong>Entretiens non r\u00e9alis\u00e9s</strong> \u2014 <em>60\u00a0% des PME</em> ne r\u00e9alisent pas leurs entretiens professionnels obligatoires, s\u2019exposant \u00e0 des sanctions.</li>
+                <li><strong>Cong\u00e9s mal g\u00e9r\u00e9s</strong> \u2014 Suivi par e-mail ou Excel, source d\u2019erreurs et de conflits.</li>
+                <li><strong>Non-conformit\u00e9 l\u00e9gale</strong> \u2014 DUERP, registres obligatoires, affichages\u2026 autant de risques en cas de contr\u00f4le.</li>
+                <li><strong>Recrutement d\u00e9sorganis\u00e9</strong> \u2014 Absence de pipeline structur\u00e9, CV \u00e9parpill\u00e9s, pas de suivi candidat.</li>
+                <li><strong>Manque de visibilit\u00e9 RH</strong> \u2014 Aucun tableau de bord centralis\u00e9 pour piloter le capital humain.</li>
+                </ol>
+                <div class="hbox blue"><strong>Astuce terrain\u00a0:</strong> \u00ab\u00a0Identifiez d\u00e8s les premi\u00e8res minutes d\u2019\u00e9change la ou les douleurs dominantes de votre prospect. C\u2019est elles qui d\u00e9clencheront la d\u00e9cision d\u2019achat.\u00a0\u00bb</div>`
+            },
+            {
+                title: 'Les 3 piliers de Symbiose',
+                icon: 'fa-cubes',
+                body: `<p>Comme pr\u00e9sent\u00e9 dans la vid\u00e9o, Symbiose repose sur <strong>trois grands modules</strong> compl\u00e9mentaires\u00a0:</p>
+                <ol>
+                <li><strong>Le module Essentiel (Collaborateur)</strong> \u2014 Vision globale de l\u2019\u00e9quipe, tra\u00e7abilit\u00e9 des donn\u00e9es collaborateurs, centralisation RH. Chaque salari\u00e9 dispose de son propre espace pour poser ses cong\u00e9s, consulter ses soldes et pr\u00e9parer ses entretiens.</li>
+                <li><strong>Le module Recrutement (ATS)</strong> \u2014 Pipeline visuel de suivi des candidatures, multidiffusion des offres, CVth\u00e8que int\u00e9gr\u00e9e. R\u00e9duit le temps de recrutement de 40\u00a0%.</li>
+                <li><strong>Le module Conformit\u00e9</strong> \u2014 Gestion des entretiens obligatoires, DUERP, registres l\u00e9gaux et alertes automatiques.</li>
+                </ol>
+                <div class="hbox green"><strong>Le Barom\u00e8tre Humeur\u00a0:</strong> Outil int\u00e9gr\u00e9 au module Essentiel, il alerte en temps r\u00e9el lorsqu\u2019un collaborateur d\u00e9croche, permettant au manager d\u2019agir avant qu\u2019il ne soit trop tard.</div>`
+            },
+            {
+                title: 'Framework QQOQCP enrichi',
+                icon: 'fa-clipboard-list',
+                body: `<p>Le <strong>QQOQCP</strong> est votre grille syst\u00e9matique pour structurer chaque entretien de d\u00e9couverte\u00a0:</p>
+                <table class="table-styled">
+                <tr><td><strong>Q</strong>ui</td><td>Qui g\u00e8re les RH\u00a0? Un DRH, le dirigeant, un cabinet externe\u00a0?</td></tr>
+                <tr><td><strong>Q</strong>uoi</td><td>Quels processus sont en place\u00a0? Recrutement, onboarding, entretiens\u00a0?</td></tr>
+                <tr><td><strong>O</strong>\u00f9</td><td>Combien de sites\u00a0? T\u00e9l\u00e9travail\u00a0? Multi-\u00e9tablissements\u00a0?</td></tr>
+                <tr><td><strong>Q</strong>uand</td><td>Depuis quand ces probl\u00e8mes existent\u00a0? Quelle urgence\u00a0?</td></tr>
+                <tr><td><strong>C</strong>omment</td><td>Quels outils aujourd\u2019hui\u00a0? Excel, papier, logiciel\u00a0?</td></tr>
+                <tr><td><strong>P</strong>ourquoi</td><td>Pourquoi changer maintenant\u00a0? Quel \u00e9l\u00e9ment d\u00e9clencheur\u00a0?</td></tr>
+                </table>
+                <div class="hbox blue"><strong>R\u00e8gle d\u2019or\u00a0:</strong> Posez des questions ouvertes (\u00ab\u00a0Comment g\u00e9rez-vous\u2026\u00a0\u00bb) plut\u00f4t que ferm\u00e9es (\u00ab\u00a0Avez-vous un outil\u00a0?\u00a0\u00bb). Cela r\u00e9v\u00e8le les vrais besoins.</div>`
+            },
+            {
+                title: 'Checklist de qualification',
+                icon: 'fa-check-double',
+                body: `<p>Avant de proposer quoi que ce soit, assurez-vous d\u2019avoir identifi\u00e9 ces <strong>5 \u00e9l\u00e9ments cl\u00e9s</strong>\u00a0:</p>
+                <ol>
+                <li>\u2705 <strong>Nombre de salari\u00e9s</strong> et structure de l\u2019entreprise (croissance, multi-sites)</li>
+                <li>\u2705 <strong>Outils actuels</strong> utilis\u00e9s pour la gestion RH (Excel, papier, logiciel concurrent)</li>
+                <li>\u2705 <strong>Douleur(s) principale(s)</strong> parmi les 7 identifi\u00e9es</li>
+                <li>\u2705 <strong>D\u00e9cideur et circuit de d\u00e9cision</strong> (qui signe, quel budget)</li>
+                <li>\u2705 <strong>\u00c9l\u00e9ment d\u00e9clencheur</strong> du besoin actuel (contr\u00f4le URSSAF, d\u00e9part cl\u00e9, croissance\u2026)</li>
+                </ol>
+                <div class="hbox green"><strong>Conseil\u00a0:</strong> Si vous avez identifi\u00e9 au moins 2 douleurs et l\u2019\u00e9l\u00e9ment d\u00e9clencheur, vous \u00eates en bonne position pour proposer une d\u00e9mo Symbiose de 30 minutes.</div>`
+            }
+        ],
+    script: [
+      {
+        title: 'Ouverture (2 min)',
+        icon: 'fa-door-open',
+        body: `<strong>VOUS :</strong> \u00ab Bonjour [Pr\u00e9nom], merci d\u2019avoir pris le temps. Je suis [Votre nom] de Symbiose. L\u2019objectif de notre \u00e9change est simple : comprendre comment vous g\u00e9rez vos \u00e9quipes aujourd\u2019hui et voir si on peut vous faire gagner du temps. \u00bb`
+      },
+      {
+        title: 'Questions de contexte (3 min)',
+        icon: 'fa-comments',
+        body: `<strong>VOUS :</strong> \u00ab Combien de salari\u00e9s avez-vous actuellement ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Qui g\u00e8re les RH chez vous ? Un DRH, vous-m\u00eame, un cabinet externe ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Quels outils utilisez-vous ? Excel, papier, un logiciel ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Avez-vous plusieurs sites ? \u00bb`
+      },
+      {
+        title: 'D\u00e9tection ATS \u2014 Questions recrutement (3 min)',
+        icon: 'fa-user-plus',
+        body: `<strong>VOUS :</strong> \u00ab Comment g\u00e9rez-vous vos recrutements aujourd\u2019hui ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Vous publiez vos offres sur quels canaux ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Avez-vous une CVth\u00e8que ou un vivier de candidats ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Vos managers participent-ils au processus ? \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Nos clients qui utilisent l\u2019ATS Symbiose r\u00e9duisent leur temps de recrutement de 40%. Le pipeline visuel permet de suivre chaque candidat, et l\u2019IA r\u00e9dige vos offres en 30 secondes. \u00bb</div>`
+      },
+      {
+        title: 'D\u00e9tection Univers Collaborateur (3 min)',
+        icon: 'fa-users',
+        body: `<strong>VOUS :</strong> \u00ab Vos salari\u00e9s ont-ils un espace pour poser leurs cong\u00e9s en ligne ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Comment suivez-vous le moral de vos \u00e9quipes ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Vos entretiens annuels sont-ils r\u00e9alis\u00e9s et archiv\u00e9s ? \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Avec Symbiose, chaque salari\u00e9 a son propre espace. Il pose ses cong\u00e9s, consulte ses soldes, pr\u00e9pare ses entretiens. Le barom\u00e8tre Humeur vous alerte si un collaborateur d\u00e9croche. Offert jusqu\u2019\u00e0 3 collaborateurs. \u00bb</div>`
+      },
+      {
+        title: 'Questions conformit\u00e9 (2 min)',
+        icon: 'fa-shield-halved',
+    videoId: '',
+        body: `<strong>VOUS :</strong> \u00ab Votre DUERP est-il \u00e0 jour ? \u00bb<br>
+<strong>VOUS :</strong> \u00ab Avez-vous un registre unique du personnel conforme ? \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Nadia B., DAF de 150 salari\u00e9s, a \u00e9vit\u00e9 un probl\u00e8me lors d\u2019un contr\u00f4le gr\u00e2ce au module Conformit\u00e9. DUERP \u00e0 jour, registres en deux clics. \u00bb</div>`
+      },
+      {
+        title: 'Synth\u00e8se (2 min)',
+        icon: 'fa-flag-checkered',
+        body: `<strong>VOUS :</strong> \u00ab Si je r\u00e9sume, vos principales pr\u00e9occupations sont [douleur 1] et [douleur 2]. Est-ce que vous seriez disponible pour une d\u00e9monstration de 30 minutes ? Plus de 500 entreprises l\u2019utilisent d\u00e9j\u00e0. \u00bb`
+      }
+    ],
+        quiz: [
+            {
+                question: 'Combien de douleurs RH principales la formation Symbiose identifie-t-elle pour les PME\u00a0?',
+                options: ['5', '6', '7', '8'],
+                correct: 2,
+                feedback: 'Symbiose identifie 7 douleurs RH cl\u00e9s\u00a0: surcharge admin, turnover, entretiens non r\u00e9alis\u00e9s, cong\u00e9s mal g\u00e9r\u00e9s, non-conformit\u00e9, recrutement d\u00e9sorganis\u00e9, manque de visibilit\u00e9 RH.'
+            },
+            {
+                question: 'Quel pourcentage de leur temps les dirigeants de PME consacrent-ils aux t\u00e2ches administratives RH\u00a0?',
+                options: ['20\u00a0%', '30\u00a0%', '40\u00a0%', '50\u00a0%'],
+                correct: 2,
+                feedback: 'Les dirigeants de PME consacrent jusqu\u2019\u00e0 40\u00a0% de leur temps aux t\u00e2ches RH manuelles \u2014 c\u2019est l\u2019argument choc de la surcharge administrative.'
+            },
+            {
+                question: 'Quel pourcentage de PME ne r\u00e9alise pas ses entretiens professionnels obligatoires\u00a0?',
+                options: ['40\u00a0%', '50\u00a0%', '60\u00a0%', '70\u00a0%'],
+                correct: 2,
+                feedback: '60\u00a0% des PME ne r\u00e9alisent pas leurs entretiens obligatoires, ce qui les expose \u00e0 des sanctions financi\u00e8res.'
+            },
+            {
+                question: 'Quelle question ouverte permet le mieux de d\u00e9tecter un besoin en ATS (recrutement)\u00a0?',
+                options: ['Comment g\u00e9rez-vous vos recrutements aujourd\u2019hui\u00a0?', 'Avez-vous un logiciel de recrutement\u00a0?', 'Combien recrutez-vous par an\u00a0?', 'Utilisez-vous un jobboard\u00a0?'],
+                correct: 0,
+                feedback: 'La question ouverte \u00ab\u00a0Comment g\u00e9rez-vous vos recrutements aujourd\u2019hui\u00a0?\u00a0\u00bb r\u00e9v\u00e8le les vrais besoins sans orienter la r\u00e9ponse.'
+            },
+            {
+                question: 'Quels sont les trois grands modules de Symbiose\u00a0?',
+                options: ['Essentiel, Recrutement (ATS), Conformit\u00e9', 'Paie, Cong\u00e9s, Formation', 'Admin, Commercial, Support', 'RH, Finance, Juridique'],
+                correct: 0,
+                feedback: 'Symbiose repose sur 3 piliers\u00a0: le module Essentiel (collaborateur), le module Recrutement (ATS) et le module Conformit\u00e9.'
+            },
+            {
+                question: 'Quel outil Symbiose alerte en temps r\u00e9el quand un collaborateur d\u00e9croche\u00a0?',
+                options: ['Le Dashboard Admin', 'Le Barom\u00e8tre Humeur', 'L\u2019ATS', 'Le module Cong\u00e9s'],
+                correct: 1,
+                feedback: 'Le Barom\u00e8tre Humeur de Symbiose alerte en temps r\u00e9el sur le d\u00e9sengagement, permettant d\u2019agir avant un d\u00e9part.'
+            },
+            {
+                question: 'Que signifie le framework QQOQCP utilis\u00e9 en d\u00e9couverte client\u00a0?',
+                options: ['Qui, Quoi, O\u00f9, Quand, Comment, Pourquoi', 'Qualit\u00e9, Quantit\u00e9, Objectif, Question, Co\u00fbt, Performance', 'Question, Qualification, Offre, Quota, Closing, Proposition', 'Qui, Quoi, Organisation, Qualification, Conseil, Projet'],
+                correct: 0,
+                feedback: 'QQOQCP signifie Qui, Quoi, O\u00f9, Quand, Comment, Pourquoi \u2014 votre grille syst\u00e9matique d\u2019entretien de d\u00e9couverte.'
+            },
+            {
+                question: 'Quel module Symbiose r\u00e9pond sp\u00e9cifiquement au d\u00e9sengagement des collaborateurs\u00a0?',
+                options: ['Le module Recrutement', 'Le module Conformit\u00e9', 'Le module Essentiel (Univers Collaborateur)', 'Le module Formation'],
+                correct: 2,
+                feedback: 'Le module Essentiel avec l\u2019Univers Collaborateur centralise les donn\u00e9es, offre un espace personnel \u00e0 chaque salari\u00e9 et int\u00e8gre le Barom\u00e8tre Humeur.'
+            },
+            {
+                question: 'Parmi ces \u00e9l\u00e9ments, lequel fait partie de la checklist de qualification\u00a0?',
+                options: ['Le chiffre d\u2019affaires du prospect', 'L\u2019\u00e9l\u00e9ment d\u00e9clencheur du besoin', 'Le nombre de clients du prospect', 'La date de cr\u00e9ation de l\u2019entreprise'],
+                correct: 1,
+                feedback: 'L\u2019\u00e9l\u00e9ment d\u00e9clencheur (contr\u00f4le URSSAF, d\u00e9part cl\u00e9, croissance\u2026) est l\u2019un des 5 \u00e9l\u00e9ments cl\u00e9s \u00e0 identifier avant de proposer une d\u00e9mo.'
+            },
+            {
+                question: 'De combien l\u2019ATS Symbiose r\u00e9duit-il le temps de recrutement selon l\u2019argument terrain\u00a0?',
+                options: ['20\u00a0%', '30\u00a0%', '40\u00a0%', '50\u00a0%'],
+                correct: 2,
+                feedback: 'L\u2019ATS Symbiose r\u00e9duit le temps de recrutement de 40\u00a0% gr\u00e2ce au pipeline visuel, \u00e0 la multidiffusion et \u00e0 l\u2019IA qui r\u00e9dige les offres en 30 secondes.'
+            }
+        ]
+  },
+  {
+    id: 2,
+    title: 'L\u2019\u00c9cosyst\u00e8me Symbiose',
+    subtitle: 'Ma\u00eetrisez l\u2019architecture \u00e0 2 niveaux, les 10 modules fonctionnels et les 3+1 packs.',
+    icon: 'fa-cubes',
+    videoId: '1179255344',
+    cours: [
+      {
+        title: 'Architecture \u00e0 2 niveaux',
+        icon: 'fa-layer-group',
+        body: `<p>Symbiose fonctionne sur <strong>deux niveaux compl\u00e9mentaires</strong> :</p>
+<ul>
+<li><strong>Interface Admin</strong> \u2014 Le cockpit du dirigeant ou du RH : tableau de bord, gestion d\u2019\u00e9quipe, validation des cong\u00e9s, suivi des entretiens, recrutement, conformit\u00e9.</li>
+<li><strong>Univers Collaborateur</strong> \u2014 L\u2019espace personnel de chaque salari\u00e9 : cong\u00e9s, humeur, entretiens, documents, \u00e9quipe.</li>
+</ul>
+<div class="hbox blue"><strong>Communication temps r\u00e9el :</strong> Les deux univers communiquent en permanence. Quand un collaborateur pose un cong\u00e9, le manager re\u00e7oit instantan\u00e9ment la notification. Quand l\u2019admin cr\u00e9e un entretien, le collaborateur le voit appara\u00eetre dans son espace. Cette synchronisation garantit une information toujours \u00e0 jour des deux c\u00f4t\u00e9s.</div>`
+      },
+      {
+        title: 'Les 10 modules fonctionnels',
+        icon: 'fa-th-large',
+        body: `<p>Les modules sont organis\u00e9s en <strong>3 cat\u00e9gories + le tableau de bord central</strong> :</p>
+<h3>Cat\u00e9gorie Collaborateurs</h3>
+<ul>
+<li><strong>Fiche Collaborateur (\u00c9quipe)</strong> \u2014 Centralise toutes les informations d\u2019un salari\u00e9 : coordonn\u00e9es, contrat, historique d\u2019entretiens, cong\u00e9s, documents. Un seul endroit pour tout retrouver. Les donn\u00e9es personnelles sont prot\u00e9g\u00e9es et chaque collaborateur acc\u00e8de uniquement \u00e0 son propre dossier.</li>
+<li><strong>Cong\u00e9s / Absences</strong> \u2014 Calendrier visuel par service avec <strong>codes couleur</strong> (valid\u00e9, en attente, refus\u00e9). Filtrage par d\u00e9partement, vue d\u2019\u00e9quipe. Param\u00e8tres personnalisables : types de cong\u00e9s, r\u00e8gles d\u2019approbation, soldes automatiques. Le collaborateur pose ses cong\u00e9s en 2 clics, le manager valide depuis son tableau de bord.</li>
+<li><strong>Entretiens assist\u00e9s par IA</strong> \u2014 Cr\u00e9ation d\u2019un entretien en <strong>30 secondes</strong> : choix du mod\u00e8le (annuel, professionnel, reprise\u2026), l\u2019IA g\u00e9n\u00e8re automatiquement les questions adapt\u00e9es. Le manager peut personnaliser, ajouter des th\u00e9matiques. Le collaborateur pr\u00e9pare ses r\u00e9ponses en amont dans son espace.</li>
+<li><strong>Climat Social (Humeur)</strong> \u2014 Suivi mensuel de l\u2019engagement avec cat\u00e9gorisation automatique : <strong>satisfaits, neutres, \u00e0 risque</strong>. Multi-filtres par service, anciennet\u00e9, poste. Permet d\u2019identifier les signaux faibles avant qu\u2019ils ne deviennent des probl\u00e8mes.</li>
+</ul>
+<h3>Cat\u00e9gorie Acquisition</h3>
+<ul><li><strong>Recrutement</strong> \u2014 ATS complet avec r\u00e9daction d\u2019offres IA, diffusion multi-canal, suivi candidatures.</li>
+<li><strong>CVth\u00e8que</strong> \u2014 Viviers de talents organis\u00e9s et recherche intelligente.</li>
+<li><strong>Int\u00e9grations (Onboarding)</strong> \u2014 Parcours J1\u2192J90 personnalisable pour chaque nouveau collaborateur.</li></ul>
+<h3>Cat\u00e9gorie Administratif</h3>
+<ul>
+<li><strong>Contrats</strong> \u2014 Ins\u00e9rez un contrat existant ou cr\u00e9ez-en un nouveau assist\u00e9 par l\u2019IA. G\u00e9n\u00e9ration automatis\u00e9e avec les donn\u00e9es du collaborateur, clauses pr\u00e9-remplies, signature \u00e9lectronique.</li>
+<li><strong>Obligations r\u00e9glementaires</strong> \u2014 Suivi de la conformit\u00e9 l\u00e9gale en continu. Anticipation des contr\u00f4les d\u2019inspection, alertes sur les sanctions potentielles (amendes), implication des salari\u00e9s dans la d\u00e9marche de pr\u00e9vention. Registre unique du personnel int\u00e9gr\u00e9.</li>
+<li><strong>Documents</strong> \u2014 Espace documentaire partag\u00e9 : convention collective, r\u00e8glement int\u00e9rieur, notes de service. Diffusion cibl\u00e9e par service ou \u00e0 l\u2019ensemble des collaborateurs. Accus\u00e9 de r\u00e9ception int\u00e9gr\u00e9.</li>
+</ul>
+<p><strong>Tableau de bord central</strong> \u2014 Agr\u00e8ge toutes les donn\u00e9es avec <strong>raccourcis rapides</strong> vers chaque module, ventilation par service, alertes anniversaires de contrat et rappels automatiques.</p>`
+      },
+      {
+        title: 'Les 3+1 Packs',
+        icon: 'fa-cubes',
+    videoId: '1179255344',
+        body: `<h3>Pack Essentiel \u2014 5\u20ac HT/salari\u00e9/mois</h3>
+<ul><li>Espace collaborateur personnel</li><li>Entretiens assist\u00e9s par IA</li><li>Barom\u00e8tre d\u2019engagement (Climat Social)</li><li>Gestion des cong\u00e9s</li><li>Tableaux de bord</li><li>Gestion documentaire</li></ul>
+<h3>Pack Acquisition \u2014 4\u20ac HT/salari\u00e9/mois</h3>
+<ul><li>Viviers de talents</li><li>R\u00e9daction d\u2019offres IA</li><li>Diffusion multi-canal</li><li>Suivi candidatures</li><li>Onboarding J1\u2192J90</li><li>Partage managers</li></ul>
+<h3>Pack Conformit\u00e9 \u2014 6\u20ac HT/salari\u00e9/mois</h3>
+<ul><li>Risques professionnels identifi\u00e9s</li><li>Anticipation contr\u00f4les et sanctions</li><li>Suivi conformit\u00e9 l\u00e9gale en continu</li><li>Registre unique du personnel</li></ul>
+<h3>Pack Int\u00e9gral</h3>
+<ul><li><strong>1-19 salari\u00e9s :</strong> 99\u20ac HT/mois forfait</li><li><strong>+20 salari\u00e9s :</strong> 11\u20ac HT/salari\u00e9/mois (au lieu de 15\u20ac, soit 27% d\u2019\u00e9conomie)</li></ul>`
+      },
+      {
+        title: 'Positionnement march\u00e9',
+        icon: 'fa-bullseye',
+    videoId: '',
+        body: `<div class="hbox green"><strong>Ce qui diff\u00e9rencie Symbiose :</strong></div>
+<ul>
+<li>D\u00e9ploiement en <strong>quelques jours</strong> (pas quelques mois)</li>
+<li>Interface intuitive <strong>sans formation</strong></li>
+<li>IA int\u00e9gr\u00e9e nativement</li>
+<li>Sans engagement ni frais cach\u00e9s</li>
+<li>Multi-sites</li>
+<li>5 ans de d\u00e9veloppement</li>
+<li>500+ entreprises</li>
+</ul>
+<p><strong>Fonctionnalit\u00e9s transversales :</strong> notifications intelligentes, workflows automatis\u00e9s, exports illimit\u00e9s, gestion multi-sites.</p>
+<div class="hbox blue"><strong>\u00c0 retenir :</strong> Pour une PME de +20 salari\u00e9s, le Pack Int\u00e9gral \u00e0 11\u20ac/salari\u00e9/mois est le meilleur rapport qualit\u00e9-prix (27% d\u2019\u00e9conomie vs les 3 packs s\u00e9par\u00e9s).</div>`
+      }
+    ],
+    script: [
+      {
+        title: 'Pitch Dirigeant',
+        icon: 'fa-user-tie',
+        body: `<strong>VOUS :</strong> \u00ab Symbiose, c\u2019est votre copilote RH. En une seule plateforme, vous visualisez votre \u00e9quipe, validez les cong\u00e9s en un clic, suivez vos recrutements et restez conforme \u2014 sans y passer des heures. D\u00e9ploy\u00e9 en quelques jours, sans engagement. Plus de 500 entreprises nous font confiance. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Thomas M., g\u00e9rant de 22 salari\u00e9s, dit que Symbiose est devenu son copilote. Il n\u2019a pas les moyens d\u2019un RH, mais il a une vision claire de son \u00e9quipe. \u00bb</div>`
+      },
+      {
+        title: 'Pitch DRH',
+        icon: 'fa-user-shield',
+        body: `<strong>VOUS :</strong> \u00ab Symbiose centralise toute votre gestion RH : entretiens assist\u00e9s par IA, barom\u00e8tre d\u2019engagement, ATS complet avec CVth\u00e8que, et conformit\u00e9 automatis\u00e9e. Vos collaborateurs ont chacun leur espace et vous gagnez 40% de temps sur l\u2019administratif. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Sophie L., DRH de 85 salari\u00e9s, a r\u00e9duit de 40% le temps pass\u00e9 sur l\u2019administratif RH. \u00bb</div>`
+      },
+      {
+        title: 'Pitch DAF',
+        icon: 'fa-calculator',
+        body: `<strong>VOUS :</strong> \u00ab Le Pack Int\u00e9gral \u00e0 11\u20ac/salari\u00e9/mois couvre cong\u00e9s, entretiens, recrutement ET conformit\u00e9. Le suivi de conformit\u00e9 est int\u00e9gr\u00e9 : DUERP, registre du personnel, risques professionnels. Sans engagement, risque z\u00e9ro. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Nadia B., DAF de 150 salari\u00e9s, a \u00e9vit\u00e9 un probl\u00e8me lors d\u2019un contr\u00f4le gr\u00e2ce au module Conformit\u00e9. \u00bb</div>`
+      },
+      {
+        title: 'Grille tarifaire',
+        icon: 'fa-tags',
+        body: `<ul>
+<li><strong>TPE (1-19 salari\u00e9s) :</strong> 99\u20ac/mois tout compris</li>
+<li><strong>PME (+20 salari\u00e9s) :</strong> 11\u20ac/salari\u00e9/mois</li>
+<li><strong>Packs s\u00e9par\u00e9s :</strong> 5\u20ac + 4\u20ac + 6\u20ac = 15\u20ac/salari\u00e9/mois</li>
+<li><strong>\u00c9conomie Int\u00e9gral :</strong> 27%</li>
+</ul>`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Quelles sont les 3 cat\u00e9gories de modules dans le dashboard ?',
+        options: ['RH, Finance, Commercial', 'Collaborateurs, Acquisition, Administratif', 'Gestion, Recrutement, Paie', 'Admin, Op\u00e9rations, Support'],
+        correct: 1,
+        feedback: 'Les 3 cat\u00e9gories sont Collaborateurs, Acquisition et Administratif.'
+      },
+      {
+        question: 'Prix du Pack Int\u00e9gral pour une PME de 30 salari\u00e9s ?',
+        options: ['5\u20ac/salari\u00e9/mois', '99\u20ac/mois', '11\u20ac HT/salari\u00e9/mois', '15\u20ac/salari\u00e9/mois'],
+        correct: 2,
+        feedback: 'Pour +20 salari\u00e9s, le Pack Int\u00e9gral est \u00e0 11\u20ac HT/salari\u00e9/mois.'
+      },
+      {
+        question: 'Argument diff\u00e9renciant face \u00e0 un concurrent complexe ?',
+        options: ['Prix le plus bas', 'D\u00e9ploiement rapide, adoption naturelle, interface intuitive', 'Plus de fonctionnalit\u00e9s', 'Support 24/7'],
+        correct: 1,
+        feedback: 'La rapidit\u00e9 de d\u00e9ploiement et l\u2019intuitivit\u00e9 sont les arguments cl\u00e9s face \u00e0 un concurrent complexe.'
+      },
+      {
+        question: 'Combien de niveaux comporte l\u2019architecture Symbiose ?',
+        options: ['1', '2', '3', '4'],
+        correct: 1,
+        feedback: 'Symbiose a une architecture \u00e0 2 niveaux : Interface Admin et Univers Collaborateur, qui communiquent en temps r\u00e9el.'
+      },
+      {
+        question: 'Quelle cat\u00e9gorie inclut le module Recrutement ?',
+        options: ['Administratif', 'Acquisition', 'Collaborateur', 'Conformit\u00e9'],
+        correct: 1,
+        feedback: 'Le module Recrutement fait partie de la cat\u00e9gorie Acquisition.'
+      },
+      {
+        question: 'Quel module fait partie de la cat\u00e9gorie Administratif ?',
+        options: ['CVth\u00e8que', 'Recrutement', 'Contrats', 'Int\u00e9grations'],
+        correct: 2,
+        feedback: 'Les Contrats font partie de la cat\u00e9gorie Administratif.'
+      },
+      {
+        question: 'Comment les deux univers de Symbiose communiquent-ils ?',
+        options: ['Par email uniquement', 'En temps r\u00e9el et de mani\u00e8re bidirectionnelle', 'Par synchronisation nocturne', 'Via un fichier d\u2019export'],
+        correct: 1,
+        feedback: 'Les univers Admin et Collaborateur communiquent en temps r\u00e9el : une action d\u2019un c\u00f4t\u00e9 appara\u00eet instantan\u00e9ment de l\u2019autre.'
+      },
+      {
+        question: 'En combien de temps peut-on cr\u00e9er un entretien avec l\u2019IA Symbiose ?',
+        options: ['5 minutes', '2 minutes', '30 secondes', '1 minute'],
+        correct: 2,
+        feedback: 'L\u2019IA permet de cr\u00e9er un entretien complet en 30 secondes avec mod\u00e8le et questions g\u00e9n\u00e9r\u00e9es automatiquement.'
+      },
+      {
+        question: 'Quelles sont les 3 cat\u00e9gories du Climat Social ?',
+        options: ['Heureux, Tristes, Neutres', 'Satisfaits, Neutres, \u00c0 risque', 'Engag\u00e9s, D\u00e9sengag\u00e9s, Absents', 'Motiv\u00e9s, D\u00e9motiv\u00e9s, Ind\u00e9cis'],
+        correct: 1,
+        feedback: 'Le Climat Social cat\u00e9gorise automatiquement les collaborateurs en satisfaits, neutres et \u00e0 risque.'
+      },
+      {
+        question: 'Que permet le module Contrats avec l\u2019IA ?',
+        options: ['Uniquement stocker des contrats', 'Ins\u00e9rer un contrat existant ou en cr\u00e9er un nouveau assist\u00e9 par l\u2019IA', 'Signer des contrats papier', 'Comparer des offres concurrentes'],
+        correct: 1,
+        feedback: 'Le module Contrats permet d\u2019ins\u00e9rer un contrat existant ou d\u2019en g\u00e9n\u00e9rer un nouveau avec l\u2019IA, clauses pr\u00e9-remplies et signature \u00e9lectronique.'
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: 'La Puissance de l\u2019ATS Symbiose',
+    subtitle: 'Ma\u00eetrisez le pipeline de recrutement, la CVth\u00e8que intelligente et l\u2019IA recrutement.',
+    icon: 'fa-bullseye',
+    videoId: '1179693384',
+    cours: [
+      {
+        title: 'Pipeline de recrutement en 4 \u00e9tapes',
+        icon: 'fa-filter',
+        body: `<ol>
+<li><strong>Candidatures \u00e0 traiter</strong> \u2014 Toutes les candidatures arrivent dans un flux unique, l\u2019IA pr\u00e9-score les profils.</li>
+<li><strong>Candidats rencontr\u00e9s</strong> \u2014 Profils qualifi\u00e9s en entretien, notes et feedbacks centralis\u00e9s.</li>
+<li><strong>Candidats pr\u00e9sent\u00e9s</strong> \u2014 Meilleurs profils partag\u00e9s avec managers pour avis collaboratif.</li>
+<li><strong>Candidats retenus</strong> \u2014 Validation finale et lancement onboarding.</li>
+</ol>`
+      },
+      {
+        title: 'CVth\u00e8que intelligente',
+        icon: 'fa-database',
+        body: `<p>Chaque candidat alimente <strong>automatiquement</strong> la CVth\u00e8que. Recherche avanc\u00e9e par comp\u00e9tences, exp\u00e9rience, localisation.</p>
+<div class="hbox blue"><strong>\u00c0 retenir :</strong> C\u2019est un actif qui prend de la valeur avec le temps. Plus vous recrutez, plus votre vivier s\u2019enrichit.</div>`
+      },
+      {
+        title: 'IA recrutement',
+        icon: 'fa-robot',
+        body: `<ul>
+<li><strong>R\u00e9daction automatique d\u2019offres</strong> en 30 secondes</li>
+<li><strong>Diffusion multi-canal</strong> automatis\u00e9e sur les jobboards</li>
+</ul>`
+      },
+      {
+        title: 'Collaboration managers',
+        icon: 'fa-users-gear',
+        body: `<p>Acc\u00e8s direct aux profils, avis, commentaires, pipeline partag\u00e9. Fini les allers-retours par email.</p>
+<p><strong>Tra\u00e7abilit\u00e9 compl\u00e8te :</strong> chaque action (note, entretien, \u00e9valuation) est horodat\u00e9e et attribu\u00e9e. Fini les \u00ab\u00a0qui a dit quoi\u00a0\u00bb.</p>`
+      },
+      {
+        title: 'Onboarding J1\u2192J90',
+        icon: 'fa-clipboard-check',
+        body: `<p>Parcours structur\u00e9 avec \u00e9tapes \u00e0 valider : accueil, documents, formation, suivi.</p>
+<div class="hbox green"><strong>\u00c0 retenir :</strong> L\u2019ATS est le moteur du Pack Acquisition (4\u20ac/salari\u00e9/mois). La CVth\u00e8que est un actif qui se remplit automatiquement.</div>`
+      },
+      {
+        title: 'Strat\u00e9gie commerciale ATS',
+        icon: 'fa-handshake',
+        body: `<p><strong>Le triptyque d\u2019accompagnement :</strong></p>
+<ol>
+<li><strong>Autonomie</strong> \u2014 Le client recrute seul avec le Pack Acquisition (4\u20ac HT/salari\u00e9/mois). Id\u00e9al PME multi-recruteurs.</li>
+<li><strong>Bin\u00f4mage</strong> \u2014 Copilotage d\u2019un recrutement avec le consultant. Forfait fixe (pas de variable). Transfert de comp\u00e9tences.</li>
+<li><strong>D\u00e9l\u00e9gation</strong> \u2014 Le cabinet g\u00e8re le recrutement de A \u00e0 Z. Honoraires 15-25% de la r\u00e9mun\u00e9ration annuelle brute.</li>
+</ol>
+<div class="hbox blue"><strong>Stat cl\u00e9 :</strong> 80% des recrutements ne sont jamais confi\u00e9s \u00e0 un cabinet \u2192 opportunit\u00e9 Symbiose en mode Autonomie.</div>
+<p><strong>Emplacements d\u2019offres :</strong> offre ponctuelle vs abonnement annuel pour les besoins r\u00e9currents/saisonniers.</p>`
+      },
+      {
+        title: 'Module Int\u00e9gration (Onboarding)',
+        icon: 'fa-user-check',
+        body: `<p>Le module Int\u00e9gration fait la jonction entre la <strong>fin du recrutement</strong> et la <strong>vie du collaborateur</strong> dans l\u2019entreprise.</p>
+<ul>
+<li><strong>Checklists personnalis\u00e9es</strong> \u2014 Actions \u00e0 r\u00e9aliser, deadlines, responsables assign\u00e9s</li>
+<li><strong>Suivi J1 \u2192 J90</strong> \u2014 Parcours structur\u00e9 : accueil, documents, formation, points d\u2019\u00e9tape</li>
+<li><strong>Visibilit\u00e9 totale</strong> \u2014 RH, manager et collaborateur voient l\u2019avancement en temps r\u00e9el</li>
+</ul>
+<div class="hbox green"><strong>\u00c0 retenir :</strong> L\u2019int\u00e9gration est un moment cl\u00e9 et d\u00e9cisif. Un onboarding rat\u00e9 = un recrutement rat\u00e9.</div>`
+      }
+    ],
+    script: [
+      {
+        title: 'Accroche',
+        icon: 'fa-bullhorn',
+        body: `<strong>VOUS :</strong> \u00ab Aujourd\u2019hui je vais vous montrer comment recruter de A \u00e0 Z sans quitter Symbiose. \u00bb`
+      },
+      {
+        title: 'Cr\u00e9er une offre avec l\u2019IA',
+        icon: 'fa-wand-magic-sparkles',
+        body: `<strong>VOUS :</strong> \u00ab Je clique sur Recrutement, je cr\u00e9e un poste. Je tape le titre \u2014 \u2018Commercial terrain\u2019 \u2014 et l\u2019IA g\u00e9n\u00e8re une offre compl\u00e8te en 30 secondes. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Combien de temps passez-vous \u00e0 r\u00e9diger une offre ? Avec Symbiose, 30 secondes. \u00bb</div>`
+      },
+      {
+        title: 'Pipeline visuel',
+        icon: 'fa-columns',
+        body: `<strong>VOUS :</strong> \u00ab Les candidatures arrivent dans un pipeline en 4 colonnes. Je vois d\u2019un coup d\u2019\u0153il o\u00f9 en est chaque candidat. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab C\u2019est comme un CRM pour vos recrutements. Fini les CV perdus dans les emails. \u00bb</div>`
+      },
+      {
+        title: 'CVth\u00e8que',
+        icon: 'fa-database',
+        body: `<strong>VOUS :</strong> \u00ab Chaque candidat alimente votre CVth\u00e8que. Dans 6 mois, vous cherchez dans votre vivier avant de republier. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Celui qui a un vivier r\u00e9agit en 48h. Les autres relancent un processus de 3 semaines. \u00bb</div>`
+      },
+      {
+        title: 'Collaboration',
+        icon: 'fa-people-arrows',
+        body: `<strong>VOUS :</strong> \u00ab Vos managers acc\u00e8dent aux profils, donnent leur avis, commentent. Plus d\u2019emails. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Recrutement collaboratif = meilleure qualit\u00e9. Manager valide le technique, RH valide le fit culturel. \u00bb</div>`
+      },
+      {
+        title: 'Triptyque commercial',
+        icon: 'fa-layer-group',
+        body: `<strong>VOUS :</strong> \u00ab On a 3 fa\u00e7ons de travailler ensemble :<br>
+1. <strong>Autonomie</strong> : vous recrutez seul avec l\u2019ATS, 4\u20ac/salari\u00e9/mois.<br>
+2. <strong>Bin\u00f4mage</strong> : on copilote ensemble, forfait fixe.<br>
+3. <strong>D\u00e9l\u00e9gation</strong> : on g\u00e8re tout, 15-25% du salaire annuel.<br>
+80% des recrutements ne passent jamais par un cabinet. L\u2019autonomie r\u00e9pond \u00e0 ce march\u00e9 \u00e9norme. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Quel que soit votre besoin, on a la r\u00e9ponse. Et on peut combiner les 3. \u00bb</div>`
+      },
+      {
+        title: 'Diagnostic client',
+        icon: 'fa-stethoscope',
+        body: `<strong>VOUS :</strong> \u00ab Avant de proposer quoi que ce soit, j\u2019ai besoin de comprendre :<br>
+\u2022 Combien de salari\u00e9s ?<br>
+\u2022 Qui g\u00e8re les RH aujourd\u2019hui ?<br>
+\u2022 Quels outils utilisez-vous ?<br>
+\u2022 Combien de recrutements par an ?<br>
+\u2022 Combien de sites ? \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Je ne vends pas un logiciel, je vous propose le bon degr\u00e9 d\u2019accompagnement. \u00bb</div>`
+      },
+      {
+        title: 'Prix',
+        icon: 'fa-tags',
+        body: `<strong>VOUS :</strong> \u00ab Tout \u00e7a pour 4\u20ac/salari\u00e9/mois. Un cabinet co\u00fbte 15-25% du salaire annuel. Pour 30 salari\u00e9s = 120\u20ac/mois. Combien co\u00fbte UN recrutement rat\u00e9 ? \u00bb`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Les 4 \u00e9tapes du pipeline ?',
+        options: ['Sourcing \u2192 Entretien \u2192 Offre \u2192 Embauche', 'Candidatures \u00e0 traiter \u2192 Rencontr\u00e9s \u2192 Pr\u00e9sent\u00e9s \u2192 Retenus', 'Publication \u2192 Tri \u2192 Entretien \u2192 D\u00e9cision', 'Besoin \u2192 Recherche \u2192 S\u00e9lection \u2192 Int\u00e9gration'],
+        correct: 1,
+        feedback: 'Le pipeline Symbiose suit 4 \u00e9tapes : Candidatures \u00e0 traiter, Rencontr\u00e9s, Pr\u00e9sent\u00e9s, Retenus.'
+      },
+      {
+        question: 'Temps de r\u00e9daction d\u2019une offre par l\u2019IA ?',
+        options: ['5 minutes', '30 secondes', '2 minutes', '1 minute'],
+        correct: 1,
+        feedback: 'L\u2019IA g\u00e9n\u00e8re une offre compl\u00e8te en 30 secondes.'
+      },
+      {
+        question: 'Quel est le principal avantage du pipeline de recrutement Symbiose\u2009?',
+        options: ['Il est enti\u00e8rement automatis\u00e9', 'Il offre une vue en temps r\u00e9el de chaque candidature \u00e0 chaque \u00e9tape', 'Il remplace les entretiens', 'Il envoie les offres automatiquement'],
+        correct: 1,
+        feedback: 'Le pipeline donne une vision compl\u00e8te et en temps r\u00e9el du parcours de chaque candidat, de la candidature \u00e0 l\u2019embauche.'
+      },
+      {
+        question: 'Avantage principal de la CVth\u00e8que ?',
+        options: ['Elle est gratuite', 'Elle se remplit automatiquement \u2014 un actif qui prend de la valeur', 'Elle remplace LinkedIn', 'Elle trie par note'],
+        correct: 1,
+        feedback: 'La CVth\u00e8que se remplit automatiquement avec chaque candidat, devenant un actif de plus en plus pr\u00e9cieux.'
+      },
+      {
+        question: 'Comment les managers participent au recrutement ?',
+        options: ['Ils re\u00e7oivent les CV par email', 'Ils acc\u00e8dent aux profils et commentent dans le pipeline partag\u00e9', 'Ils n\u2019ont pas acc\u00e8s', 'Ils valident par t\u00e9l\u00e9phone'],
+        correct: 1,
+        feedback: 'Les managers acc\u00e8dent directement au pipeline, consultent les profils et commentent.'
+      }
+,
+      {
+        question: 'Combien d\u2019\u00e9tapes comporte le pipeline de recrutement Symbiose ?',
+        options: ['3', '4', '5', '6'],
+        correct: 1,
+        feedback: 'Le pipeline de recrutement comporte 4 \u00e9tapes.'
+      },
+      {
+        question: 'Quelle est la premi\u00e8re \u00e9tape du pipeline de recrutement ?',
+        options: ['Candidats rencontr\u00e9s', 'Candidatures \u00e0 traiter', 'Candidats pr\u00e9sent\u00e9s', 'Candidats retenus'],
+        correct: 1,
+        feedback: 'La premi\u00e8re \u00e9tape est Candidatures \u00e0 traiter.'
+      },
+      {
+        question: 'Quel outil Symbiose permet de structurer l\u2019onboarding d\u2019un nouveau collaborateur\u2009?',
+        options: ['Un email de bienvenue automatique', 'Un module Int\u00e9gration avec checklists, deadlines et responsables', 'Un questionnaire de satisfaction', 'Un chatbot interne'],
+        correct: 1,
+        feedback: 'Le module Int\u00e9gration structure l\u2019onboarding de J1 \u00e0 J90 avec des checklists, des deadlines et des responsables assign\u00e9s.'
+      },
+      {
+        question: 'Quelle est la dur\u00e9e couverte par le parcours d\u2019int\u00e9gration Symbiose\u2009?',
+        options: ['La premi\u00e8re semaine uniquement', 'De J1 \u00e0 J90', 'Les 6 premiers mois', 'Il n\u2019y a pas de dur\u00e9e d\u00e9finie'],
+        correct: 1,
+        feedback: 'Le parcours d\u2019int\u00e9gration couvre les 90 premiers jours, p\u00e9riode critique pour fid\u00e9liser un nouveau collaborateur.'
+      },
+      {
+        question: 'Comment la CVth\u00e8que s\u2019alimente-t-elle ?',
+        options: ['Manuellement uniquement', 'Automatiquement avec chaque candidat', 'Par import CSV', 'Via LinkedIn'],
+        correct: 1,
+        feedback: 'La CVth\u00e8que s\u2019alimente automatiquement avec chaque nouveau candidat.'
+      },
+      {
+        question: 'Quel type de recherche permet la CVth\u00e8que ?',
+        options: ['Par nom uniquement', 'Recherche avanc\u00e9e par comp\u00e9tences, exp\u00e9rience, localisation', 'Par date uniquement', 'Par email'],
+        correct: 1,
+        feedback: 'La CVth\u00e8que offre une recherche avanc\u00e9e par comp\u00e9tences, exp\u00e9rience et localisation.'
+      },
+      {
+        question: 'Quels sont les 3 niveaux d\u2019accompagnement du triptyque commercial Symbiose ?',
+        options: ['D\u00e9couverte \u2192 N\u00e9gociation \u2192 Closing', 'Autonomie \u2192 Bin\u00f4mage \u2192 D\u00e9l\u00e9gation', 'Prospection \u2192 Qualification \u2192 Signature', 'Sourcing \u2192 Entretien \u2192 Int\u00e9gration'],
+        correct: 1,
+        feedback: 'Le triptyque commercial Symbiose propose 3 niveaux : Autonomie (4\u20ac/salari\u00e9/mois), Bin\u00f4mage (forfait fixe) et D\u00e9l\u00e9gation (15-25% RAB).'
+      },
+      {
+        question: 'Que permet le module Int\u00e9gration de Symbiose ?',
+        options: ['G\u00e9rer la paie des nouveaux collaborateurs', 'Suivre l\u2019onboarding avec checklists, deadlines et responsables', 'Envoyer des emails de bienvenue automatiques', 'Planifier les cong\u00e9s du premier mois'],
+        correct: 1,
+        feedback: 'Le module Int\u00e9gration structure l\u2019onboarding de J1 \u00e0 J90 avec des checklists, des deadlines et des responsables assign\u00e9s.'
+      },
+    ],
+    game: {
+      type: 'matching',
+      title: 'Le bon niveau d\u2019accompagnement',
+      instruction: 'Pour chaque situation client, choisissez le niveau du triptyque adapt\u00e9 : Autonomie, Bin\u00f4mage ou D\u00e9l\u00e9gation.',
+      items: [
+        {
+          situation: 'PME de 50 salari\u00e9s, RH interne, recrute r\u00e9guli\u00e8rement, veut \u00eatre autonome',
+          answer: 'Autonomie',
+          explanation: 'Pack Acquisition \u00e0 4\u20ac/salari\u00e9/mois. Le client a les ressources pour recruter seul.'
+        },
+        {
+          situation: 'TPE de 12 salari\u00e9s, pas de RH d\u00e9di\u00e9, premier recrutement d\u2019un commercial, veut apprendre',
+          answer: 'Bin\u00f4mage',
+          explanation: 'Forfait fixe. Le consultant copilote le recrutement et transf\u00e8re la comp\u00e9tence.'
+        },
+        {
+          situation: 'Groupe de 200 salari\u00e9s, besoin urgent d\u2019un directeur commercial, aucune ressource interne',
+          answer: 'D\u00e9l\u00e9gation',
+          explanation: 'Le cabinet prend le recrutement en charge. Honoraires 15-25% de la RAB.'
+        },
+        {
+          situation: 'Cha\u00eene de restaurants, 8 sites, recrute des saisonniers toute l\u2019ann\u00e9e, \u00e9quipe RH structur\u00e9e',
+          answer: 'Autonomie',
+          explanation: 'Emplacements d\u2019offres \u00e0 l\u2019ann\u00e9e + Pack Acquisition. Volume r\u00e9current = autonomie rentable.'
+        },
+        {
+          situation: 'Cabinet comptable de 25 personnes, un seul recrutement par an, pas de comp\u00e9tence RH',
+          answer: 'D\u00e9l\u00e9gation',
+          explanation: 'Pas assez de volume pour l\u2019autonomie. D\u00e9l\u00e9gation ponctuelle plus adapt\u00e9e.'
+        }
+      ]
+    }
+  },
+  {
+    id: 4,
+    title: 'L\u2019Univers Collaborateur',
+    subtitle: 'Pr\u00e9sentez l\u2019espace personnel du salari\u00e9, le barom\u00e8tre Humeur et l\u2019argument d\u2019adoption.',
+    icon: 'fa-hand-holding-heart',
+        videoId: '1179257675',
+    cours: [
+      {
+        title: 'Espace personnel du collaborateur',
+        icon: 'fa-id-badge',
+        body: `<p>Chaque salari\u00e9 dispose de <strong>son propre acc\u00e8s Symbiose</strong>, m\u00eame sans adresse e-mail. L\u2019identifiant est automatiquement g\u00e9n\u00e9r\u00e9 : <strong>pr\u00e9nom.nom</strong> (ex. julien.duchesne). Un mot de passe temporaire est d\u00e9fini par l\u2019administrateur RH, personnalisable ensuite par le collaborateur.</p>
+<p>Symbiose g\u00e8re <strong>4 r\u00f4les</strong> : Dirigeant, RH, Manager et Collaborateur. Le r\u00f4le Collaborateur donne acc\u00e8s au strict minimum :</p>
+<ul>
+<li>Tableau de bord personnel (poser un cong\u00e9, d\u00e9clarer son humeur, signaler un arr\u00eat maladie)</li>
+<li>Cong\u00e9s et absences</li>
+<li>Entretiens</li>
+<li>Documents</li>
+<li>Annuaire d\u2019entreprise</li>
+<li>Vue \u00e9quipe et d\u00e9partement</li>
+</ul>
+<div class="hbox blue"><strong>Jauge de compl\u00e9tion :</strong> \u00c0 la premi\u00e8re connexion, le collaborateur est invit\u00e9 \u00e0 compl\u00e9ter ses informations personnelles (identit\u00e9, situation familiale, coordonn\u00e9es, contact d\u2019urgence). Une jauge affiche le taux de compl\u00e9tion (ex. 95 %). Elle dispara\u00eet une fois toutes les informations renseign\u00e9es.</div>
+<div class="hbox green"><strong>Offert jusqu\u2019\u00e0 3 collaborateurs</strong> pour tester. Connexion possible depuis un t\u00e9l\u00e9phone portable.</div>`
+      },
+      {
+        title: 'Annuaire d\u2019entreprise',
+        icon: 'fa-address-book',
+        body: `<p>L\u2019annuaire int\u00e9gr\u00e9 permet \u00e0 chaque collaborateur de <strong>rechercher les coordonn\u00e9es de ses coll\u00e8gues</strong> en un clic.</p>
+<ul>
+<li><strong>Filtre par d\u00e9partement</strong> pour retrouver rapidement un collaborateur</li>
+<li>Affichage de tous les collaborateurs de l\u2019entreprise</li>
+<li>Acc\u00e8s rapide aux informations de contact</li>
+</ul>
+<div class="hbox green"><strong>Lien social :</strong> L\u2019annuaire renforce la visibilit\u00e9 et la coh\u00e9sion au sein de l\u2019entreprise.</div>`
+      },
+      {
+        title: 'Cong\u00e9s c\u00f4t\u00e9 salari\u00e9',
+        icon: 'fa-calendar-check',
+        body: `<p>Le collaborateur g\u00e8re ses cong\u00e9s en toute autonomie :</p>
+<ul>
+<li><strong>Solde de cong\u00e9s visible en un coup d\u2019\u0153il</strong></li>
+<li><strong>Pose de cong\u00e9 simplifi\u00e9e :</strong> s\u00e9lectionner le premier jour puis le dernier jour sur le calendrier, le <strong>calcul du nombre de jours est automatique</strong></li>
+<li><strong>D\u00e9claration d\u2019arr\u00eat maladie</strong> sans obligation de fournir l\u2019attestation imm\u00e9diatement (t\u00e9l\u00e9versement ult\u00e9rieur possible)</li>
+<li>Demande <strong>envoy\u00e9e instantan\u00e9ment</strong> au responsable RH pour validation</li>
+<li>Calendrier d\u2019\u00e9quipe et historique complet</li>
+</ul>
+<div class="hbox blue"><strong>C\u00f4t\u00e9 RH :</strong> La demande appara\u00eet directement sur le tableau de bord. Validation en un clic avec animation de confirmation. Visible aussi dans l\u2019onglet Cong\u00e9s et absences.</div>
+<div class="hbox green"><strong>Circuits de validation param\u00e9trables :</strong> Lors de l\u2019installation chez le client, vous l\u2019accompagnez dans le param\u00e9trage des circuits de validation des cong\u00e9s pay\u00e9s. Toutes les r\u00e8gles de l\u2019entreprise sont configurables.</div>`
+      },
+      {
+        title: 'Barom\u00e8tre Humeur & Bien-\u00eatre',
+        icon: 'fa-face-smile',
+        body: `<p>Chaque collaborateur enregistre son humeur. Vue agr\u00e9g\u00e9e sur 6 mois. <strong>Alertes si un collaborateur d\u00e9croche.</strong></p>
+<div class="hbox blue"><strong>Pr\u00e9vention du turnover :</strong> Le co\u00fbt d\u2019un d\u00e9part = 6-9 mois de salaire. Le barom\u00e8tre d\u00e9tecte les signaux faibles en amont.</div>`
+      },
+      {
+        title: 'Entretiens c\u00f4t\u00e9 collaborateur',
+        icon: 'fa-clipboard-list',
+        body: `<p>D\u00e8s qu\u2019un entretien est programm\u00e9 par le manager ou le RH, le collaborateur en est <strong>inform\u00e9 dans son espace</strong> avec la date et l\u2019horaire.</p>
+<ul>
+<li><strong>Questions consultables \u00e0 l\u2019avance :</strong> le collaborateur peut voir toutes les questions qui lui seront pos\u00e9es, avec les conseils et l\u2019objectif de chaque question</li>
+<li><strong>Pr\u00e9paration guid\u00e9e :</strong> il peut compl\u00e9ter ses r\u00e9ponses au pr\u00e9alable, <strong>sauvegarder et y retourner ult\u00e9rieurement</strong></li>
+<li><strong>Indicateurs de suivi :</strong> nombre d\u2019entretiens r\u00e9alis\u00e9s, planifi\u00e9s, termin\u00e9s, notes et \u00e9valuations du manager</li>
+<li>Tout est archiv\u00e9 et accessible</li>
+</ul>
+<div class="hbox green"><strong>Adoption facilitée :</strong> Le collaborateur est compl\u00e8tement guid\u00e9 dans sa d\u00e9marche de pr\u00e9paration. Plus besoin de courir apr\u00e8s les formulaires papier.</div>`
+      },
+      {
+        title: 'Mon \u00e9quipe',
+        icon: 'fa-people-group',
+        body: `<p>Coll\u00e8gues, \u00e9v\u00e9nements, anniversaires. Cr\u00e9e du lien et de la visibilit\u00e9.</p>
+<div class="hbox green"><strong>\u00c0 retenir :</strong> L\u2019Univers Collaborateur transforme Symbiose d\u2019un \u00ab outil RH \u00bb en plateforme d\u2019entreprise. Le barom\u00e8tre Humeur est LE moment WOW en d\u00e9mo. Offert jusqu\u2019\u00e0 3 collaborateurs.</div>`
+      },
+      {
+        title: 'Documents',
+        icon: 'fa-file-lines',
+        body: `<p>Le collaborateur retrouve dans cet espace les <strong>documents mis \u00e0 disposition par les ressources humaines</strong> :</p>
+<ul>
+<li>Convention collective</li>
+<li>R\u00e8glement int\u00e9rieur</li>
+<li>Notes de service</li>
+<li>Documents personnels t\u00e9l\u00e9vers\u00e9s lors de la compl\u00e9tion du profil</li>
+</ul>
+<div class="hbox green"><strong>Centralisation :</strong> Fini les documents \u00e9parpill\u00e9s. Tout est accessible en un seul endroit pour le collaborateur.</div>`
+      }
+    ],
+    script: [
+      {
+        title: 'Accroche',
+        icon: 'fa-bullhorn',
+        body: `<strong>VOUS :</strong> \u00ab Maintenant, ce que vos salari\u00e9s voient quand ils se connectent. Symbiose, ce n\u2019est pas juste un outil RH \u2014 c\u2019est un espace pour chaque membre de votre \u00e9quipe. \u00bb`
+      },
+      {
+        title: 'Cong\u00e9s',
+        icon: 'fa-calendar-check',
+        body: `<strong>VOUS :</strong> \u00ab Votre salari\u00e9 voit ses soldes, le calendrier d\u2019\u00e9quipe. Poser un cong\u00e9 ? Trois clics. La demande arrive chez vous pour validation. Fini les SMS et Post-it. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Combien de temps perdez-vous \u00e0 traiter les demandes de cong\u00e9s ? Avec Symbiose, le salari\u00e9 fait la d\u00e9marche, vous validez en un clic. \u00bb</div>`
+      },
+      {
+        title: 'Le moment WOW \u2014 Barom\u00e8tre Humeur',
+        icon: 'fa-face-smile',
+        body: `<strong>VOUS :</strong> \u00ab Chaque collaborateur enregistre comment il se sent. Vous voyez une vue agr\u00e9g\u00e9e sur 6 mois. Si quelqu\u2019un d\u00e9croche, vous \u00eates alert\u00e9. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Le turnover co\u00fbte 6-9 mois de salaire par d\u00e9part. Le barom\u00e8tre d\u00e9tecte les signaux faibles en amont. Pr\u00e9vention, pas curatif. \u00bb</div>`
+      },
+      {
+        title: 'Entretiens et \u00e9quipe',
+        icon: 'fa-users',
+        body: `<strong>VOUS :</strong> \u00ab Le salari\u00e9 pr\u00e9pare ses entretiens dans l\u2019outil, note ses objectifs. Dans Mon \u00e9quipe, il voit ses coll\u00e8gues, les anniversaires. \u00c7a cr\u00e9e du lien. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Un salari\u00e9 qui a de la visibilit\u00e9 et qui peut s\u2019exprimer, c\u2019est un salari\u00e9 engag\u00e9. Un salari\u00e9 engag\u00e9, \u00e7a reste. \u00bb</div>`
+      },
+      {
+        title: 'Closing adoption',
+        icon: 'fa-flag-checkered',
+        body: `<strong>VOUS :</strong> \u00ab Quand chaque salari\u00e9 utilise Symbiose, c\u2019est une plateforme d\u2019entreprise. Offert jusqu\u2019\u00e0 3 collaborateurs pour tester. L\u2019adoption est naturelle \u2014 sans formation. \u00bb`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Que doit faire le collaborateur lors de sa premi\u00e8re connexion \u00e0 Symbiose\u2009?',
+        options: ['Suivre une formation obligatoire', 'Compl\u00e9ter ses informations personnelles', 'Choisir un abonnement', 'T\u00e9l\u00e9charger l\u2019application mobile'],
+        correct: 1,
+        feedback: '\u00c0 sa premi\u00e8re connexion, le collaborateur est guid\u00e9 pour compl\u00e9ter ses informations personnelles\u00a0: coordonn\u00e9es, poste, photo.'
+      },
+      {
+        question: 'Quel est l\u2019identifiant de connexion d\u2019un collaborateur sans adresse e-mail ?',
+        options: ['Son num\u00e9ro de t\u00e9l\u00e9phone', 'Son pr\u00e9nom.nom', 'Son matricule', 'Son adresse postale'],
+        correct: 1,
+        feedback: 'L\u2019identifiant est automatiquement g\u00e9n\u00e9r\u00e9 au format pr\u00e9nom.nom (ex. julien.duchesne), m\u00eame sans adresse e-mail.'
+      },
+      {
+        question: 'Quelle affirmation est vraie concernant les r\u00f4les dans Symbiose\u2009?',
+        options: ['Il y a uniquement 2 r\u00f4les\u00a0: Admin et Utilisateur', 'Les r\u00f4les sont fig\u00e9s et ne peuvent pas \u00eatre modifi\u00e9s', 'On peut cr\u00e9er tous les r\u00f4les possible et imaginable', 'Seul le dirigeant peut acc\u00e9der \u00e0 la plateforme'],
+        correct: 2,
+        feedback: 'Symbiose offre une flexibilit\u00e9 totale\u00a0: vous pouvez cr\u00e9er et personnaliser autant de r\u00f4les que n\u00e9cessaire selon l\u2019organisation du client.'
+      },
+      {
+        question: 'Que se passe-t-il \u00e0 la premi\u00e8re connexion du collaborateur ?',
+        options: ['Il acc\u00e8de directement au tableau de bord', 'Il est invit\u00e9 \u00e0 compl\u00e9ter ses informations personnelles', 'Il doit cr\u00e9er un mot de passe', 'Il suit une formation obligatoire'],
+        correct: 1,
+        feedback: 'Une fen\u00eatre s\u2019affiche pour compl\u00e9ter identit\u00e9, situation familiale, coordonn\u00e9es et contact d\u2019urgence. Une jauge affiche le taux de compl\u00e9tion.'
+      },
+      {
+        question: 'Comment le collaborateur pose-t-il un cong\u00e9 dans Symbiose ?',
+        options: ['Il envoie un e-mail au RH', 'Il s\u00e9lectionne le premier et le dernier jour sur le calendrier', 'Il remplit un formulaire papier', 'Il appelle son manager'],
+        correct: 1,
+        feedback: 'Le collaborateur s\u00e9lectionne le premier puis le dernier jour sur le calendrier. Le nombre de jours est calcul\u00e9 automatiquement.'
+      },
+      {
+        question: 'Comment le manager valide-t-il les demandes de cong\u00e9s ?',
+        options: ['Par e-mail', 'En un clic depuis le tableau de bord', 'Par courrier', 'Par t\u00e9l\u00e9phone'],
+        correct: 1,
+        feedback: 'La demande appara\u00eet directement sur le tableau de bord du RH. Validation en un clic avec animation de confirmation.'
+      },
+      {
+        question: 'Que sont les circuits de validation des cong\u00e9s dans Symbiose ?',
+        options: ['Des circuits fixes et identiques pour tous', 'Des r\u00e8gles param\u00e9trables selon l\u2019entreprise', 'Des validations automatiques sans intervention', 'Des circuits d\u00e9finis par le collaborateur'],
+        correct: 1,
+        feedback: 'Les circuits de validation sont enti\u00e8rement param\u00e9trables. Vous accompagnez le client dans leur configuration lors de l\u2019installation.'
+      },
+      {
+        question: 'Que peut faire le collaborateur avant un entretien programm\u00e9 ?',
+        options: ['Rien, il d\u00e9couvre les questions le jour J', 'Consulter les questions \u00e0 l\u2019avance et pr\u00e9parer ses r\u00e9ponses', 'Annuler l\u2019entretien', 'D\u00e9l\u00e9guer \u00e0 un coll\u00e8gue'],
+        correct: 1,
+        feedback: 'Le collaborateur peut consulter les questions avec conseils et objectifs, pr\u00e9parer ses r\u00e9ponses, sauvegarder et y retourner ult\u00e9rieurement.'
+      },
+      {
+        question: 'Le \u00ab moment WOW \u00bb de l\u2019Univers Collaborateur ?',
+        options: ['La gestion des cong\u00e9s', 'Le Barom\u00e8tre Humeur', 'Les entretiens', 'Le calendrier'],
+        correct: 1,
+        feedback: 'Le Barom\u00e8tre Humeur est LE moment WOW en d\u00e9mo. Il d\u00e9tecte les signaux faibles et pr\u00e9vient le turnover (co\u00fbt : 6-9 mois de salaire par d\u00e9part).'
+      },
+      {
+        question: 'Que trouve le collaborateur dans la section Documents ?',
+        options: ['Ses fiches de paie', 'La convention collective et les documents RH', 'Ses contrats clients', 'Ses \u00e9valuations de performance'],
+        correct: 1,
+        feedback: 'Le collaborateur retrouve les documents mis \u00e0 disposition par les RH, comme la convention collective.'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: 'Ma\u00eetriser la D\u00e9mo Symbiose',
+    subtitle: 'Le nouveau parcours de d\u00e9mo en 6 \u00e9tapes avec ATS et Univers Collaborateur.',
+    icon: 'fa-desktop',
+    videoId: '1179891923',
+    cours: [
+      { title: 'Pr\u00e9paration pr\u00e9-d\u00e9mo avec Spider', icon: 'fa-puzzle-piece', body: 'Avant chaque d\u00e9mo, personnalisez l\u2019univers du prospect gr\u00e2ce \u00e0 l\u2019extension Chrome <b>Spider</b> pour maximiser l\u2019impact :<br><br><b>1. Installer l\u2019extension Spider</b> \u2014 T\u00e9l\u00e9chargez l\u2019extension Spider depuis le Chrome Web Store. Elle fait le lien entre LinkedIn et Symbiose.<br><br><b>2. Cr\u00e9er l\u2019univers prospect</b> \u2014 Dans Symbiose, cr\u00e9ez un nouvel univers au nom de l\u2019entreprise prospect. C\u2019est dans cet espace que les donn\u00e9es import\u00e9es appara\u00eetront.<br><br><b>3. Importer les collaborateurs via LinkedIn</b> \u2014 Sur LinkedIn, recherchez l\u2019entreprise du prospect. Avec Spider, s\u00e9lectionnez 5 \u00e0 10 profils pertinents (dirigeants, RH, managers) et importez-les comme collaborateurs dans l\u2019univers cr\u00e9\u00e9. Noms, postes et photos sont automatiquement r\u00e9cup\u00e9r\u00e9s.<br><br><b>4. R\u00e9sultat</b> \u2014 Le Dashboard Admin affiche d\u00e9sormais les vrais collaborateurs du prospect avec leurs informations r\u00e9elles. La d\u00e9mo devient imm\u00e9diatement concr\u00e8te et personnalis\u00e9e, cr\u00e9ant un effet WOW d\u00e8s les premi\u00e8res secondes.' },
+      { title: 'Le nouveau parcours de d\u00e9mo en 6 \u00e9tapes', icon: 'fa-route', body: 'La d\u00e9mo Symbiose suit un parcours structur\u00e9 en <b>6 \u00e9tapes</b> pour une dur\u00e9e de <b>25 \u00e0 30 minutes</b>. Ce parcours repose sur une architecture <b>2 + 4</b> : 2 \u00e9tapes fixes et 4 \u00e9tapes mobiles.<br><br><b>\u00c9tapes fixes (toujours en d\u00e9but et fin) :</b><br>\u2022 <b>\u00c9tape 1 \u2014 Dashboard Admin</b> (2 min) : Pr\u00e9sentation du tableau de bord personnalis\u00e9 avec les vrais collaborateurs du prospect (import\u00e9s via Spider). Premi\u00e8re impression forte.<br>\u2022 <b>\u00c9tape 6 \u2014 R\u00e9cap Personnalis\u00e9</b> (3 min) : Synth\u00e8se des points cl\u00e9s, r\u00e9ponse aux questions et pr\u00e9sentation du pack tarifaire adapt\u00e9.<br><br><b>\u00c9tapes mobiles (ordre adaptable selon le prospect) :</b><br>\u2022 <b>\u00c9tape 2 \u2014 ATS en Live</b> (6 min) : 1er moment WOW \u2014 Diffusion d\u2019offres, matching CV, multidiffusion. Id\u00e9al si le prospect a un besoin prioritaire en recrutement.<br>\u2022 <b>\u00c9tape 3 \u2014 Univers Collaborateur</b> (5 min) : 2e moment WOW \u2014 Espace collaborateur, cong\u00e9s, entretiens, notes de frais. Id\u00e9al si le prospect cherche un SIRH.<br>\u2022 <b>\u00c9tape 4 \u2014 Cong\u00e9s, Entretiens & Humeur</b> (5 min) : Gestion RH au quotidien, barom\u00e8tre d\u2019humeur, campagnes d\u2019entretiens.<br>\u2022 <b>\u00c9tape 5 \u2014 Obligations & Conformit\u00e9</b> (4 min) : DUERP, registre du personnel, alertes l\u00e9gales, conformit\u00e9 RGPD.<br><br>L\u2019ordre des 4 \u00e9tapes mobiles s\u2019adapte aux <b>douleurs identifi\u00e9es</b> lors de la d\u00e9couverte. Commencez par le sujet qui r\u00e9sonne le plus chez le prospect.' },
+      { title: 'Adaptation selon le profil', icon: 'fa-sliders', body: 'L\u2019ordre des \u00e9tapes mobiles se d\u00e9cide en fonction du <b>profil du prospect</b> et de ses douleurs prioritaires :<br><br>\u2022 <b>Dirigeant / G\u00e9rant</b> : Commencer par le Dashboard (vue globale) puis ATS (probl\u00e9matique recrutement fr\u00e9quente). Insister sur le gain de temps et la vision d\u2019ensemble.<br>\u2022 <b>DRH / Responsable RH</b> : Privil\u00e9gier l\u2019Univers Collaborateur et les Entretiens. Mettre en avant la centralisation RH et la conformit\u00e9.<br>\u2022 <b>DAF / Directeur Financier</b> : Montrer d\u2019abord les Obligations & Conformit\u00e9 puis les tableaux de bord. Insister sur la r\u00e9duction des risques et le ROI.<br><br>R\u00e8gle d\u2019or : toujours <b>commencer par la douleur principale</b> identifi\u00e9e en d\u00e9couverte, et placer les 2 moments WOW (ATS + Univers Collaborateur) dans les 3 premi\u00e8res \u00e9tapes pour maintenir l\u2019attention.' },
+      { title: 'Erreurs \u00e0 \u00e9viter', icon: 'fa-triangle-exclamation', body: '\u2022 <b>Montrer toutes les fonctionnalit\u00e9s</b> : La d\u00e9mo n\u2019est pas une formation. S\u00e9lectionnez uniquement les modules pertinents pour le prospect. Mieux vaut 3 fonctionnalit\u00e9s bien d\u00e9montr\u00e9es que 10 survol\u00e9es.<br><br>\u2022 <b>Ne pas personnaliser le Dashboard</b> : Un Dashboard avec des donn\u00e9es g\u00e9n\u00e9riques (Jean Dupont, Marie Martin) perd tout impact. Prenez toujours le temps d\u2019importer les vrais collaborateurs via Spider avant la d\u00e9mo.<br><br>\u2022 <b>Ignorer les douleurs du prospect</b> : D\u00e9rouler un parcours standard sans adapter l\u2019ordre des \u00e9tapes mobiles montre un manque d\u2019\u00e9coute. La d\u00e9couverte doit guider la d\u00e9mo.<br><br>\u2022 <b>Oublier le R\u00e9cap final</b> : Ne pas conclure par une synth\u00e8se personnalis\u00e9e et le pack tarifaire laisse le prospect sans next step clair.' },
+      { title: 'Checklist pr\u00e9-d\u00e9mo', icon: 'fa-clipboard-check', body: 'Avant chaque d\u00e9mo, v\u00e9rifiez ces points essentiels :<br><br>\u2611 <b>Extension Spider install\u00e9e</b> et fonctionnelle sur Chrome<br>\u2611 <b>Univers prospect cr\u00e9\u00e9</b> dans Symbiose avec le nom de l\u2019entreprise<br>\u2611 <b>5 \u00e0 10 collaborateurs import\u00e9s</b> via LinkedIn/Spider (dirigeants, RH, managers)<br>\u2611 <b>Dashboard v\u00e9rifi\u00e9</b> : les collaborateurs s\u2019affichent correctement avec photos et postes<br>\u2611 <b>Notes de d\u00e9couverte relues</b> : douleurs prioritaires identifi\u00e9es, ordre des \u00e9tapes mobiles d\u00e9fini<br>\u2611 <b>Connexion internet stable</b> et Symbiose accessible<br>\u2611 <b>Pack tarifaire pr\u00e9par\u00e9</b> pour l\u2019\u00e9tape R\u00e9cap final<br>\u2611 <b>Dur\u00e9e confirm\u00e9e</b> avec le prospect (25-30 min recommand\u00e9es)' },
+    ],
+    script: [
+      {
+        title: '\u00c9tape 1 \u2014 Dashboard (2 min)',
+        icon: 'fa-gauge-high',
+        body: `<strong>VOUS :</strong> \u00ab Voici votre futur cockpit RH. D\u2019un seul coup d\u2019\u0153il, vous voyez vos \u00e9quipes, qui est absent aujourd\u2019hui, les recrutements en cours, les cong\u00e9s \u00e0 valider, les entretiens \u00e0 planifier. Tout est l\u00e0, en temps r\u00e9el. \u00bb<br><br>
+<em>Transition :</em> \u00ab Puisque vous m\u2019avez dit que le recrutement est votre priorit\u00e9, commen\u00e7ons par l\u00e0. \u00bb`
+      },
+      {
+        title: '\u00c9tape 2 \u2014 ATS / 1er WOW (6 min)',
+        icon: 'fa-wand-magic-sparkles',
+        body: `<strong>VOUS :</strong> \u00ab Je vais cr\u00e9er un recrutement sous vos yeux. [D\u00e9monstration live] Voil\u00e0, en 30 secondes l\u2019IA a r\u00e9dig\u00e9 l\u2019offre. Je la diffuse. Les candidatures arrivent ici dans le pipeline. Je peux partager ce profil avec votre manager technique pour avoir son avis. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Votre client gagne en autonomie sur ses recrutements courants : en 30 secondes, l\u2019IA r\u00e9dige l\u2019offre, la multidiffusion fait le reste. Et pour les profils strat\u00e9giques ou p\u00e9nuriques, il sait qu\u2019il peut compter sur votre expertise Mercato. C\u2019est la puissance du duo Symbiose + recruteur. \u00bb</div>`
+      },
+      {
+        title: '\u00c9tape 3 \u2014 Univers Collaborateur / 2e WOW (5 min)',
+        icon: 'fa-face-smile',
+        body: `<strong>VOUS :</strong> \u00ab Maintenant, basculons sur ce que voit votre salari\u00e9. [Switch vers vue collaborateur] Il a son espace, ses cong\u00e9s, ses entretiens. Et regardez le barom\u00e8tre Humeur \u2014 vous saurez comment se sentent vos \u00e9quipes, en temps r\u00e9el. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab C\u2019est \u00e7a qui transforme Symbiose d\u2019un outil RH en plateforme d\u2019entreprise. Quand 100% de vos salari\u00e9s l\u2019utilisent, l\u2019adoption est totale. \u00bb</div>`
+      },
+      {
+        title: '\u00c9tapes 4-5 \u2014 Fonctionnalit\u00e9s d\u00e9taill\u00e9es (9 min)',
+        icon: 'fa-list-check',
+        body: `<strong>Cong\u00e9s :</strong> \u00ab Votre salari\u00e9 pose son cong\u00e9 ici. Vous le validez l\u00e0, en un clic. L\u2019historique est complet. \u00bb<br><br>
+<strong>Entretiens :</strong> \u00ab L\u2019IA pr\u00e9pare la trame, le salari\u00e9 note ses points, tout est archiv\u00e9. \u00bb<br><br>
+<strong>Conformit\u00e9 :</strong> \u00ab Le DUERP est suivi dans l\u2019outil. En cas de contr\u00f4le, tout est pr\u00eat en deux clics. \u00bb`
+      },
+      {
+        title: '\u00c9tape 6 \u2014 R\u00e9cap et proposition (3 min)',
+        icon: 'fa-flag-checkered',
+        body: `<strong>VOUS :</strong> \u00ab Pour r\u00e9sumer ce qu\u2019on a vu ensemble : Symbiose couvre vos besoins en [recrutement/gestion d\u2019\u00e9quipe/conformit\u00e9]. Pour votre structure de [X] salari\u00e9s, je vous recommande le [Pack adapt\u00e9] \u00e0 [prix]. C\u2019est sans engagement, avec un essai gratuit. On peut d\u00e9marrer le d\u00e9ploiement cette semaine si vous le souhaitez. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Le d\u00e9ploiement prend quelques jours, pas quelques mois. Et si \u00e7a ne vous convient pas, vous arr\u00eatez quand vous voulez \u2014 c\u2019est sans engagement. \u00bb</div>`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Combien d\u2019\u00e9tapes compte le nouveau parcours de d\u00e9mo ?',
+        options: ['4 \u00e9tapes', '5 \u00e9tapes', '6 \u00e9tapes', '8 \u00e9tapes'],
+        correct: 2,
+        feedback: 'Le nouveau parcours de d\u00e9mo compte 6 \u00e9tapes structur\u00e9es.'
+      },
+      {
+        question: 'Quelle est la dur\u00e9e recommand\u00e9e pour la d\u00e9mo compl\u00e8te ?',
+        options: ['15-20 minutes', '25-30 minutes', '45 minutes', '1 heure'],
+        correct: 1,
+        feedback: 'La d\u00e9mo compl\u00e8te dure 25-30 minutes pour maintenir l\u2019attention.'
+      },
+      {
+        question: 'Quel est le 1er moment WOW de la d\u00e9mo ?',
+        options: ['Le dashboard', 'L\u2019ATS en live', 'Les cong\u00e9s', 'La conformit\u00e9'],
+        correct: 1,
+        feedback: 'L\u2019ATS en live est le 1er moment WOW : cr\u00e9ation d\u2019offre par l\u2019IA en 30 secondes.'
+      },
+      {
+        question: 'Comment adapter la d\u00e9mo si le prospect a un besoin prioritaire en recrutement ?',
+        options: ['Sauter les \u00e9tapes 3 \u00e0 5', 'D\u00e9marrer par l\u2019\u00e9tape 2 (ATS)', 'Ne montrer que les tarifs', 'Faire une d\u00e9mo plus longue'],
+        correct: 1,
+        feedback: 'Si le recrutement est prioritaire, on d\u00e9marre directement par l\u2019ATS (\u00e9tape 2).'
+      },
+      {
+        question: 'Quelle erreur fr\u00e9quente faut-il \u00e9viter pendant la d\u00e9mo ?',
+        options: ['Parler des tarifs trop t\u00f4t', 'Montrer toutes les fonctionnalit\u00e9s sans cibler les douleurs', 'Ne pas faire de live', 'Commencer par la conformit\u00e9'],
+        correct: 1,
+        feedback: 'Il faut se concentrer sur les douleurs identifi\u00e9es, pas montrer toutes les fonctionnalit\u00e9s.'
+      }
+,
+      { question: 'Quel outil permet d\u2019importer les collaborateurs du prospect dans Symbiose avant la d\u00e9mo ?',
+        options: ['Le CRM int\u00e9gr\u00e9', 'L\u2019extension Chrome Spider', 'Le module Param\u00e8tres', 'L\u2019API Symbiose'],
+        correct: 1,
+        feedback: 'L\u2019extension Chrome Spider permet d\u2019importer les collaborateurs du prospect avant la d\u00e9mo, pour personnaliser la pr\u00e9sentation avec ses vraies donn\u00e9es.'
+      },
+      {
+        question: 'Quelles sont les 2 \u00e9tapes fixes de la d\u00e9mo ?',
+        options: ['ATS et CVth\u00e8que', 'Dashboard Admin et R\u00e9cap Personnalis\u00e9', 'Cong\u00e9s et Entretiens', 'Recrutement et Paie'],
+        correct: 1,
+        feedback: 'Les \u00e9tapes fixes sont le Dashboard Admin (ouverture) et le R\u00e9cap Personnalis\u00e9 (fermeture).'
+      },
+      {
+        question: 'Combien d\u2019\u00e9tapes mobiles peut-on r\u00e9ordonner ?',
+        options: ['2', '3', '4', '5'],
+        correct: 2,
+        feedback: 'Il y a 4 \u00e9tapes mobiles que l\u2019on peut r\u00e9ordonner selon les douleurs du prospect.'
+      },
+      {
+        question: 'Selon quoi doit-on adapter l\u2019ordre des \u00e9tapes mobiles ?',
+        options: ['Le prix du pack', 'Les douleurs identifi\u00e9es chez le prospect', 'L\u2019anciennet\u00e9 du prospect', 'La taille de l\u2019entreprise'],
+        correct: 1,
+        feedback: 'L\u2019ordre des \u00e9tapes mobiles s\u2019adapte aux douleurs identifi\u00e9es chez le prospect.'
+      },
+      {
+        question: 'Que sont les arguments WOW dans la d\u00e9mo ?',
+        options: ['Des remises commerciales', 'Les fonctionnalit\u00e9s les plus percutantes \u00e0 montrer', 'Des t\u00e9moignages clients', 'Des statistiques march\u00e9'],
+        correct: 1,
+        feedback: 'Les arguments WOW sont les fonctionnalit\u00e9s les plus percutantes \u00e0 d\u00e9montrer.'
+      },
+    ]
+  },
+  {
+    id: 6,
+    title: 'Objections & Argumentaire Produit',
+    subtitle: 'Transformer chaque objection en opportunit\u00e9 avec des r\u00e9ponses produit concr\u00e8tes.',
+    icon: 'fa-shield-halved',
+    videoId: '1179854133',
+    cours: [
+      {
+        title: 'La m\u00e9thode A.R.C.',
+        icon: 'fa-rotate',
+        body: `<div class="hbox blue"><strong>Rappel cl\u00e9 :</strong> Une objection n\u2019est jamais un rejet \u2014 c\u2019est un <strong>signal d\u2019int\u00e9r\u00eat</strong>. Si le prospect objecte, c\u2019est qu\u2019il r\u00e9fl\u00e9chit. Un prospect d\u00e9sint\u00e9ress\u00e9 dit simplement \u00ab non merci \u00bb.</div>
+<p>Chaque objection se traite en 3 temps :</p>
+<h3>A \u2014 Accueillir</h3>
+<p>Ne jamais contredire frontalement. Valider l\u2019inqui\u00e9tude du prospect. <strong>\u00c9vitez le \u00ab match de tennis \u00bb</strong> : r\u00e9pondre du tac au tac transforme l\u2019\u00e9change en affrontement. Accueillir, c\u2019est d\u00e9samorcer.<br><em>\u00ab Je comprends tout \u00e0 fait votre point de vue... \u00bb</em></p>
+<h3>R \u2014 Reformuler</h3>
+<p>Reformuler l\u2019objection pour montrer qu\u2019on a compris et la recadrer. <strong>Technique du silence :</strong> marquez 3 \u00e0 5 secondes de pause avant de r\u00e9pondre. Cela montre que vous prenez l\u2019objection au s\u00e9rieux et \u00e9vite la r\u00e9ponse r\u00e9flexe.<br><em>\u00ab Si je comprends bien, votre pr\u00e9occupation c\u2019est... \u00bb</em></p>
+<h3>C \u2014 Convaincre</h3>
+<p>Apporter un argument concret, chiffr\u00e9, avec preuve sociale ou d\u00e9monstration. Votre <strong>d\u00e9couverte client</strong> (Module 4) est la cl\u00e9 : si vous avez bien identifi\u00e9 le vrai besoin du prospect, votre r\u00e9ponse sera imparable.<br><em>\u00ab Justement, c\u2019est pour \u00e7a que nos clients... \u00bb</em></p>`
+      },
+      {
+        title: 'Les 5 objections ATS',
+        icon: 'fa-bullseye',
+    videoId: '',
+        body: `<h3>1. \u00ab On recrute d\u00e9j\u00e0 sur Indeed/LinkedIn \u00bb</h3>
+<p>Bien s\u00fbr, et ces canaux sont excellents pour sourcer. Ce que Symbiose ajoute, c\u2019est le <strong>suivi</strong> : un pipeline visuel, un historique de chaque candidat, et une CVth\u00e8que qui se remplit automatiquement. Vos offres Indeed peuvent alimenter directement Symbiose.</p>
+<h3>2. \u00ab On a un cabinet de recrutement \u00bb</h3>
+<p>Un cabinet co\u00fbte <strong>15 \u00e0 25% du salaire annuel</strong>. Symbiose \u00e0 4\u20ac/salari\u00e9/mois vous permet de g\u00e9rer les recrutements simples en interne et de garder le cabinet pour les postes strat\u00e9giques.</p>
+<h3>3. \u00ab On n\u2019a pas le temps de g\u00e9rer un ATS \u00bb</h3>
+<p>Justement, l\u2019ATS Symbiose est con\u00e7u pour <strong>faire gagner du temps</strong>. L\u2019IA r\u00e9dige vos offres en 30 secondes. Le pipeline est visuel et intuitif. Nos clients disent qu\u2019ils gagnent du temps d\u00e8s la premi\u00e8re semaine.</p>
+<h3>4. \u00ab C\u2019est trop cher pour ce qu\u2019on recrute \u00bb</h3>
+<p>\u00c0 4\u20ac/salari\u00e9/mois, si vous \u00e9vitez ne serait-ce qu\u2019UN mauvais recrutement par an, le ROI est imm\u00e9diat. Un recrutement rat\u00e9 co\u00fbte entre <strong>30 000 et 150 000\u20ac</strong> selon le poste.</p>
+<h3>5. \u00ab On n\u2019a pas assez de volume \u00bb</h3>
+<p>M\u00eame avec 2-3 recrutements par an, la CVth\u00e8que se constitue pour l\u2019avenir. Et l\u2019onboarding structur\u00e9 am\u00e9liore l\u2019int\u00e9gration de chaque nouveau collaborateur. Le Pack Acquisition est \u00e0 4\u20ac/salari\u00e9 \u2014 pour 15 salari\u00e9s, c\u2019est 60\u20ac/mois.</p>`
+      },
+      {
+        title: 'Les 5 objections Univers Collaborateur',
+        icon: 'fa-hand-holding-heart',
+        videoId: '1179257675',
+        body: `<h3>1. \u00ab Mes salari\u00e9s n\u2019utiliseront pas \u00bb</h3>
+<p>L\u2019interface est con\u00e7ue pour \u00eatre utilis\u00e9e <strong>sans formation</strong>. Quand un salari\u00e9 voit qu\u2019il peut poser ses cong\u00e9s en 3 clics au lieu d\u2019un email, l\u2019adoption est naturelle. C\u2019est offert jusqu\u2019\u00e0 3 collaborateurs pour tester.</p>
+<h3>2. \u00ab On a d\u00e9j\u00e0 un intranet \u00bb</h3>
+<p>Symbiose n\u2019est pas un intranet \u2014 c\u2019est un <strong>outil de gestion</strong>. Votre salari\u00e9 pose ses cong\u00e9s, pr\u00e9pare ses entretiens, consulte ses documents. Un intranet ne fait pas \u00e7a.</p>
+<h3>3. \u00ab C\u2019est trop intrusif, le barom\u00e8tre humeur \u00bb</h3>
+<p>Le barom\u00e8tre est <strong>100% volontaire et anonymis\u00e9</strong> au niveau agr\u00e9g\u00e9. Le salari\u00e9 choisit de participer ou non. Les retours sont tr\u00e8s positifs.</p>
+<h3>4. \u00ab On est trop petits pour \u00e7a \u00bb</h3>
+<p>Au contraire, les TPE sont celles qui b\u00e9n\u00e9ficient le plus. \u00c0 <strong>99\u20ac/mois tout compris</strong> pour moins de 20 salari\u00e9s, c\u2019est moins cher qu\u2019un d\u00e9jeuner d\u2019\u00e9quipe.</p>
+<h3>5. \u00ab On utilise d\u00e9j\u00e0 un logiciel RH \u00bb</h3>
+<p>Quel est votre <strong>taux d\u2019adoption</strong> actuel ? Si vos salari\u00e9s ne l\u2019utilisent pas, c\u2019est comme si vous n\u2019aviez rien. Symbiose est adopt\u00e9 naturellement parce qu\u2019il est simple.</p>`
+      },
+      {
+        title: '\u00c0 retenir',
+        icon: 'fa-bookmark',
+        body: `<div class="hbox blue"><strong>\u00c0 retenir :</strong> Toujours accueillir l\u2019objection avec bienveillance, reformuler, puis convaincre avec un argument chiffr\u00e9 ou un t\u00e9moignage. Ne jamais attaquer le concurrent frontalement.</div>
+<p><strong>Les 2 cl\u00e9s du traitement des objections :</strong></p>
+<ol>
+<li><strong>Les objections sont normales et positives</strong> \u2014 elles signifient que votre prospect r\u00e9fl\u00e9chit s\u00e9rieusement \u00e0 votre proposition.</li>
+<li><strong>\u00c9vitez le match de tennis</strong> \u2014 ne r\u00e9pondez jamais du tac au tac. Marquez un silence de 3 \u00e0 5 secondes, accueillez, reformulez, puis argumentez.</li>
+</ol>
+<div class="hbox green"><strong>Astuce terrain :</strong> Votre d\u00e9couverte client est votre meilleur alli\u00e9 face aux objections. Plus vous connaissez le vrai besoin du prospect, plus votre r\u00e9ponse sera percutante.</div>`
+      }
+    ],
+    script: [
+      {
+        title: 'M\u00e9thode A.R.C. en pratique',
+        icon: 'fa-rotate',
+        body: `<p>Chaque objection suit le m\u00eame sch\u00e9ma en 3 temps :</p>
+<ol>
+<li><strong>ACCUEILLIR :</strong> \u00ab Je comprends \u00bb / \u00ab C\u2019est une remarque pertinente \u00bb / \u00ab Effectivement... \u00bb</li>
+<li><strong>REFORMULER :</strong> \u00ab Si je comprends bien, ce qui vous pr\u00e9occupe c\u2019est... \u00bb</li>
+<li><strong>CONVAINCRE :</strong> argument chiffr\u00e9 + preuve sociale + proposition concr\u00e8te</li>
+</ol>
+<div class="hbox green"><strong>R\u00e8gle d\u2019or :</strong> Ne JAMAIS dire \u00ab non \u00bb ou \u00ab vous avez tort \u00bb. Toujours partir de la pr\u00e9occupation du prospect pour y r\u00e9pondre.</div>`
+      },
+      {
+        title: 'Objection \u00ab C\u2019est trop cher \u00bb',
+        icon: 'fa-euro-sign',
+        body: `<strong>A :</strong> \u00ab Je comprends, le budget est un sujet important. \u00bb<br><br>
+<strong>R :</strong> \u00ab Ce qui vous pr\u00e9occupe, c\u2019est le rapport entre l\u2019investissement et la valeur, c\u2019est bien \u00e7a ? \u00bb<br><br>
+<strong>C :</strong> \u00ab \u00c0 99\u20ac/mois pour une TPE ou 11\u20ac/salari\u00e9 pour le Pack Int\u00e9gral, c\u2019est moins cher qu\u2019une demi-journ\u00e9e de cabinet comptable. Et vous gagnez en moyenne 40% de temps sur l\u2019administratif RH. Le ROI est mesurable d\u00e8s le premier mois. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> Toujours comparer au co\u00fbt de l\u2019inaction (turnover \u00e0 6-9 mois de salaire, non-conformit\u00e9 = amendes, recrutement rat\u00e9 = 30-150K\u20ac).</div>`
+      },
+      {
+        title: 'Objection \u00ab On n\u2019est pas pr\u00eats \u00bb',
+        icon: 'fa-clock',
+        body: `<strong>A :</strong> \u00ab C\u2019est tout \u00e0 fait normal de vouloir choisir le bon moment. \u00bb<br><br>
+<strong>R :</strong> \u00ab Vous pr\u00e9f\u00e9rez attendre d\u2019avoir r\u00e9solu vos probl\u00e8mes actuels avant de vous \u00e9quiper ? \u00bb<br><br>
+<strong>C :</strong> \u00ab Justement, Symbiose est con\u00e7u pour s\u2019adapter \u00e0 votre rythme. Le d\u00e9ploiement prend quelques jours. L\u2019essai est gratuit et sans engagement. Vous pouvez commencer avec un seul pack et \u00e9voluer. Attendre, c\u2019est continuer \u00e0 perdre du temps sur l\u2019administratif. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> L\u2019essai gratuit sans engagement \u00e9limine le risque. Testez pendant 30 jours. Si \u00e7a ne vous convient pas, vous n\u2019avez rien perdu.</div>`
+      },
+      {
+        title: '\u00ab \u00c7a fait doublon avec notre logiciel de paie \u00bb',
+        body: `<strong>A :</strong> \u00ab Je comprends, personne ne veut payer deux fois pour la m\u00eame chose. \u00bb<br><br>
+<strong>R :</strong> \u00ab Si je comprends bien, vous craignez que Symbiose fasse double emploi avec votre solution de paie actuelle\u2009? \u00bb<br><br>
+<strong>C :</strong> \u00ab Symbiose ne remplace pas votre logiciel de paie \u2014 il le compl\u00e8te. Les donn\u00e9es saisies dans Symbiose (cong\u00e9s, absences, variables) s\u2019exportent en un clic vers votre logiciel de paie gr\u00e2ce \u00e0 la fonction <strong>Export Paie</strong>. Z\u00e9ro ressaisie, z\u00e9ro doublon. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> La fonction Export Paie \u00e9limine la double saisie. Symbiose g\u00e8re l\u2019humain (cong\u00e9s, entretiens, bien-\u00eatre), votre logiciel g\u00e8re les bulletins. Chacun son m\u00e9tier.</div>`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Que signifie l\u2019acronyme A.R.C.\u2009?',
+        options: ['Analyser, R\u00e9pondre, Conclure', 'Accueillir, Reformuler, Convaincre', 'Argumenter, Rassurer, Closer', 'Accepter, Rebondir, Cr\u00e9er'],
+        correct: 1,
+        feedback: 'A.R.C. signifie Accueillir, Reformuler, Convaincre \u2014 les 3 temps du traitement de chaque objection.'
+      },
+      {
+        question: 'Pourquoi une objection est-elle un signal positif\u2009?',
+        options: ['Le prospect veut n\u00e9gocier le prix', 'Le prospect est d\u00e9sint\u00e9ress\u00e9', 'Le prospect r\u00e9fl\u00e9chit s\u00e9rieusement \u00e0 votre proposition', 'Le prospect teste vos connaissances'],
+        correct: 2,
+        feedback: 'Si le prospect objecte, c\u2019est qu\u2019il r\u00e9fl\u00e9chit. Un prospect d\u00e9sint\u00e9ress\u00e9 dit simplement \u00ab non merci \u00bb.'
+      },
+      {
+        question: 'Quelle est la meilleure r\u00e9ponse \u00e0 \u00ab On recrute d\u00e9j\u00e0 sur Indeed \u00bb\u2009?',
+        options: ['Indeed ne suffit pas, il faut Symbiose', 'Symbiose ajoute le suivi : pipeline, historique, CVth\u00e8que', 'Nos prix sont meilleurs que Indeed', 'Indeed est d\u00e9pass\u00e9'],
+        correct: 1,
+        feedback: 'On ne critique pas Indeed mais on montre la valeur ajout\u00e9e de Symbiose : le suivi structur\u00e9 des candidatures.'
+      },
+      {
+        question: 'Combien de secondes de silence recommande-t-on avant de r\u00e9pondre \u00e0 une objection\u2009?',
+        options: ['1 seconde', '10 secondes', '3 \u00e0 5 secondes', 'Aucune, il faut r\u00e9pondre imm\u00e9diatement'],
+        correct: 2,
+        feedback: 'Un silence de 3 \u00e0 5 secondes montre que vous prenez l\u2019objection au s\u00e9rieux et \u00e9vite la r\u00e9ponse r\u00e9flexe.'
+      },
+      {
+        question: 'Quelle est la premi\u00e8re \u00e9tape de la m\u00e9thode A.R.C. face \u00e0 une objection\u2009?',
+        options: ['Argumenter avec des chiffres', 'Accueillir l\u2019objection avec bienveillance', 'Proposer une d\u00e9mo imm\u00e9diate', 'Demander au prospect de reformuler'],
+        correct: 1,
+        feedback: 'Le A de A.R.C. = Accueillir. On commence toujours par montrer qu\u2019on a entendu la pr\u00e9occupation avant de r\u00e9pondre.'
+      },
+      {
+        question: 'Comment r\u00e9pondre \u00e0 \u00ab Le barom\u00e8tre humeur c\u2019est trop intrusif \u00bb\u2009?',
+        options: ['C\u2019est obligatoire pour les entreprises', 'Le barom\u00e8tre est volontaire \u2014 les salari\u00e9s appr\u00e9cient', 'On peut le d\u00e9sactiver', 'C\u2019est comme un sondage classique'],
+        correct: 1,
+        feedback: 'Le barom\u00e8tre est 100% volontaire. Le salari\u00e9 choisit de participer, ce qui renforce la confiance.'
+      },
+      {
+        question: 'Que faut-il \u00e9viter absolument face \u00e0 une objection\u2009?',
+        options: ['Reformuler l\u2019objection', 'Marquer un silence', 'R\u00e9pondre du tac au tac comme un match de tennis', 'Poser des questions'],
+        correct: 2,
+        feedback: 'Le \u00ab match de tennis \u00bb transforme l\u2019\u00e9change en affrontement. Il faut accueillir, pas contre-attaquer.'
+      },
+      {
+        question: 'Quelle est la r\u00e9ponse \u00e0 \u00ab \u00c7a fait doublon avec notre logiciel de paie \u00bb\u2009?',
+        options: ['Symbiose remplace le logiciel de paie', 'La fonction Export Paie \u00e9limine la double saisie', 'Il faut abandonner le logiciel de paie', 'Les deux outils sont identiques'],
+        correct: 1,
+        feedback: 'Symbiose compl\u00e8te le logiciel de paie. La fonction Export Paie exporte cong\u00e9s, absences et variables en un clic.'
+      },
+      {
+        question: 'Sur quoi repose la qualit\u00e9 de votre r\u00e9ponse \u00e0 une objection\u2009?',
+        options: ['Votre exp\u00e9rience personnelle', 'La qualit\u00e9 de votre d\u00e9couverte client en amont', 'Le nombre d\u2019arguments que vous avez', 'Votre capacit\u00e9 \u00e0 parler vite'],
+        correct: 1,
+        feedback: 'Votre d\u00e9couverte client (Module 4) est votre meilleur alli\u00e9 : plus vous connaissez le vrai besoin, plus la r\u00e9ponse est percutante.'
+      },
+      {
+        question: 'Face \u00e0 \u00ab On n\u2019est pas pr\u00eats \u00bb, quel argument cl\u00e9 utiliser\u2009?',
+        options: ['Insister pour un engagement imm\u00e9diat', 'Rappeler dans 6 mois', 'L\u2019offre sans engagement \u00e9limine le risque', 'Baisser le prix'],
+        correct: 2,
+        feedback: 'Le sans engagement est l\u2019argument imparable\u00a0: le prospect n\u2019a rien \u00e0 perdre en testant.'
+      },
+    ]
+  },
+  {
+    id: 7,
+    title: 'Proposition Commerciale & Closing',
+    subtitle: 'Du chiffrage \u00e0 la signature : tarifs, ROI et techniques de closing.',
+    icon: 'fa-file-invoice-dollar',
+    videoId: '1179934329',
+    cours: [
+      {
+        title: 'Structure de proposition en 4 parties',
+        icon: 'fa-layer-group',
+        body: `<p>La proposition commerciale commence par une <strong>phase de reformulation</strong> : reprenez les douleurs RH identifi\u00e9es en d\u00e9couverte, mais aussi les <strong>signaux faibles</strong> relev\u00e9s pendant le traitement des objections. Utilisez les mots du client, pas les v\u00f4tres.</p>
+<div class="hbox green"><strong>R\u00e8gle d\u2019or :</strong> Ne proposez que les modules qui r\u00e9pondent aux besoins identifi\u00e9s. Inutile de tout pr\u00e9senter \u2014 focus sur ce qui int\u00e9resse votre prospect.</div>
+<ol>
+<li><strong>Partie 1 \u2014 Reformulation :</strong> reprendre les douleurs d\u00e9tect\u00e9es et les signaux faibles. \u00ab\u00a0Vous m\u2019avez dit que...\u00a0\u00bb Montrer que vous avez \u00e9cout\u00e9 et compris.</li>
+<li><strong>Partie 2 \u2014 Solution sur mesure :</strong> mapper chaque douleur sur le module ou pack correspondant. La solution doit para\u00eetre taill\u00e9e pour le client.</li>
+<li><strong>Partie 3 \u2014 Chiffrage :</strong> pr\u00e9senter le ou les packs recommand\u00e9s avec le prix. Toujours pr\u00e9senter le Pack Int\u00e9gral comme r\u00e9f\u00e9rence pour les +20 salari\u00e9s.</li>
+<li><strong>Partie 4 \u2014 Closing :</strong> appliquer la technique de closing adapt\u00e9e au profil (closing \u00e0 chaud ou closing travaill\u00e9).</li>
+</ol>`
+      },
+      {
+        title: 'Grille tarifaire compl\u00e8te',
+        icon: 'fa-euro-sign',
+        body: `<table style="width:100%;border-collapse:collapse;">
+<tr style="background:var(--surface-alt);"><th style="padding:8px;text-align:left;">Pack</th><th style="padding:8px;text-align:left;">Prix</th><th style="padding:8px;text-align:left;">Inclus</th></tr>
+<tr><td style="padding:8px;"><strong>Essentiel</strong></td><td style="padding:8px;">5\u20ac HT/sal/mois</td><td style="padding:8px;">Cong\u00e9s, entretiens IA, humeur, documents, tableaux de bord</td></tr>
+<tr style="background:var(--surface-alt);"><td style="padding:8px;"><strong>Acquisition</strong></td><td style="padding:8px;">4\u20ac HT/sal/mois</td><td style="padding:8px;">Recrutement, CVth\u00e8que, offres IA, onboarding, collaboration managers</td></tr>
+<tr><td style="padding:8px;"><strong>Conformit\u00e9</strong></td><td style="padding:8px;">6\u20ac HT/sal/mois</td><td style="padding:8px;">Risques pro, DUERP, registre unique du personnel, anticipation contr\u00f4les</td></tr>
+<tr style="background:var(--surface-alt);"><td style="padding:8px;"><strong>Int\u00e9gral 1-19 sal.</strong></td><td style="padding:8px;">99\u20ac HT/mois</td><td style="padding:8px;">Tout compris</td></tr>
+<tr><td style="padding:8px;"><strong>Int\u00e9gral +20 sal.</strong></td><td style="padding:8px;">11\u20ac HT/sal/mois</td><td style="padding:8px;">Tout compris (au lieu de 15\u20ac, soit 27% d\u2019\u00e9conomie)</td></tr>
+</table>`
+      },
+      {
+        title: 'Calcul ROI par taille d\u2019entreprise',
+        icon: 'fa-calculator',
+        body: `<h3>PME de 30 salari\u00e9s \u2014 Pack Int\u00e9gral</h3>
+<p>30 x 11\u20ac = <strong>330\u20ac/mois</strong>. ROI : 40% de temps gagn\u00e9 sur l\u2019admin RH = \u00e9conomie d\u2019au moins 1 journ\u00e9e/semaine de DRH. Co\u00fbt d\u2019un turnover \u00e9vit\u00e9 : 6-9 mois de salaire = 15 000-30 000\u20ac. <strong>Un seul turnover \u00e9vit\u00e9 gr\u00e2ce au barom\u00e8tre Humeur rembourse 4 ans d\u2019abonnement.</strong></p>
+<h3>TPE de 12 salari\u00e9s \u2014 Pack Int\u00e9gral</h3>
+<p><strong>99\u20ac/mois</strong>. Structure RH compl\u00e8te pour le prix d\u2019un d\u00e9jeuner d\u2019\u00e9quipe par mois. Sans Symbiose = risques de non-conformit\u00e9 (amendes), perte de temps admin, recrutements non suivis.</p>
+<div class="hbox green"><strong>Astuce vid\u00e9o :</strong> Passez de la logique de <em>d\u00e9pense</em> \u00e0 la logique d\u2019<em>investissement</em>. Une PME de 30 salari\u00e9s investit 90\u00a0000\u20ac/mois en masse salariale. Le module Essentiel \u00e0 150\u20ac/mois, c\u2019est 2-3\u00a0heures d\u2019un cadre. Le ROI est imm\u00e9diat.</div>`
+      },
+      {
+        title: 'Les 5 techniques de closing',
+        icon: 'fa-handshake',
+        body: `<h3>Closing \u00e0 chaud</h3>
+<p>Apr\u00e8s une d\u00e9mo personnalis\u00e9e r\u00e9ussie (l\u2019<strong>effet waouh</strong>), la d\u00e9couverte et la reformulation am\u00e8nent le prospect \u00e0 une acceptation naturelle. Pas de raison d\u2019attendre : closez dans la foul\u00e9e et programmez l\u2019installation.</p>
+<h3>Closing travaill\u00e9</h3>
+<p>Si le prospect veut r\u00e9fl\u00e9chir ou en parler \u00e0 un associ\u00e9, vous entrez dans un closing travaill\u00e9 (1 \u00e0 3 semaines). La cl\u00e9 : <strong>ancrer le client dans l\u2019utilisation</strong> en activant des comptes collaborateurs cl\u00e9s (ceux qui doivent poser des cong\u00e9s, pr\u00e9voir des entretiens).</p>
+<div class="hbox blue"><strong>Principe SaaS :</strong> Un logiciel utilis\u00e9 au quotidien devient indispensable. D\u00e8s que Symbiose est ancr\u00e9 dans l\u2019\u00e9cosyst\u00e8me de l\u2019entreprise, le co\u00fbt (100-300\u20ac/mois) n\u2019est plus un sujet.</div>
+<h3>5 techniques de closing</h3>
+<ol>
+<li><strong>L\u2019essai gratuit :</strong> \u00ab Commencez gratuitement, sans engagement ni carte de cr\u00e9dit. \u00bb</li>
+<li><strong>Le ROI :</strong> \u00ab \u00c0 330\u20ac/mois, si vous \u00e9vitez un seul turnover, c\u2019est rembours\u00e9 pour 4 ans. \u00bb</li>
+<li><strong>L\u2019urgence douce :</strong> \u00ab Plus vous attendez, plus vous perdez du temps sur l\u2019administratif. \u00bb</li>
+<li><strong>La preuve sociale :</strong> \u00ab Plus de 500 entreprises utilisent Symbiose au quotidien. \u00bb</li>
+<li><strong>La progression :</strong> \u00ab Commencez avec le Pack Essentiel \u00e0 5\u20ac/salari\u00e9. \u00bb</li>
+</ol>`
+      },
+      {
+        title: '\u00c0 retenir',
+        icon: 'fa-bookmark',
+        body: `<div class="hbox blue"><strong>\u00c0 retenir :</strong></div>
+<ul>
+<li><strong>Reformulation d\u2019abord :</strong> montrez que vous avez \u00e9cout\u00e9 (douleurs + signaux faibles).</li>
+<li><strong>Sur mesure :</strong> ne proposez que les modules pertinents, pas tout le catalogue.</li>
+<li><strong>D\u00e9pense \u2192 investissement :</strong> repositionnez le prix face \u00e0 la masse salariale et au temps gagn\u00e9.</li>
+<li><strong>Deux closings :</strong> \u00e0 chaud (effet waouh) ou travaill\u00e9 (ancrage dans l\u2019utilisation).</li>
+<li><strong>Ancrage SaaS :</strong> activez des comptes cl\u00e9s pour projeter le client dans l\u2019usage r\u00e9el.</li>
+</ul>`
+      }
+    ],
+    script: [
+      {
+        title: 'Ouverture de la proposition',
+        icon: 'fa-door-open',
+        body: `<strong>VOUS :</strong> \u00ab Suite \u00e0 notre \u00e9change et \u00e0 la d\u00e9mo, je vous ai pr\u00e9par\u00e9 une proposition sur mesure. Je vais vous la pr\u00e9senter en quelques minutes. \u00bb`
+      },
+      {
+        title: 'R\u00e9cap des douleurs',
+        icon: 'fa-heart-pulse',
+        body: `<strong>VOUS :</strong> \u00ab Vous m\u2019avez dit que [douleur 1], [douleur 2] et [douleur 3]. Ce sont vos priorit\u00e9s, et c\u2019est exactement l\u00e0-dessus que Symbiose va vous aider. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> Reformuler les douleurs avec les MOTS du prospect. \u00ab Vous m\u2019avez dit que les cong\u00e9s par email c\u2019\u00e9tait l\u2019enfer \u00bb \u2014 ne pas dire \u00ab la gestion des absences est sous-optimale \u00bb.</div>`
+      },
+      {
+        title: 'Pr\u00e9sentation du chiffrage',
+        icon: 'fa-file-invoice-dollar',
+    videoId: '',
+        body: `<strong>Pour +20 salari\u00e9s :</strong><br>
+\u00ab Je vous recommande le Pack Int\u00e9gral \u00e0 11\u20ac par salari\u00e9 par mois. Pour vos [X] salari\u00e9s, \u00e7a fait [X x 11]\u20ac par mois. C\u2019est la couverture compl\u00e8te : gestion d\u2019\u00e9quipe, recrutement, conformit\u00e9. Et c\u2019est 27% moins cher que les 3 packs s\u00e9par\u00e9s. \u00bb<br><br>
+<strong>Pour TPE :</strong><br>
+\u00ab Pour vos [X] salari\u00e9s, le Pack Int\u00e9gral est \u00e0 99\u20ac par mois tout compris. \u00c7a couvre tout : cong\u00e9s, entretiens, recrutement, conformit\u00e9. C\u2019est moins cher qu\u2019un d\u00e9jeuner d\u2019\u00e9quipe. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> Toujours annoncer le prix mensuel, jamais annuel. Et imm\u00e9diatement encha\u00eener avec le ROI ou la comparaison.</div>`
+      },
+      {
+        title: 'Closing \u2014 L\u2019essai gratuit',
+        icon: 'fa-gift',
+        body: `<strong>VOUS :</strong> \u00ab Ce que je vous propose, c\u2019est de commencer par l\u2019essai gratuit. Pas d\u2019engagement, pas de carte de cr\u00e9dit. On d\u00e9ploie Symbiose pour votre entreprise, vous testez pendant 30 jours, et vous d\u00e9cidez. Si \u00e7a ne vous convient pas, vous arr\u00eatez. C\u2019est z\u00e9ro risque. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Le d\u00e9ploiement prend quelques jours. La semaine prochaine, vous pourriez d\u00e9j\u00e0 avoir votre tableau de bord RH en place. On commence quand ? \u00bb</div>`
+      },
+      {
+        title: 'Closing \u2014 Si h\u00e9sitation',
+        icon: 'fa-scale-balanced',
+        body: `<strong>VOUS :</strong> \u00ab Je comprends que c\u2019est une d\u00e9cision importante. Qu\u2019est-ce qui vous ferait pencher ? \u00bb [\u00c9couter]<br><br>
+<strong>Si prix :</strong> \u00ab Commencez avec un seul pack \u2014 le Pack Essentiel \u00e0 5\u20ac/salari\u00e9 \u2014 et ajoutez les autres quand vous serez convaincu. \u00bb<br><br>
+<strong>Si timing :</strong> \u00ab L\u2019essai gratuit n\u2019a pas de date limite. Mais chaque mois sans outil, c\u2019est du temps perdu. \u00bb<br><br>
+<strong>Si d\u00e9cideur absent :</strong> \u00ab Je peux pr\u00e9parer un r\u00e9capitulatif \u00e0 envoyer au d\u00e9cideur. On peut aussi organiser une mini-d\u00e9mo de 15 minutes pour lui. \u00bb<br><br>
+<div class="hbox green"><strong>Argument gagnant :</strong> Toujours proposer un \u00ab petit pas \u00bb plut\u00f4t qu\u2019un \u00ab grand saut \u00bb. L\u2019essai gratuit, un seul pack, une mini-d\u00e9mo.</div>`
+      },
+      {
+        title: '\u00ab\u00a0On va r\u00e9fl\u00e9chir\u00a0\u00bb \u2014 Closing travaill\u00e9',
+        body: `<p><strong>VOUS :</strong> \u00ab\u00a0Je comprends tout \u00e0 fait. En attendant, je vous propose d\u2019activer 2-3 comptes pour vos collaborateurs cl\u00e9s. Par exemple, [pr\u00e9nom] qui doit poser ses cong\u00e9s, et [pr\u00e9nom] qui a un entretien pr\u00e9vu. Comme \u00e7a, vous voyez l\u2019outil en situation r\u00e9elle avant de d\u00e9cider.\u00a0\u00bb</p>
+<p class="tip"><strong>Argument gagnant :</strong> Projeter le client dans l\u2019utilisation r\u00e9elle. Un logiciel utilis\u00e9 au quotidien ne se d\u00e9sinstalle pas. Plus les collaborateurs l\u2019adoptent, plus le closing devient naturel.</p>`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Quelle est la première étape d’une proposition commerciale réussie ?',
+        options: ['Présenter le prix immédiatement', 'Reformuler les douleurs et signaux faibles du client', 'Montrer toutes les fonctionnalités de Symbiose', 'Envoyer un devis standard par email'],
+        correct: 1,
+        feedback: 'La reformulation des douleurs montre au prospect que vous avez compris ses enjeux. C’est la base d’une proposition personnalisée et convaincante.'
+      },
+      {
+        question: 'Pourquoi ne faut-il pas toujours présenter tous les modules Symbiose ?',
+        options: ['Pour que le prix paraisse plus bas', 'Parce que certains modules ne fonctionnent pas', 'Il faut se concentrer sur les modules qui répondent aux besoins identifiés', 'Pour éviter de perdre le prospect avec trop d’informations techniques'],
+        correct: 2,
+        feedback: 'Présenter uniquement les modules pertinents montre que vous écoutez le client. Une démo ciblée est toujours plus percutante qu’un catalogue exhaustif.'
+      },
+      {
+        question: 'Quel est le forfait mensuel Essentiel pour une PME de 30 salariés ?',
+        options: ['99 €/mois', '200 €/mois', '150 €/mois', '250 €/mois'],
+        correct: 2,
+        feedback: 'Le forfait Essentiel pour 30 salariés est à 150 €/mois. Connaître les tarifs par cœur est indispensable pour répondre sans hésiter au prospect.'
+      },
+      {
+        question: 'Comment repositionner le prix quand le prospect dit « c’est cher » ?',
+        options: ['Proposer immédiatement une remise', 'Passer d’une logique de dépense à une logique d’investissement rentable', 'Comparer avec les concurrents', 'Ignorer l’objection et continuer la démo'],
+        correct: 1,
+        feedback: 'Le repositionnement prix passe par la démonstration du ROI : comparer le coût de Symbiose au coût réel des tâches manuelles (temps passé, erreurs, turnover).'
+      },
+      {
+        question: '150 €/mois pour le module Essentiel (30 salariés), ça représente quoi concrètement ?',
+        options: ['2-3 heures d’un cadre ou du chef d’entreprise', 'Un déjeuner d’équipe', 'Une demi-journée de formation', 'Le coût d’une annonce sur un jobboard'],
+        correct: 0,
+        feedback: 'Ramener le prix à un équivalent concret (2-3h de temps cadre) rend le coût dérisoire face à la valeur apportée. C’est une technique de vente puissante.'
+      },
+      {
+        question: 'Qu’est-ce que le « closing à chaud » ?',
+        options: ['Relancer le prospect après une semaine', 'Négocier en faisant une remise', 'Envoyer un email avec les conditions commerciales', 'Closer dans la foulée après l’effet waouh de la démo personnalisée'],
+        correct: 3,
+        feedback: 'Le closing à chaud capitalise sur l’enthousiasme immédiat après une démo percutante. Plus on attend, plus l’émotion retombe et plus le closing est difficile.'
+      },
+      {
+        question: 'Que faut-il proposer concrètement lors d’un closing à chaud ?',
+        options: ['Un essai gratuit de 3 mois', 'De revenir la semaine prochaine pour finaliser', 'L’activation immédiate de Symbiose avec le prospect', 'Un rendez-vous avec le directeur commercial'],
+        correct: 2,
+        feedback: 'L’activation immédiate crée un engagement concret : plus le prospect utilise Symbiose avec ses équipes, plus il sera difficile de s’en passer.'
+      },
+      {
+        question: 'Qu’est-ce que le « closing travaillé » ?',
+        options: ['Proposer un prix négocié après réflexion', 'Un closing qui se construit sur plusieurs semaines avec un plan d’action structuré', 'Rappeler le prospect tous les jours', 'Envoyer une proposition commerciale détaillée par courrier'],
+        correct: 1,
+        feedback: 'Le closing travaillé est un processus structuré sur plusieurs semaines : chaque interaction rapproche le prospect de la décision, avec des jalons concrets et un suivi rigoureux.'
+      },
+      {
+        question: 'Pourquoi activer des comptes collaborateurs clés pendant le closing travaillé ?',
+        options: ['Pour créer un ancrage terrain qui rend Symbiose indispensable', 'Pour générer des frais supplémentaires', 'Pour montrer que le logiciel est compliqué', 'Pour tester la résistance au changement des équipes'],
+        correct: 0,
+        feedback: 'L’ancrage terrain est la stratégie clé : quand les collaborateurs utilisent Symbiose au quotidien, l’outil devient indispensable et le closing se fait naturellement.'
+      },
+      {
+        question: 'Quel est le principe fondamental du SaaS concernant la fidélisation ?',
+        options: ['Les clients signent des contrats de 3 ans', 'Les prix augmentent chaque année', 'Le support client est disponible 24h/24', 'Un logiciel utilisé au quotidien devient indispensable et difficile à retirer'],
+        correct: 3,
+        feedback: 'C’est le principe de rétention SaaS : un outil intégré dans les process quotidiens crée une dépendance naturelle. Le duo Symbiose + recruteur ancré dans l’entreprise assure la fidélisation.'
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: 'Suivi Client & Bonnes Pratiques',
+    subtitle: 'Accompagner l\u2019adoption, d\u00e9velopper le compte et exceller durablement.',
+    icon: 'fa-star',
+    videoId: '1179891617',
+    cours: [
+      {
+        title: 'Installation chez le client',
+        icon: 'fa-laptop-code',
+        body: `<p>Apr\u00e8s la signature, votre mission commence vraiment : <strong>vous \u00eates l\u2019accompagnateur de votre client</strong>. L\u2019installation est le premier acte concret de cette relation. Voici les 4 \u00e9tapes cl\u00e9s \u00e0 r\u00e9aliser avec le client.</p>
+
+<h3>\u00c9tape 1 \u2014 Se connecter \u00e0 Symbiose</h3>
+<p>Aidez le client \u00e0 se connecter pour la premi\u00e8re fois \u00e0 son espace administrateur. V\u00e9rifiez ensemble que l\u2019acc\u00e8s fonctionne, que l\u2019interface est claire et que le client sait o\u00f9 trouver les menus principaux.</p>
+
+<h3>\u00c9tape 2 \u2014 Param\u00e9trer les cong\u00e9s</h3>
+<p>Rendez-vous dans <strong>Mon \u00e9quipe &gt; Cong\u00e9s &gt; Absences &gt; Roue param\u00e8tres</strong>. Configurez les types d\u2019absences utilis\u00e9s par l\u2019entreprise (cong\u00e9s pay\u00e9s, RTT, maladie, etc.). C\u2019est souvent la fonctionnalit\u00e9 qui cr\u00e9e le premier \u00ab effet waouh \u00bb chez les collaborateurs.</p>
+
+<h3>\u00c9tape 3 \u2014 Importer les collaborateurs</h3>
+<p>Allez dans le menu <strong>\u00c9quipe</strong> pour ajouter les collaborateurs, soit <strong>un par un</strong>, soit par <strong>import CSV</strong> (id\u00e9al pour les \u00e9quipes de plus de 10 personnes). Chaque collaborateur re\u00e7oit un email d\u2019invitation automatique.</p>
+
+<h3>\u00c9tape 4 \u2014 D\u00e9finir les r\u00f4les et permissions</h3>
+<p>Dans <strong>\u00c9quipe &gt; G\u00e9rer les r\u00f4les</strong>, attribuez les bons profils : <strong>RH</strong> (acc\u00e8s complet), <strong>Manager</strong> (validation cong\u00e9s, suivi \u00e9quipe), <strong>Collaborateur</strong> (self-service). Des permissions bien d\u00e9finies garantissent une adoption fluide.</p>
+
+<div class="hbox orange"><strong>Conseil terrain :</strong> R\u00e9alisez ces 4 \u00e9tapes en visio ou en pr\u00e9sentiel avec le client. Ne lui envoyez pas un simple email avec un lien \u2014 accompagnez-le. C\u2019est ce premier contact qui pose les bases de la relation durable.</div>`
+      },
+      {
+        title: 'Calendrier de suivi post-vente',
+        icon: 'fa-calendar-check',
+        body: `<p><strong>Vous n\u2019\u00eates pas juste un commercial, vous \u00eates l\u2019accompagnateur de votre client.</strong> Votre r\u00f4le apr\u00e8s la vente est aussi important que votre r\u00f4le avant. Un suivi rigoureux fait la diff\u00e9rence entre un client qui renouvelle et un client qui r\u00e9silie.</p>
+
+<div class="hbox red"><strong>Alerte 15 jours :</strong> Si l\u2019outil dort pendant 15 jours apr\u00e8s l\u2019installation, il y a un risque r\u00e9el que les habitudes ne changent pas. Agissez vite d\u00e8s que vous d\u00e9tectez une baisse de connexion.</div>
+
+<h3>J+7 \u2014 Prise en main</h3>
+<p>Appeler le client pour v\u00e9rifier que le d\u00e9ploiement s\u2019est bien pass\u00e9, que les collaborateurs sont invit\u00e9s, que les premiers cong\u00e9s sont pos\u00e9s. <strong>Objectif :</strong> s\u2019assurer que l\u2019outil est utilis\u00e9 d\u00e8s la premi\u00e8re semaine. V\u00e9rifiez le taux de connexion dans <strong>Spider, onglet Symbiose</strong>.</p>
+
+<h3>J+30 \u2014 Satisfaction</h3>
+<p>Appeler pour mesurer la satisfaction, identifier les \u00e9ventuels blocages, montrer les fonctionnalit\u00e9s pas encore utilis\u00e9es. <strong>Objectif :</strong> maximiser l\u2019adoption. Si le taux de connexion est faible, identifiez les non-connect\u00e9s et personnalisez les relances.</p>
+
+<h3>J+90 \u2014 Upsell</h3>
+<p>Appeler avec les chiffres d\u2019utilisation (taux de connexion, nombre de cong\u00e9s trait\u00e9s, entretiens r\u00e9alis\u00e9s). <strong>Objectif :</strong> proposer la mont\u00e9e en gamme avec des donn\u00e9es concr\u00e8tes, pas avec des arguments commerciaux g\u00e9n\u00e9riques. Un client qui utilise bien Symbiose est un client pr\u00eat \u00e0 \u00e9voluer.</p>
+
+<div class="hbox blue"><strong>\u00c0 retenir :</strong> Le duo recruteur + Symbiose est un cercle vertueux. Vous, le recruteur, apportez l\u2019expertise humaine et le suivi personnalis\u00e9. Symbiose fournit les donn\u00e9es et les outils. Ensemble, vous fid\u00e9lisez le client.</div>`
+      },
+      {
+        title: 'KPIs d\u2019adoption \u00e0 suivre',
+        icon: 'fa-chart-line',
+        body: `<p>Pour piloter le suivi client, vous devez vous appuyer sur des <strong>donn\u00e9es concr\u00e8tes</strong>, pas sur des impressions. Dans <strong>Spider, onglet Symbiose</strong>, vous pouvez voir en temps r\u00e9el les indicateurs d\u2019adoption de chaque client.</p>
+
+<h3>Taux de connexion</h3>
+<p>Combien de collaborateurs se connectent r\u00e9guli\u00e8rement ? Un taux sup\u00e9rieur \u00e0 70% est un excellent signe. En dessous de 50%, il faut intervenir rapidement \u2014 rappel de l\u2019alerte 15 jours.</p>
+
+<h3>Utilisation des cong\u00e9s</h3>
+<p>Est-ce que les demandes de cong\u00e9s passent par Symbiose ? C\u2019est souvent le premier r\u00e9flexe adopt\u00e9 par les \u00e9quipes. Si ce n\u2019est pas le cas, c\u2019est que le param\u00e9trage initial n\u2019a peut-\u00eatre pas \u00e9t\u00e9 bien fait.</p>
+
+<h3>Barom\u00e8tre d\u2019humeur</h3>
+<p>Les collaborateurs remplissent-ils le barom\u00e8tre ? C\u2019est un indicateur fort d\u2019engagement. Mettez en avant cette fonctionnalit\u00e9 aupr\u00e8s du client RH \u2014 c\u2019est un outil de pilotage social tr\u00e8s appr\u00e9ci\u00e9.</p>
+
+<h3>Entretiens r\u00e9alis\u00e9s</h3>
+<p>Le module entretiens est-il utilis\u00e9 ? Si oui, c\u2019est un signal fort de maturit\u00e9 RH du client. Si non, c\u2019est une opportunit\u00e9 de formation et d\u2019accompagnement suppl\u00e9mentaire.</p>
+
+<div class="hbox green"><strong>Astuce Spider :</strong> Consultez l\u2019onglet Symbiose de chaque client avant chaque appel de suivi. Arrivez avec des chiffres pr\u00e9cis \u2014 c\u2019est ce qui vous diff\u00e9rencie d\u2019un simple fournisseur. D\u00e9veloppez le compte avec des donn\u00e9es, pas avec des arguments commerciaux g\u00e9n\u00e9riques.</div>`
+      },
+      {
+        title: 'Strat\u00e9gies d\u2019upsell',
+        icon: 'fa-arrow-up-right-dots',
+        body: `<p>L\u2019upsell ne consiste pas \u00e0 \u00ab vendre plus \u00bb. Il s\u2019agit de <strong>d\u00e9velopper le compte avec des donn\u00e9es, pas avec des arguments commerciaux g\u00e9n\u00e9riques</strong>. Quand un client utilise bien Symbiose, les chiffres parlent d\u2019eux-m\u00eames.</p>
+
+<h3>Essentiel \u2192 Int\u00e9gral</h3>
+<p>Le client est satisfait du Pack Essentiel (cong\u00e9s, notes de frais, barom\u00e8tre). Proposez le <strong>Pack Int\u00e9gral \u00e0 +6\u20ac/salari\u00e9</strong> qui ajoute recrutement, entretiens, GPEC, formation et conformit\u00e9. <strong>Argument :</strong> \u00ab Vous \u00eates d\u00e9j\u00e0 convaincu par le Pack Essentiel. Imaginez la m\u00eame simplicit\u00e9 pour vos recrutements et vos entretiens. \u00bb</p>
+
+<h3>Acquisition \u2192 Int\u00e9gral</h3>
+<p>Le client utilise le Pack Acquisition (ATS). Proposez le <strong>Pack Int\u00e9gral \u00e0 11\u20ac au lieu de 15\u20ac/salari\u00e9</strong>. L\u2019\u00e9conomie de 27% par rapport aux packs s\u00e9par\u00e9s est un argument imparable.</p>
+
+<h3>Ajout du module Conformit\u00e9</h3>
+<p>Pour les entreprises soumises \u00e0 des obligations l\u00e9gales (DUERP, affichage obligatoire, registre du personnel), le module Conformit\u00e9 est un ajout naturel. <strong>Argument :</strong> \u00ab Symbiose g\u00e8re d\u00e9j\u00e0 vos RH, autant centraliser aussi votre conformit\u00e9 l\u00e9gale. \u00bb</p>
+
+<div class="hbox blue"><strong>R\u00e8gle d\u2019or :</strong> Un client qui utilise bien Symbiose, c\u2019est un client qui renouvelle, qui monte en gamme et qui vous recommande. Le duo recruteur + Symbiose est votre meilleur levier de d\u00e9veloppement commercial.</div>`
+      },
+      {
+        title: 'Les 7 habitudes des top performers',
+        icon: 'fa-trophy',
+        body: `<p>Les recruteurs qui r\u00e9ussissent le mieux avec Symbiose partagent ces 7 habitudes. Adoptez-les pour maximiser vos r\u00e9sultats et vos commissions.</p>
+<ol>
+<li><strong>Ma\u00eetriser parfaitement Symbiose</strong> \u2014 chaque fonctionnalit\u00e9, chaque menu, chaque param\u00e8tre. Vous devez pouvoir r\u00e9pondre \u00e0 toute question du client.</li>
+<li><strong>Avoir le QQOQCP enrichi</strong> avant toute d\u00e9mo \u2014 ne jamais improviser, toujours personnaliser.</li>
+<li><strong>Adapter la d\u00e9mo aux douleurs identifi\u00e9es</strong> \u2014 ne pas tout montrer, se concentrer sur ce qui r\u00e9sout les probl\u00e8mes du client.</li>
+<li><strong>Toujours faire une d\u00e9monstration live</strong> \u2014 ne jamais se contenter de slides ou de captures d\u2019\u00e9cran.</li>
+<li><strong>Utiliser la m\u00e9thode A.R.C.</strong> pour chaque objection \u2014 Accepter, R\u00e9pondre, Conclure.</li>
+<li><strong>Proposer l\u2019essai gratuit</strong> comme premier pas \u2014 lever les freins et laisser l\u2019outil convaincre.</li>
+<li><strong>Appeler chaque client \u00e0 J+7, J+30 et J+90</strong> \u2014 et demander des recommandations aux clients satisfaits.</li>
+</ol>
+
+<div class="hbox green"><strong>L\u2019accompagnement fait la diff\u00e9rence :</strong> Votre r\u00f4le apr\u00e8s la vente est aussi important que votre r\u00f4le avant. Un client bien accompagn\u00e9 par son recruteur devient un ambassadeur du duo recruteur + Symbiose.</div>`
+      },
+      {
+        title: '\u00c0 retenir',
+        icon: 'fa-bookmark',
+        body: `<div class="hbox blue"><strong>L\u2019essentiel du Module 8 :</strong></div>
+
+<p><strong>1. L\u2019installation est votre premi\u00e8re mission post-vente.</strong> R\u00e9alisez les 4 \u00e9tapes (connexion, param\u00e9trage cong\u00e9s, import collaborateurs, r\u00f4les) avec le client, pas \u00e0 distance par email.</p>
+
+<p><strong>2. Vous \u00eates un accompagnateur, pas un vendeur.</strong> Votre r\u00f4le apr\u00e8s la vente est aussi important qu\u2019avant. Le duo recruteur + Symbiose est un cercle vertueux : vous apportez l\u2019humain, Symbiose apporte les outils.</p>
+
+<p><strong>3. Respectez le calendrier J+7 / J+30 / J+90.</strong> Chaque appel a un objectif pr\u00e9cis. Attention \u00e0 l\u2019alerte 15 jours : si l\u2019outil dort, les habitudes ne changent pas.</p>
+
+<p><strong>4. Pilotez avec des donn\u00e9es, pas des impressions.</strong> Spider onglet Symbiose vous donne le taux de connexion, l\u2019utilisation des cong\u00e9s, le barom\u00e8tre et les entretiens. Arrivez pr\u00e9par\u00e9 \u00e0 chaque appel.</p>
+
+<p><strong>5. D\u00e9veloppez avec des donn\u00e9es, pas des arguments.</strong> L\u2019upsell est naturel quand le client utilise bien l\u2019outil. Les chiffres parlent d\u2019eux-m\u00eames.</p>
+
+<p><strong>6. Un client fid\u00e8le renouvelle, monte en gamme et recommande.</strong> C\u2019est le meilleur retour sur investissement de votre accompagnement.</p>`
+      }
+    ],
+    script: [
+      {
+        title: 'Guide d\u2019installation client',
+        icon: 'fa-laptop-code',
+        body: `<strong>VOUS :</strong> \u00ab Bonjour [Pr\u00e9nom], f\u00e9licitations pour votre choix de Symbiose ! On va installer la plateforme ensemble, \u00e7a prend environ 20 minutes. \u00bb<br><br>
+
+<strong>\u00c9tape 1 \u2014 Connexion :</strong><br>
+\u00ab Je vous ai envoy\u00e9 vos identifiants par email. On va se connecter ensemble. [Guider vers l\u2019\u00e9cran d\u2019accueil] Voil\u00e0, vous \u00eates dans votre espace administrateur. \u00bb<br><br>
+
+<strong>\u00c9tape 2 \u2014 Cong\u00e9s :</strong><br>
+\u00ab On va configurer les types d\u2019absences. Allez dans Mon \u00e9quipe, puis Cong\u00e9s, puis Absences. Cliquez sur la roue param\u00e8tres. Quels types de cong\u00e9s utilisez-vous ? [CP, RTT, maladie...] On les ajoute ensemble. \u00bb<br><br>
+
+<strong>\u00c9tape 3 \u2014 Collaborateurs :</strong><br>
+\u00ab Maintenant, on va ajouter vos collaborateurs. Dans le menu \u00c9quipe, vous pouvez les ajouter un par un ou par import CSV. Pour vos [X] salari\u00e9s, je recommande l\u2019import CSV \u2014 je vous envoie le mod\u00e8le. \u00bb<br><br>
+
+<strong>\u00c9tape 4 \u2014 R\u00f4les :</strong><br>
+\u00ab Derni\u00e8re \u00e9tape : d\u00e9finir qui fait quoi. Dans \u00c9quipe puis G\u00e9rer les r\u00f4les, on a trois profils : RH pour l\u2019acc\u00e8s complet, Manager pour la validation des cong\u00e9s, Collaborateur pour le self-service. Qui est votre RH principal ? \u00bb<br><br>
+
+<div class="hbox green"><strong>Conclure :</strong> \u00ab Parfait, tout est en place ! Vos collaborateurs vont recevoir un email d\u2019invitation. Je vous rappelle dans 7 jours pour v\u00e9rifier que tout se passe bien. N\u2019h\u00e9sitez pas \u00e0 m\u2019appeler entre-temps. \u00bb</div>`
+      },
+      {
+        title: 'Appel J+7 \u2014 Prise en main',
+        icon: 'fa-phone',
+        body: `<strong>VOUS :</strong> \u00ab Bonjour [Pr\u00e9nom], c\u2019est [Votre nom] de Symbiose. Je vous appelle pour notre point J+7. Comment se passe la prise en main ? \u00bb<br><br>
+
+<strong>V\u00c9RIFICATIONS :</strong><br>
+\u2022 \u00ab Est-ce que tous les collaborateurs ont re\u00e7u leur invitation et se sont connect\u00e9s ? \u00bb<br>
+\u2022 \u00ab Les premiers cong\u00e9s ont-ils \u00e9t\u00e9 pos\u00e9s via la plateforme ? \u00bb<br>
+\u2022 \u00ab Avez-vous rencontr\u00e9 des difficult\u00e9s ou des questions ? \u00bb<br><br>
+
+<strong>DONN\u00c9ES SPIDER :</strong><br>
+\u00ab De mon c\u00f4t\u00e9, je vois dans mon outil que [X]% de vos collaborateurs se sont d\u00e9j\u00e0 connect\u00e9s. C\u2019est [bien / \u00e0 am\u00e9liorer]. \u00bb<br><br>
+
+<div class="hbox orange"><strong>Si adoption faible :</strong> \u00ab Je vois que certains collaborateurs ne se sont pas encore connect\u00e9s. Voulez-vous qu\u2019on leur renvoie une invitation personnalis\u00e9e ? Je peux aussi vous envoyer un mod\u00e8le de communication interne pour les encourager. \u00bb</div>`
+      },
+      {
+        title: 'Appel J+30 \u2014 Satisfaction',
+        icon: 'fa-face-smile',
+        body: `<strong>VOUS :</strong> \u00ab Bonjour [Pr\u00e9nom], c\u2019est [Votre nom]. Cela fait un mois que Symbiose est en place. Je voulais faire le point avec vous. \u00bb<br><br>
+
+<strong>SATISFACTION :</strong><br>
+\u2022 \u00ab Sur une \u00e9chelle de 1 \u00e0 10, comment \u00e9valuez-vous Symbiose ? \u00bb<br>
+\u2022 \u00ab Quelles fonctionnalit\u00e9s utilisez-vous le plus ? \u00bb<br>
+\u2022 \u00ab Y a-t-il des fonctionnalit\u00e9s que vous n\u2019utilisez pas encore ? \u00bb<br><br>
+
+<strong>DONN\u00c9ES SPIDER :</strong><br>
+\u00ab Voici ce que je vois : [X] collaborateurs connect\u00e9s r\u00e9guli\u00e8rement, [X] demandes de cong\u00e9s trait\u00e9es, le barom\u00e8tre d\u2019humeur est [actif/inactif]. \u00bb<br><br>
+
+<strong>FONCTIONNALIT\u00c9S SOUS-UTILIS\u00c9ES :</strong><br>
+\u00ab Je remarque que vous n\u2019utilisez pas encore [fonctionnalit\u00e9]. Elle vous permettrait de [b\u00e9n\u00e9fice concret]. Voulez-vous que je vous montre rapidement ? \u00bb<br><br>
+
+<div class="hbox green"><strong>Conclure :</strong> \u00ab Tr\u00e8s bien. Je vous rappelle dans deux mois pour faire un bilan complet et voir comment on peut aller encore plus loin ensemble. \u00bb</div>`
+      },
+      {
+        title: 'Appel J+90 \u2014 Upsell',
+        icon: 'fa-arrow-trend-up',
+        body: `<strong>VOUS :</strong> \u00ab Bonjour [Pr\u00e9nom], c\u2019est [Votre nom]. Cela fait 3 mois que vous utilisez Symbiose. J\u2019ai pr\u00e9par\u00e9 un petit bilan pour vous. \u00bb<br><br>
+
+<strong>BILAN CHIFFR\u00c9 (depuis Spider) :</strong><br>
+\u00ab Vos \u00e9quipes se connectent r\u00e9guli\u00e8rement, [X] demandes de cong\u00e9s trait\u00e9es, [X] entretiens r\u00e9alis\u00e9s. C\u2019est excellent ! \u00bb<br><br>
+
+<strong>TRANSITION UPSELL :</strong><br>
+\u00ab J\u2019ai une question : avez-vous des recrutements pr\u00e9vus cette ann\u00e9e ? [Si oui] Vous savez que Symbiose a un ATS int\u00e9gr\u00e9 qui vous permettrait de g\u00e9rer vos recrutements directement dans la plateforme ? Pour vos [X] salari\u00e9s, ajouter le Pack Acquisition co\u00fbte [X x 4]\u20ac/mois. Ou mieux, passer au Pack Int\u00e9gral pour tout avoir \u00e0 11\u20ac/salari\u00e9. \u00bb<br><br>
+
+<div class="hbox green"><strong>Argument gagnant :</strong> \u00ab Vous \u00eates d\u00e9j\u00e0 convaincu par le Pack Essentiel. Imaginez la m\u00eame simplicit\u00e9 pour vos recrutements. Et le Pack Int\u00e9gral fait \u00e9conomiser 27% par rapport aux packs s\u00e9par\u00e9s. \u00bb</div>`
+      },
+      {
+        title: 'Demande de recommandation',
+        icon: 'fa-share-nodes',
+        body: `<strong>VOUS :</strong> \u00ab Au fait [Pr\u00e9nom], je vois que tout se passe tr\u00e8s bien avec Symbiose. Est-ce que vous connaissez d\u2019autres dirigeants ou RH qui pourraient avoir les m\u00eames probl\u00e9matiques que celles que vous aviez avant Symbiose ? \u00bb<br><br>
+
+<strong>SI H\u00c9SITATION :</strong><br>
+\u00ab Ce que j\u2019observe, c\u2019est que les meilleurs ambassadeurs de Symbiose sont les clients satisfaits comme vous. Votre t\u00e9moignage a beaucoup de valeur. M\u00eame un simple pr\u00e9nom et un nom, et je me charge du reste. \u00bb<br><br>
+
+<strong>SI RECOMMANDATION :</strong><br>
+\u00ab Merci beaucoup ! Est-ce que je peux mentionner votre nom quand je les contacte ? Une recommandation d\u2019un pair, c\u2019est 10 fois plus puissant qu\u2019un appel \u00e0 froid. \u00bb<br><br>
+
+<div class="hbox blue"><strong>Rappel :</strong> La recommandation est la 7\u00e8me habitude des top performers. Un excellent service combin\u00e9 \u00e0 une demande au bon moment maximise les recommandations.</div>`
+      }
+    ],
+    quiz: [
+      {
+        question: 'Quelle est la premi\u00e8re \u00e9tape de l\u2019installation chez le client ?',
+        options: ['Importer les collaborateurs en CSV', 'Se connecter ensemble \u00e0 l\u2019espace administrateur Symbiose', 'Configurer les types de cong\u00e9s', 'D\u00e9finir les r\u00f4les et permissions'],
+        correct: 1,
+        feedback: 'La premi\u00e8re \u00e9tape est de se connecter ensemble \u00e0 Symbiose pour que le client d\u00e9couvre son espace administrateur.'
+      },
+      {
+        question: 'Quel est le risque si Symbiose n\u2019est pas utilis\u00e9 dans les 15 premiers jours ?',
+        options: ['Le risque que les habitudes ne changent pas et que l\u2019outil soit abandonn\u00e9', 'L\u2019abonnement est automatiquement r\u00e9sili\u00e9', 'Le prix augmente de 20%', 'Les donn\u00e9es sont supprim\u00e9es'],
+        correct: 0,
+        feedback: 'Si l\u2019outil dort pendant 15 jours, les habitudes ne changent pas et il y a un risque r\u00e9el d\u2019abandon.'
+      },
+      {
+        question: 'O\u00f9 suivre le taux de connexion des collaborateurs d\u2019un client ?',
+        options: ['Dans le back-office Symbiose uniquement', 'Sur le site internet du client', 'Dans Spider, onglet Symbiose', 'Par email automatique hebdomadaire'],
+        correct: 2,
+        feedback: 'Dans Spider, onglet Symbiose, vous pouvez voir le taux de connexion et les indicateurs d\u2019adoption en temps r\u00e9el.'
+      },
+      {
+        question: 'Quel est l\u2019objectif principal de l\u2019appel J+30 ?',
+        options: ['Vendre un pack sup\u00e9rieur', 'Maximiser l\u2019adoption et mesurer la satisfaction', 'R\u00e9silier les clients insatisfaits', 'Collecter les paiements en retard'],
+        correct: 1,
+        feedback: 'L\u2019appel J+30 vise \u00e0 mesurer la satisfaction, identifier les blocages et maximiser l\u2019adoption de Symbiose.'
+      },
+      {
+        question: 'Comment doit-on aborder l\u2019upsell selon la m\u00e9thode enseign\u00e9e ?',
+        options: ['Avec des donn\u00e9es concr\u00e8tes d\u2019utilisation, pas des arguments g\u00e9n\u00e9riques', 'En proposant une remise imm\u00e9diate', 'En insistant jusqu\u2019\u00e0 obtenir un oui', 'En contactant directement le directeur g\u00e9n\u00e9ral'],
+        correct: 0,
+        feedback: 'L\u2019upsell se fait avec des donn\u00e9es concr\u00e8tes (Spider) et non des arguments commerciaux g\u00e9n\u00e9riques.'
+      },
+      {
+        question: 'Quel est l\u2019avantage principal du Pack Int\u00e9gral pour le client\u2009?',
+        options: ['Il b\u00e9n\u00e9ficie d\u2019un support t\u00e9l\u00e9phonique prioritaire', 'Le module Acquisition est offert', 'Il a acc\u00e8s \u00e0 une formation certifiante', 'Il peut r\u00e9silier \u00e0 tout moment sans frais'],
+        correct: 1,
+        feedback: 'Avec le Pack Int\u00e9gral, le module Acquisition est inclus\u00a0: un argument fort pour les entreprises qui recrutent r\u00e9guli\u00e8rement.'
+      },
+      {
+        question: 'Quel r\u00f4le devez-vous adopter apr\u00e8s la vente selon la formation ?',
+        options: ['Un commercial en attente du renouvellement', 'Un accompagnateur du client dans l\u2019adoption de Symbiose', 'Un technicien de support', 'Un auditeur de conformit\u00e9'],
+        correct: 1,
+        feedback: 'Vous n\u2019\u00eates pas juste un commercial, vous \u00eates l\u2019accompagnateur de votre client dans l\u2019adoption de Symbiose.'
+      },
+      {
+        question: 'Quelle est la 7\u00e8me habitude des top performers ?',
+        options: ['Demander des recommandations aux clients satisfaits', 'Faire 50 appels par jour', 'Envoyer des emails en masse', 'Baisser les prix pour fid\u00e9liser'],
+        correct: 0,
+        feedback: 'Demander des recommandations aux clients satisfaits est la 7\u00e8me habitude cl\u00e9 des top performers.'
+      },
+      {
+        question: 'Comment r\u00e9agir si l\u2019adoption est faible \u00e0 J+30 ?',
+        options: ['Attendre que \u00e7a s\u2019am\u00e9liore tout seul', 'Identifier les non-connect\u00e9s et personnaliser l\u2019invitation', 'Annuler l\u2019abonnement du client', 'Appeler tous les salari\u00e9s un par un'],
+        correct: 1,
+        feedback: 'Identifier les salari\u00e9s non-connect\u00e9s et personnaliser les relances pour relancer l\u2019adoption.'
+      },
+      {
+        question: 'Pourquoi un client qui utilise bien Symbiose est-il strat\u00e9gique ?',
+        options: ['Il co\u00fbte moins cher en support', 'Il g\u00e9n\u00e8re moins de tickets', 'Il renouvelle, monte en gamme et recommande', 'Il n\u2019a plus besoin du recruteur'],
+        correct: 2,
+        feedback: 'Un client bien accompagn\u00e9 renouvelle, monte en gamme et recommande \u2014 le meilleur retour sur investissement.'
+      }
+    ]
+  }
+];

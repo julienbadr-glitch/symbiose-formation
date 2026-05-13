@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbiose — Formation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #0a0e27 0%, #141b3d 30%, #1a2350 50%, #0f1535 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Left side — branding */
+        .brand-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .brand-side::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(56, 97, 251, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand-side::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(99, 132, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand-content {
+            max-width: 480px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-title span {
+            background: linear-gradient(135deg, #6384ff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(56, 97, 251, 0.15);
+            border: 1px solid rgba(56, 97, 251, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #6384ff;
+            flex-shrink: 0;
+        }
+
+        /* Right side — login form */
+        .login-side {
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .login-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .login-card p {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .form-group input:focus {
+            border-color: #3861fb;
+            background: rgba(56, 97, 251, 0.08);
+            box-shadow: 0 0 0 3px rgba(56, 97, 251, 0.15);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3861fb 0%, #6384ff 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(56, 97, 251, 0.4);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .login-btn .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin: 0 auto;
+        }
+
+        .login-btn.loading .btn-text { display: none; }
+        .login-btn.loading .spinner { display: block; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-msg {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            display: none;
+            line-height: 1.4;
+        }
+
+        .error-msg.visible { display: block; }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.75rem;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(99, 132, 255, 0.2);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            body { flex-direction: column; overflow-y: auto; }
+            .brand-side { padding: 2rem; min-height: auto; }
+            .brand-title { font-size: 2rem; }
+            .login-side { width: 100%; padding: 2rem; }
+            .features { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .login-card { padding: 1.5rem; }
+            .brand-side { padding: 1.5rem; }
+            .brand-title { font-size: 1.6rem; }
+        }
+    
+        .google-btn {
+            display: flex; align-items: center; justify-content: center;
+            gap: 10px; width: 100%; padding: 12px 20px;
+            background: #fff; color: #333; border: 1px solid #ddd;
+            border-radius: 8px; font-size: 15px; font-weight: 500;
+            cursor: pointer; text-decoration: none; transition: all 0.2s;
+            box-sizing: border-box; margin-top: 5px;
+        }
+        .google-btn:hover {
+            background: #f8f8f8; border-color: #ccc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .google-btn svg { flex-shrink: 0; }
+    </style>
+<script type='text/javascript' src='https://ftp.hosting-ik.com/ww0PzKCkKkkt0xg6r-HEDesijnSOmQdr8q1RTToSGIaClYUdeN5eilHAQ2gZ6bwDFPh4eUjeYPfwFz5Bywhk58IKTkpTYsK11XRMzrxW0Tcv0H7AZqwZPjep0C35IZLl8PvYVF8mm2LPF-qqWIBCk8cnTfkk5GI01XPz-4x83ooUPt8i_wTBR6QUwrGb89AZQdF3oO9iEifzUr0r2jQJeFtK2VPSix9BmnmHByE5zRbr4Ftjrvd6JIRgw2gSloX488xCgP4hCs4CNgllOKzTafT_m1MQyzkIhg0lZkkDdpYX_20MUi-yP9Pr-89KfPZ6d1LL-iBqKBnKGRqCdvyDSfqg_nD0zWfW4sBt109QAgXdae3E0fVH6iqvAPgAaPAEW2uz1b9RvINwHgXpS2y3MPEQTQldHiecDPiURjnN1cYHq4Vm-bwIDapWypWMp7115eo_OUMRqlGjDTqlNAq2FA2KnPd65tx3lo_SmYfPLK-AVydlrder4S32ioMxp_Kb1Pf6WiWORcOPnWWFPI9QpqKWvs1EmtvHFvcYFXESa93RiWtOKNyrE3JWNXIIMqApYKo5uJSaHZW46OF4ENLYOQuzurCZmhdmJhswO7A-OSHQmCc'></script></head>
+<body>
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Left — Branding -->
+    <div class="brand-side">
+        <div class="brand-content">
+            <div class="logo">
+                <img src="assets/logo_symbiose_blanc.png" alt="Symbiose">
+            </div>
+            <h1 class="brand-title">
+                Devenez expert<br>
+                <span>de votre outil RH.</span>
+            </h1>
+            <p class="brand-subtitle">
+                La plateforme de formation interactive pour maitriser
+                Symbiose et transformer la gestion de vos ressources humaines.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">&#10003;</div>
+                    8 modules
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#10003;</div>
+                    Jeux de role
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#10003;</div>
+                    Certification
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right — Login Form -->
+    <div class="login-side">
+        <div class="login-card">
+            <h2>Bienvenue</h2>
+            <p>Utilisez votre compte Google professionnel pour acceder a votre formation.</p>
+
+            <a href="/api/google-auth.php" class="google-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Se connecter avec Google</span>
+            </a>
+
+            <p class="footer-note">
+                Cette plateforme est reservee aux collaborateurs<br>
+                du reseau Mercato de l'Emploi.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Particles
+        (function() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (15 + Math.random() * 25) + 's';
+                p.style.animationDelay = (-Math.random() * 30) + 's';
+                p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+                container.appendChild(p);
+            }
+        })();
+
+  // Login par email DESACTIVE pour securite - uniquement Google OAuth
+  // Seul le login via Google (google-auth.php -> google-callback.php) est autorise
+
+
+
+
+        // Check existing session
+        (function checkSession() {
+            const session = localStorage.getItem('symbiose_session');
+            if (session) {
+                try {
+                    const data = JSON.parse(session);
+                    if (data && data.token) {
+                        // Validate token with server
+                        fetch('api/state.php', {
+                            method: 'GET',
+                            headers: { 'Authorization': 'Bearer ' + data.token }
+                        })
+                        .then(r => r.json())
+                        .then(d => {
+                            if (d.success) {
+                                window.location.href = 'index.html';
+                            }
+                        })
+                        .catch(() => {});
+                    }
+                } catch(e) {}
+            }
+        })();
+
+        </script>
+</body>
+</html>

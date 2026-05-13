@@ -1,0 +1,23 @@
+// Exam questions data (extracted from data.js for modularity)
+export const EXAM_QUESTIONS = [
+  { q: 'Combien de douleurs RH principales cible Symbiose ?', o: ['5', '7', '10', '3'] },
+  { q: 'Quelle question d\u00e9tecte le besoin en ATS ?', o: ['Combien de salari\u00e9s ?', 'Comment g\u00e9rez-vous vos recrutements ?', 'Votre DUERP est-il \u00e0 jour ?', 'Qui est le d\u00e9cideur ?'] },
+  { q: 'Combien de packs modulaires propose Symbiose ?', o: ['2', '3', '4', '5'] },
+  { q: 'Quel pack inclut le suivi du DUERP et des risques professionnels ?', o: ['Essentiel', 'Acquisition', 'Conformit\u00e9', 'Aucun'] },
+  { q: 'Prix du Pack Essentiel ?', o: ['3\u20ac/sal/mois', '4\u20ac/sal/mois', '5\u20ac/sal/mois', '6\u20ac/sal/mois'] },
+  { q: 'Prix du Pack Int\u00e9gral pour <20 salari\u00e9s ?', o: ['49\u20ac/mois', '79\u20ac/mois', '99\u20ac/mois', '149\u20ac/mois'] },
+  { q: 'Quelle fonctionnalit\u00e9 IA permet de cr\u00e9er une offre d\u2019emploi en 30 secondes ?', o: ['Barom\u00e8tre IA', 'R\u00e9daction d\u2019offres IA', 'Conformit\u00e9 IA', 'Entretiens IA'] },
+  { q: 'Quelle est la dur\u00e9e id\u00e9ale d\u2019une d\u00e9mo Symbiose ?', o: ['10-15 min', '25-30 min', '45 min', '1 heure'] },
+  { q: 'Combien de modules maximum montrer en d\u00e9mo ?', o: ['2', '3-4', '6-7', 'Tous'] },
+  { q: 'Quel \u00e9l\u00e9ment cr\u00e9e l\u2019effet wow en d\u00e9mo ?', o: ['Cong\u00e9s', 'Documents', 'ATS avec r\u00e9daction IA', 'Contrats'] },
+  { q: 'Quelle m\u00e9thode pour traiter une objection ?', o: ['Contredire', 'M\u00e9thode A.R.C.', 'Ignorer', 'R\u00e9duction'] },
+  { q: 'Que signifie une objection ?', o: ['Pas int\u00e9ress\u00e9', 'Signal d\u2019achat d\u00e9guis\u00e9', 'Passer au suivant', 'Prix trop \u00e9lev\u00e9'] },
+  { q: 'Meilleur argument face \u00e0 "C\u2019est trop cher" ?', o: ['R\u00e9duction de 50%', 'ROI concret : 250\u20ac/mois vs 3000-5000\u20ac de co\u00fbts', 'Prix du march\u00e9', 'Moins de modules'] },
+  { q: 'Strat\u00e9gie de pr\u00e9sentation des tarifs recommand\u00e9e ?', o: ['Un seul pack', 'Le moins cher', '2 options (cibl\u00e9 vs Int\u00e9gral)', 'Tous les packs'] },
+  { q: 'Quel argument ROI est le plus impactant ?', o: ['Le design', 'Co\u00fbt d\u2019un recrutement rat\u00e9 (30-150K\u20ac)', 'Nombre de modules', 'Rapidit\u00e9 du support'] },
+  { q: 'Technique de closing la plus efficace chez Symbiose ?', o: ['R\u00e9duction de prix', 'Essai gratuit sans CB', 'Pression urgence', 'Documentation'] },
+  { q: 'Premi\u00e8re action dans les 72h post-d\u00e9mo ?', o: ['Appeler', 'Email de synth\u00e8se dans l\u2019heure', 'Attendre', 'Envoyer la facture'] },
+  { q: 'Signal d\u2019achat verbal ?', o: ['Regarde son t\u00e9l\u00e9phone', 'Demande le d\u00e9lai de d\u00e9ploiement', 'Dit "C\u2019est int\u00e9ressant"', 'Reste silencieux'] },
+  { q: 'Caract\u00e9ristique des top performers ?', o: ['Talent naturel', 'Discipline et constance', 'Charisme', 'R\u00e9seau'] },
+  { q: 'Que permet le "win/loss review" ?', o: ['Punir', 'Identifier patterns de victoire/\u00e9chec', 'Comparer les commerciaux', 'Justifier les r\u00e9sultats'] },
+];

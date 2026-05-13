@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbiose -- Formation</title>
+    <meta property="og:image" content="https://mercato-formation.fr/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mercato-formation.fr/assets/og-image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components/sidebar.css">
+    <link rel="stylesheet" href="./css/components/header.css">
+    <link rel="stylesheet" href="./css/components/home.css">
+    <link rel="stylesheet" href="./css/components/dashboard.css">
+    <link rel="stylesheet" href="./css/components/step.css">
+    <link rel="stylesheet" href="./css/components/game.css">
+    <link rel="stylesheet" href="./css/components/quiz.css?v=81">
+    <link rel="stylesheet" href="./css/components/roleplay.css?v=81">
+    <link rel="stylesheet" href="./css/components/exam.css">
+    <link rel="stylesheet" href="./css/components/certificate.css">
+    <link rel="stylesheet" href="./css/components/notifications.css">
+  <link rel="stylesheet" href="logout-style.css">
+  <link rel="stylesheet" href="style.css?v=81"><script type='text/javascript' src='https://ftp.hosting-ik.com/Hu7xiJFY2lukZbg3ld0D_ghsNO94c8PLydBj8G47bCaVx5TzHcq7h3RSXBXAsO_W69xCjZ5dEvd4THxFjbaIleTehVEFLo2wqyFh26dMR0_Q6k8koQNWAYYQ7WtZrsZoYeiHDjKbAxqDcCbOpvLv3HMTDcYbnFk2JFMX-c1P989CtZzBgJlxUNpBXqcuO2tkCXiCToKSGYNC8gcGXsWHSNZ-IzvQZYhVHVT_pKMnUspGHM_evru2zEiF8XYOW0rup1-XIWeHDGJ0Sle2stkKL2t6tnsP6RuDH6IWncxEd8qdm--TQ-nJddTia2KOV76eqrVTpewwsAdIgPfjsx2yzHazBTag9zUVx1rwONKn1pEuRj466jD81x9-UZU5GwSm6JTDEJWIPr5AJgahW-7MTu0dUm3GCSUFcxlwjny-4ug472ndINXuIUVJ1VU1HVLbsOVY3RPG_5u0T4NJmZkjcK8W0ny0C2AYh_afFvxNda9tI-CWj8O_nDREe1YO5n2QsjIKubVEle3Dj5DJKFVjQv4bVN60SLhfskr5R6QTBdRPcDgEBwnIc79mrg-LM58DTaDTxE3ZkmBLWoxQJew06Cn4MLz6R4zT_BqUs0gtuTYB7GI'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/V7nNobWHeOrMUUvEvP8z4c2hbWHmaOPUB-BIQNOs1Dt0Mfj4-0st9OnNKIBS2TzNcJIUXDARcKXph3GOorHwDqVQpPlYRqSwwPkl-c3VzjfqqgKAJELGU_2auP47IVRN6x1cPsZ4psRVJTnAxyVlUJHuE3Nyb47z23Nb6kL55Z1f3Uv4qiepEbrv-N52qn1B-W0FcQTRLK-dlqTr0-ezXr5RoYbrkQg6NLXNciwVmCIy4bmK7r_fzkwfHO4TO7T8AjiAUBCgDWimoAh_I4YsNvdB1cqFcBifKk2bs765oiMFSPRT1greTMEzTLuAJa6di_F4kWRYR1FejhjB8gROzxmLZLdejkni3Kc3GEdzshjt9XRvIPmP-0s8Rs9nkVGpB5PYzCtERTMd8zAMpigjMARlzoajcjkaxCworOxudPcGIX4yYeHgjrXzSGe_eQ-z0Yx1QqxNP6x0807_k9J-uJxqLQddYN_-FX8Th452wentR0udVDneJ9KIf94XUasx80RwE1SAAMfGDYyxhTMo__8mfOWhPzeVC0dymZiW4LZDJ53ZwFBDZ4wp1IpK1wKoyq7r9nlvxt4KJjsN5lZwax8lGcluQQYrm_RJhx8Y2yb94Gs'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/6ky43dsora4T8luyQLLKz06VYF0S6SH7ZPivQUa5RhStzGHCbLfFlK3_c24dUhN6ZRMrVn_QzoG85at2DvohlEDCNYakqCYdYLKioHQhGHgpJyWEN9pJHJ5jJ3WiovgjvPnPLTcinvn8EhmiF019RnAR8MILUkzRwmUc6Mm7DbPBShn_FYlQrVPSvSE3_t4OTlxxeV50LQgN_bGsXOsb_Ww1zjOtj-J_t8yln45PXosuw4hAdkL7_k-1_1B0QhcYzoY3QFarvIeeyeh7YCJaPCMr5hs9Ccwrry-Sl1v-aH-FKDrkCaJluUNSsF01nImj_JMbA1eafSvaV-lPJkLLJfm_KUukUeLxq3iHPrWJmPYTMDqTCKJBp5LLM1VCZBDu16FIpRWnOc3SpKA6BuvnwM8ZmlGo67GyuYGtB5A89-jd25VYgBaUmbVoNBf6xvDTGPExYh9WknGZ_wgQxZRMIuwYXNsUuBglKhnsKsNL8Bmbt2AT5YcE9B5bzfM--6MmPfLw8CYnq6InAde3J-dDbrid8aqJx9ERNe04YacBFJY4amrv0rwojaqD_Hgtp148xJJbk3VfB8p3T-FKBxL6gLMmSqFy_IXBevy1WNhz7YhVr_g'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/d09IBMCsdYX9HNcZrO8cD8bXAb-1XyhqghEgBSUnJzyQRq9cOXPTD4EB7vXlxUGXhRWKxs5PkitXvJrrXCAfKehEKVDZZXqniLp6ZhVWAZ2qkLgyXBC_OQvUjt9iny4pjpccH1KLchQZHS4wPCPZ9QfqyswhOk0z5_kl0-MBnPxRR-MWYuzsc8jL89pCCLo1gqZbr2OyNt3Jdy3C9UgNpeFdMmDphl7mXvnZTQVAZi_oWrKu7pxTDr6OtQuUmsS5ifOXjrcPQBOMtLbPwC97ZsyAhy1_sfcDztJZKkqIIzIk6eAA96Va77EH6AcX0RT9BQAteZ4TUM8IXRNop14Ek1alrFo_gQMf1j22iA1_08tbSnynJrsFe5GVVP-prgdoUbpUtIBIl5SBM4tuQiZ4vn8wSIt81NHEw1uwBnuPpRPYnpCiDj-ztNnMiomtoZ1A10LT_mPpVOPd6wYLNXjUmDjMBY1grn41EHTt_RwHgEjPSfUEvNLqqsTDJ6ujb1cH2ZU9jplFqOGVptRP8fWyzUS_UMGdDz5SrTnOq6T9c_QtAxnHwSc9lLCCZqGQoGCBHwGRduDr2kXk9Hd1rvKvPSQCom7oK4SsWkE_IqyApBl4XD8'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/X8nrf7XM9nFvvuhimzq0DJ6hLXLyh9uk0PkpB8EC1WDgTqKNu6UM6948hoCbgTIoPYcOHISol0cDSr98lazD9FfLJLobO92txS0SQ49mXHv7jDjbc-sYOzuHrOT-_hbclA3IiZ59s7xMvQclydYo1lbZzo5nEJeL7Y_-Jmu2qqZXPmvgEM4QlX6D0n-7xiY9iTMSN1AIRsKovegvj57boQXYxmYqVJgNx94CSh5oM6hiKe4dpdi9dbvXyKbhN5wYyNyruwbeXK12dJd4wHpjUtF7YXw76nMQQcfkinv8-Nwy7bXX0EihjV0MoxJLqNt-PNGSrpWBvlkyYIaoY7X8VLw-Zcd3Bp51zWzIvIk0bGfHmA9sreWRCGpMWWF64yYsmJXF6Ej_6CC5POwzuKH6lhN4REQqwW2zEDrB985Qedg4o-PTc9Dz-jpLS-LbZzM_7fUdAjKOIkm-2imExo8CNp4uxzK8i5SxmOjbjA7aTCqoH90NwLNGsd2BI-tFwlto3K-8n44PU8Yllg0CB4yzqKX0LWsppfl3_w7pcI0MNzEg0sAlcvxsFfWXiG6wyIlev7hdk8sW1Q1iKh_DXfUHOUjv6TIxsPacEb56KBB5kdtiIuY'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/PkHnonfDGgclCX6rCtLwEd9Y9fCla4FJ3LC2UsmqfXZEwqe1t-pqgv1UVMaw3jiGyE2LQdgnQOLB6DOVAlCA6FWRvCT8UMxREnt3_6q7_8TMvBNoR6XUBQ9R13mhOGqn3_O_691UvXu2JRfDc5onKf3P5-tWMJ_GRDFEgK-cd8zaTF-LpBPhxS5D3hj18YSCFuKbnvPnX0boHwQYCG1zIVfkd9ZBxRvldD2DnSuYEK3-YGed19EF8dzx1Cy3h_AWR67tikjzIJW0exrNjlnEKdwzLUaPQkx1F0uY_3JV1DqmOnCDd_aR2-TlN5vvFXV5MOomd0NgV2Y22_gaDVKfolPzQXG0U3DJN99sPkuhXaFcXMhTKqeXC6WnGzuxglIIEHVHSFh0ulGZEPngNfvAr2-mK190Xb8VKCzXOnd1sk0cCo3a0YBlv8THUjXvcAdoU1OOZlNfVlCnSUPXrq4XnzXjgTaV6UzptuMfFVAhkgzEtEw-uxwFZvKhbnSFfzzcitar6imyLErFdgpkvY9kqTTl_dTLC3A87o9aQkFrosJP4-PS8762kz2mgiDfdIpgH4tG5NYjE1vGkRZAvovc1fIM6PUzB3e7zYXBYawEI24vxA0'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/zMABcmjWUeC44pOHHb70Ogojkvz3CQBy_h4b2-6ITiPt61UcwW9wKJuGjp8tzFbm06vZWG8S0gWtNaLRRHOoSxvZ_F0aWTx9DnbHhWvnpODAmNRpPvSSIlHGN0FiZcc7TDsq2wus6p5y9Ur2u-zSyIgCJYsG8VvsWyY0xxaAX1JCtfZ7yyRcr4Ve8-_qtZS_2PGVR5iWxD7oV4s05AoJWoLJD3zrYP0QufqNRqPqO5FOdYQ2V_f1H_1IcnZYp64YZ_FNB_eVZfmD5TWjTU_DuPj_pKWcLieVx-LP7neRPiw7EUtS4M6WlOFOMipDjVZ4VJciJeXZm-XxhwXA1lQ3NdMyk2lt7ya4fR5NQgXpHEmlT-qN6OoNqkKMArR1BTcs36AveUEWI07Q0whVWp4IreUZXLuzH1_S8ejwxWg-widkTZdzxHOe5SbRDVGvcZE4qp_gjnpa3Kpd2leuw_iXsV7pO8xoJVHZ3xIGzQa_F7HTujJaPdUeQ2U8hnO1gUEJk2a_Z9URc9frViP4foIUQKL2OnRgmUryMbzPK2uu2c_pd50NoBCKqJa1E2Lj60AFt7tOLYeQRd2ZVaG6cEeHqsm9_fR4T_iA5FacUwMB8fkP36o'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/_f685yKvHxOYePeke1G4pKdWY2mvxHScdNhE6p64qjsf6JKcI1A_Ff0uRaF8O7_nAWKPRB6HQJMPoUFnN2XyinjtxSMr5R1twfvRdVS_GwHnvWWZihUuvW3tqmqeFd6BpdOwAzkmb7KcRCQw-eTGIIOYjK7l4QSKIDcMe7nIZVWuwOBP7g07xocaz83z1nqbNLO7XgKQAjl3sNUY3Uo8mRLGGSO8SYnLHzPw--a8QAp_b9xm5veORjti7_M2aQsNJgLiWuSBOBHj3TA5IpO_A_L0Q8cWx8gH_IZ_TtDnj-mD1uNZXsjVYzR6XxvForyXQNU_dZYG4O_QEcIakZnhjhphcSsSU7saY5sN3M3y0Zoi2htnnZNRK-FTNMC3itM4mloqzhee8lgbhcFtwc-ic7St7q-O2P5hFu_UJcC04se0E4fvVALZKTJN7WawuvYUblviWqOmvCP1j08HouQm1iKpHrRL57Ayv13RBW4QH3DUJTsGTVGMYYoIHszdGqYgLn-bfZUCyuvUlqWPhQrCTWKspsPXA1uJIFFLbyHBLLx62G13GO_KwXcAfPlF3JjrEUARdH1kpHLcTndvvXM0uPsNcD7IWGbqwLbQ8O45zbCjU5s'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/1SfMl6KLxrPs0rkhAVzjuis33w6as6Vw_jv4GN4VV30e5EQvsRdZsvkR6BvEXB3XRFDpC65hUPoCulAD8zPZCFq01yMH3dSnpKeTdJFOt-UUR9czXGErQUmpu1Cpm1gKVVP22DpOYgCBmGrMbzqmg9Y09xn_lYxr3W3UkVuX0y9xof_QCHPFzOtpfXO1CySj0-WQCu4_yp8scyxQcMkhd69wMOaEB9IgjrBAxOogQY0RtnEaDxcDSjQ9lvcjepJaluoPQpxKJvN87mHb4X1ARw7i0Puluygafotdmp6bZcH5xRc_-o8nA4_e0uJ1qI4pntR8zuzKGEaDTm4mH7gSDREtaJsE0ut69aVyLgvkBv-Jh4K_VgGEM2bYEawBGxf_dgc-1fAPflvIbT42-FRe0dUj1309c3Y-9UMxQp_eCFtzSetBbdykGb_ykI7z5G7SN7RR0Nb4C_d-hAXLF6oua2PSjagvgjTdKtnt0_Pb_VkygUCam-egZ0z0Ga8llhGjxOLjGBKfp6sG60VzpF-hTSXkw46OTc1ettt82V0eba_plgF_O74W3imMV21Zby0lCGwoaCwrN4D6yDypIfHEX4K6-Jk9S1IkdMi0iA3g3GM830A'></script><script type='text/javascript' src='https://ftp.hosting-ik.com/FzB4Idpv-ns7Qv1jUHOzZK3W4oebC6IcsT9YabYIjz62BbKMV_RNL1Hz3BAr4YDpFe5Yhty58E6O9Lic1G479U7-QRQiKLv4N9UuJ8rb0XXLziFopHmB3HtwHfFPdp5nxHTideZVsaSPk6OtNXmPgaAhXZ7cI803-hiq9NLN_m-RG0K8luhOwxmZAWu67i2We7B1lcrs9oFM3eFR7hcRmFpBFQ4tuaN_Al5c_cR8GZRW1IArf8_Y_D2l4zRQZa61Mmti4VJiUcFYFxpSWj-NAE8qucn7sZV5JhNvKy-ugjdrgAaPs1FtxN1lbit2hpAILTr00roUUKbs-GBjbT1E-o8ufsV1LqWkt5jIjNJmzrqR_lsNBtYRdZNswGeQtBUWBVu2z5L7GoMBpxeVoCpdem1O0utRziNxeo1QsQMLxnMoJ25C2p0y8LvQidxBLilmsZ_HdEMWI-abqyd6McBnNyJL1qLbMb_-445GqelHxl7n0a6mKSeA3v7Aw4NHN1liEfQaV0gR6dBLV140EPetyPc2yET6vWDfQSS113ZYzviflggFGEhxjntpnhBJ9P4aLd_MB2_Ybr_QRjysvQ5PwR9yqBnk8YwCQdeo_nbvYgdsc_o'></script></head>
+  <body>
+    <div id="app">
+      <div class="app-container">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+                <img src="assets/logo_symbiose_blanc.png" alt="Symbiose" class="logo-img" style="max-width:180px;height:auto;">
+            </div>
+            <button class="sidebar-close-btn" id="sidebarCloseBtn"><i class="fas fa-xmark"></i></button>
+          </div>
+          <nav class="nav-section">
+            <div class="nav-item active" data-view="home"><i class="fas fa-home"></i><span>Accueil</span></div>
+            <div class="nav-title" style="margin-top:12px">Formation</div>
+            <div class="nav-item" data-view="step-1"><i class="fas fa-magnifying-glass"></i><span>1. D&eacute;couverte Client</span><span class="nav-status-dot" data-step-dot="1"></span></div>
+            <div class="nav-item" data-view="step-2"><i class="fas fa-cubes"></i><span>2. &Eacute;cosyst&egrave;me Symbiose</span><span class="nav-status-dot" data-step-dot="2"></span></div>
+            <div class="nav-item" data-view="step-3"><i class="fas fa-bullseye"></i><span>3. Puissance de l&rsquo;ATS</span><span class="nav-status-dot" data-step-dot="3"></span></div>
+            <div class="nav-item" data-view="step-4"><i class="fas fa-hand-holding-heart"></i><span>4. Univers Collaborateur</span><span class="nav-status-dot" data-step-dot="4"></span></div>
+            <div class="nav-item" data-view="step-5"><i class="fas fa-desktop"></i><span>5. Ma&icirc;triser la D&eacute;mo</span><span class="nav-status-dot" data-step-dot="5"></span></div>
+            <div class="nav-item" data-view="step-6"><i class="fas fa-shield-halved"></i><span>6. Objections &amp; Argumentaire</span><span class="nav-status-dot" data-step-dot="6"></span></div>
+            <div class="nav-item" data-view="step-7"><i class="fas fa-file-invoice-dollar"></i><span>7. Proposition &amp; Closing</span><span class="nav-status-dot" data-step-dot="7"></span></div>
+            <div class="nav-item" data-view="step-8"><i class="fas fa-star"></i><span>8. Suivi &amp; Bonnes Pratiques</span><span class="nav-status-dot" data-step-dot="8"></span></div>
+            <div class="nav-title" style="margin-top:20px">Jeux de R&ocirc;le</div>
+            <div class="nav-item" data-view="roleplay"><i class="fas fa-masks-theater"></i><span>Simulations</span></div>
+            <div class="nav-title" style="margin-top:20px">Validation</div>
+            <div class="nav-item" data-view="exam"><i class="fas fa-clipboard-check"></i><span>Examen Final</span></div>
+            <div class="nav-item" data-view="certificate"><i class="fas fa-certificate"></i><span>Certificat</span></div>
+          </nav>
+          <div class="sidebar-footer">
+            <div class="nav-logout" id="logoutBtn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i><span>D&eacute;connexion</span></div>
+          </div>
+        </aside>
+        <div class="main-wrapper">
+          <header class="top-header" id="topHeader">
+            <button class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+            <div class="header-center">
+              <div class="header-level-bar" id="headerLevelBar"></div>
+              <div class="header-divider"></div>
+              <div class="header-badges-row" id="headerBadgesRow"></div>
+            </div>
+            <div class="header-right">
+              <div class="header-xp-badge" id="headerXpBadge">
+                <i class="fas fa-bolt"></i>
+                <span id="headerXpText">0 XP</span>
+              </div>
+              <div class="header-progress-ring">
+                <svg width="44" height="44" viewBox="0 0 44 44">
+                  <circle cx="22" cy="22" r="18" fill="none" stroke="rgba(37,99,235,.15)" stroke-width="3"/>
+                  <circle id="headerRing" cx="22" cy="22" r="18" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-dasharray="113.1" stroke-dashoffset="113.1" transform="rotate(-90 22 22)"/>
+                </svg>
+                <span class="header-ring-text" id="headerRingText">0%</span>
+              </div>
+              <div class="header-profile" id="headerProfile">
+                <div class="header-avatar">CD</div>
+                <div class="header-profile-info">
+                  <span class="header-profile-name">Charlotte D.</span>
+                  <span class="header-profile-level" id="headerProfileLevel">Recrue</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main class="main-content" id="mainContent"></main>
+        </div>
+      </div>
+    </div>
+    <div id="notifications"></div>
+    <div id="confettiCanvas"></div>
+<script>function handleLogout() { localStorage.removeItem("symbiose_session"); localStorage.removeItem("symbiose_state"); window.location.href = "login.html"; }</script>
+    <script type="module" src="/auth.js?v=92"></script>
+    <script type="module" src="/main.js?v=100"></script>
+    
+  
+<script>
+(function(){
+  var vimeoEmbed='<div class="video-container"><iframe src="https://player.vimeo.com/video/1179693384?badge=0&autopause=0&player_id=0&app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen title="ATS / recrutement"></iframe></div>';
+  function replaceVideo(){
+    var cards=document.querySelectorAll(".video-card .card-body");
+    for(var i=0;i<cards.length;i++){
+      var ph=cards[i].querySelector("div");
+      if(ph&&ph.textContent.trim().indexOf("venir")!==-1){
+        ph.outerHTML=vimeoEmbed;
+        return true;
+      }
+    }
+    return false;
+  }
+  if(!replaceVideo()){
+    var obs=new MutationObserver(function(){
+      if(replaceVideo()) obs.disconnect();
+    });
+    obs.observe(document.body,{childList:true,subtree:true});
+    setTimeout(function(){obs.disconnect();},15000);
+  }
+})();
+</script>
+</body>
+</html>

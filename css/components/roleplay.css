@@ -1,0 +1,248 @@
+.rp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 8px }
+.rp-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 28px; cursor: pointer; transition: all .3s var(--ease); position: relative; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column }
+.rp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 0, 0, .1) }
+.rp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px }
+.rp-card:nth-child(1)::before { background: linear-gradient(90deg, var(--primary), #3b82f6) }
+.rp-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent), #fbbf24) }
+.rp-card:nth-child(3)::before { background: linear-gradient(90deg, var(--success), #34d399) }
+.rp-card:nth-child(4)::before { background: linear-gradient(90deg, var(--danger), #f87171) }
+.rp-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px }
+.rp-card-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff }
+.rp-card-icon.blue { background: linear-gradient(135deg, var(--primary), #3b82f6) }
+.rp-card-icon.amber { background: linear-gradient(135deg, var(--accent), #fbbf24) }
+.rp-card-icon.green { background: linear-gradient(135deg, var(--success), #34d399) }
+.rp-card-icon.red { background: linear-gradient(135deg, var(--danger), #f87171) }
+.rp-card-diff { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: #f1f5f9; color: var(--text-muted); letter-spacing: .3px; display: flex; align-items: center; gap: 5px }
+.rp-card-diff.diff-easy { background: rgba(16, 185, 129, .1); color: #059669; border: 1px solid rgba(16, 185, 129, .2) }
+.rp-card-diff.diff-medium { background: rgba(245, 158, 11, .1); color: #b45309; border: 1px solid rgba(245, 158, 11, .2) }
+.rp-card-diff.diff-hard { background: rgba(239, 68, 68, .1); color: #dc2626; border: 1px solid rgba(239, 68, 68, .2) }
+.rp-card-diff i { font-size: 10px }
+.rp-card-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); font-family: 'Space Grotesk', sans-serif }
+.rp-card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; flex: 1 }
+.rp-card-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; font-size: 12px; color: var(--text-muted) }
+.rp-card-meta i { width: 14px; text-align: center; margin-right: 2px }
+.rp-card-xp { color: #b45309; font-weight: 600 }
+.rp-card-btn { width: 100%; justify-content: center; overflow: hidden }
+.rp-btn-arrow { transition: transform .3s var(--ease) }
+.rp-card-btn:hover .rp-btn-arrow { transform: translateX(4px) }
+
+.rp-chat-layout { display: flex; gap: 0; height: calc(100vh - 120px); margin: -32px -40px; background: var(--bg) }
+.rp-chat-layout.rp-chat-fullwidth { display: flex; flex-direction: column }
+.rp-chat-sidebar { width: 320px; min-width: 320px; background: var(--card-bg); border-right: 1px solid var(--card-border); padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px }
+.rp-back-btn { width: 100%; justify-content: center }
+.rp-info-card { text-align: center; padding: 20px; background: #f8fafc; border-radius: var(--radius); border: 1px solid var(--card-border) }
+.rp-info-card h3 { font-size: 16px; font-weight: 700; margin-top: 12px; color: var(--text-primary) }
+.rp-info-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; margin: 0 auto }
+.rp-info-icon.blue { background: linear-gradient(135deg, var(--primary), #3b82f6) }
+.rp-info-icon.amber { background: linear-gradient(135deg, var(--accent), #fbbf24) }
+.rp-info-icon.green { background: linear-gradient(135deg, var(--success), #34d399) }
+.rp-info-icon.red { background: linear-gradient(135deg, var(--danger), #f87171) }
+.rp-info-diff { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: #f1f5f9; color: var(--text-muted); margin-top: 8px }
+.rp-info-section { padding: 0 }
+.rp-info-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px }
+.rp-info-client { display: flex; align-items: center; gap: 12px }
+.rp-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0 }
+.rp-avatar.small { width: 36px; height: 36px; font-size: 12px }
+.rp-avatar.blue { background: linear-gradient(135deg, var(--primary), #3b82f6) }
+.rp-avatar.amber { background: linear-gradient(135deg, var(--accent), #fbbf24) }
+.rp-avatar.green { background: linear-gradient(135deg, var(--success), #34d399) }
+.rp-avatar.red { background: linear-gradient(135deg, var(--danger), #f87171) }
+.rp-client-name { font-size: 14px; font-weight: 600; color: var(--text-primary) }
+.rp-client-role { font-size: 12px; color: var(--text-muted) }
+.rp-client-company { font-size: 11px; color: var(--text-muted); margin-top: 2px }
+.rp-info-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0 }
+
+.rp-chat-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #f1f5f9 }
+.rp-chat-header { display: flex; align-items: center; gap: 12px; padding: 16px 24px; background: var(--card-bg); border-bottom: 1px solid var(--card-border); flex-shrink: 0 }
+.rp-chat-header-name { font-size: 14px; font-weight: 600; color: var(--text-primary) }
+.rp-chat-header-status { font-size: 11px; color: var(--success); display: flex; align-items: center; gap: 5px }
+.rp-status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); display: inline-block; animation: statusPulse 2s infinite }
+@keyframes statusPulse { 0%, 100% { opacity: 1 } 50% { opacity: .4 } }
+.rp-chat-diff-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px }
+.rp-chat-diff-badge.diff-debutant { background: rgba(34, 197, 94, .1); color: #16a34a }
+.rp-chat-diff-badge.diff-intermediaire { background: rgba(245, 158, 11, .1); color: #d97706 }
+.rp-chat-diff-badge.diff-expert { background: rgba(239, 68, 68, .1); color: #dc2626 }
+.rp-turn-counter { font-size: 12px; font-weight: 600; color: var(--text-muted); padding: 4px 12px; background: #f1f5f9; border-radius: 20px }
+
+.rp-chat-topbar { display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: var(--card-bg); border-bottom: 1px solid var(--card-border); flex-shrink: 0 }
+.rp-topbar-back { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--card-border); background: transparent; color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all .2s var(--ease); flex-shrink: 0 }
+.rp-topbar-back:hover { background: #f1f5f9; color: var(--text-primary); border-color: #cbd5e1 }
+.rp-topbar-avatar { position: relative; flex-shrink: 0 }
+.rp-topbar-status-dot { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--success); border: 2px solid var(--card-bg); animation: statusPulse 2s infinite }
+.rp-topbar-info { flex: 1; min-width: 0 }
+.rp-topbar-name { font-size: 14px; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.rp-topbar-name .rp-topbar-role { font-weight: 400; color: var(--text-muted); font-size: 12px; margin-left: 6px }
+.rp-topbar-scenario { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; margin-top: 1px }
+.rp-topbar-scenario i { font-size: 10px }
+.rp-topbar-pills { display: flex; align-items: center; gap: 8px; flex-shrink: 0 }
+.rp-topbar-xp { font-size: 12px; font-weight: 600; color: #b45309; padding: 4px 10px; background: rgba(245, 158, 11, .08); border-radius: 20px }
+.rp-topbar-xp i { margin-right: 3px; font-size: 11px }
+.rp-topbar-context-toggle { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--card-border); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all .2s var(--ease); flex-shrink: 0 }
+.rp-topbar-context-toggle:hover { background: #f1f5f9; color: var(--primary); border-color: var(--primary) }
+.rp-topbar-context-toggle.active { background: var(--primary-light); color: var(--primary); border-color: var(--primary) }
+
+.rp-context-drawer { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease), opacity .25s var(--ease); opacity: 0; background: var(--card-bg); border-bottom: 1px solid transparent; flex-shrink: 0 }
+.rp-context-drawer.open { max-height: 500px; opacity: 1; border-bottom-color: var(--card-border) }
+.rp-context-drawer-inner { display: grid; grid-template-columns: 1fr 2fr 1.5fr; gap: 20px; padding: 16px 24px; align-items: start }
+.rp-context-col { min-width: 0 }
+.rp-context-col-wide { border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border); padding: 0 20px }
+.rp-context-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--text-muted); margin-bottom: 6px; display: flex; align-items: center; gap: 5px }
+.rp-context-label i { font-size: 10px; width: 14px; text-align: center }
+.rp-context-value { font-size: 13px; color: var(--text-primary); line-height: 1.55 }
+.rp-context-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px }
+
+.rp-messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; scrollbar-width: thin; scrollbar-color: rgba(203, 213, 225, .5) transparent }
+.rp-messages::-webkit-scrollbar { width: 5px }
+.rp-messages::-webkit-scrollbar-thumb { background: rgba(203, 213, 225, .5); border-radius: 4px }
+
+.rp-msg { display: flex; align-items: flex-end; gap: 10px; max-width: 80% }
+.rp-msg-user { align-self: flex-end; flex-direction: row-reverse }
+.rp-msg-bot { align-self: flex-start }
+.rp-msg-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; color: #fff; flex-shrink: 0 }
+.rp-msg-avatar.user { background: linear-gradient(135deg, var(--primary), #3b82f6) }
+.rp-msg-avatar.bot { background: #e2e8f0; color: var(--text-secondary) }
+.rp-msg-avatar.bot.blue { background: linear-gradient(135deg, var(--primary), #3b82f6); color: #fff }
+.rp-msg-avatar.bot.amber { background: linear-gradient(135deg, var(--accent), #fbbf24); color: #fff }
+.rp-msg-avatar.bot.green { background: linear-gradient(135deg, var(--success), #34d399); color: #fff }
+.rp-msg-avatar.bot.red { background: linear-gradient(135deg, var(--danger), #f87171); color: #fff }
+
+.rp-msg-bubble { padding: 14px 18px; border-radius: 18px; font-size: 14px; line-height: 1.6; position: relative; box-shadow: 0 1px 3px rgba(0, 0, 0, .06) }
+.rp-msg-bubble.user { background: var(--primary); color: #fff; border-bottom-right-radius: 6px }
+.rp-msg-bubble.bot { background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--card-border); border-bottom-left-radius: 6px }
+
+.rp-typing { display: flex; gap: 5px; padding: 4px 0 }
+.rp-typing span { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); opacity: .4; animation: typingDot 1.4s infinite }
+.rp-typing span:nth-child(2) { animation-delay: .2s }
+.rp-typing span:nth-child(3) { animation-delay: .4s }
+@keyframes typingDot { 0%, 60%, 100% { transform: translateY(0); opacity: .4 } 30% { transform: translateY(-6px); opacity: 1 } }
+
+.rp-input-bar { display: flex; align-items: flex-end; gap: 10px; padding: 16px 24px; background: var(--card-bg); border-top: 1px solid var(--card-border); flex-shrink: 0 }
+.rp-input { flex: 1; background: #f1f5f9; border: 2px solid var(--card-border); border-radius: 14px; padding: 12px 16px; font-size: 14px; font-family: 'Inter', sans-serif; color: var(--text-primary); resize: none; max-height: 120px; line-height: 1.5; transition: border-color .2s var(--ease) }
+.rp-input:focus { outline: none; border-color: var(--primary); background: #fff }
+.rp-input::placeholder { color: var(--text-muted) }
+.rp-mic-btn { width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; color: var(--text-muted); border: 2px solid var(--card-border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all .2s var(--ease); flex-shrink: 0; position: relative }
+.rp-mic-btn:hover { background: #e2e8f0; color: var(--text-primary); border-color: #cbd5e1 }
+.rp-mic-btn.recording { background: rgba(239, 68, 68, .1); color: var(--danger); border-color: var(--danger); animation: micPulse 1.5s ease-in-out infinite }
+.rp-mic-btn.recording::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--danger); opacity: 0; animation: micRing 1.5s ease-out infinite }
+@keyframes micPulse { 0%, 100% { transform: scale(1) } 50% { transform: scale(1.08) } }
+@keyframes micRing { 0% { transform: scale(1); opacity: .6 } 100% { transform: scale(1.4); opacity: 0 } }
+.rp-send-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all .2s var(--ease); flex-shrink: 0 }
+.rp-send-btn:hover { background: var(--primary-hover); transform: scale(1.05) }
+.rp-send-btn:active { transform: scale(.95) }
+
+.rp-hint-btn { width: 44px; height: 44px; border-radius: 50%; background: rgba(245, 158, 11, .1); color: #d97706; border: 2px solid rgba(245, 158, 11, .25); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all .2s var(--ease); flex-shrink: 0 }
+.rp-hint-btn:hover { background: rgba(245, 158, 11, .2); border-color: #d97706; transform: scale(1.05) }
+.rp-hint-btn:active { transform: scale(.95) }
+
+.rp-hint-msg { background: rgba(245, 158, 11, .08); border: 1px solid rgba(245, 158, 11, .25); border-radius: 12px; padding: 12px 16px; font-size: 13px; color: #92400e; line-height: 1.5; margin: 4px 0; align-self: center; max-width: 90%; text-align: center }
+.rp-hint-msg i { color: #d97706; margin-right: 6px }
+
+.rp-end-card { background: var(--card-bg); border: 2px solid var(--card-border); border-radius: var(--radius-lg); padding: 32px; text-align: center; margin: 16px auto; max-width: 480px; box-shadow: var(--shadow-md) }
+.rp-end-icon { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--success), #34d399); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px }
+.rp-end-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary) }
+.rp-end-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5 }
+.rp-end-xp { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 20px }
+.rp-end-xp i { margin-right: 6px }
+.rp-end-tips { text-align: left; background: #f8fafc; border: 1px solid var(--card-border); border-radius: var(--radius); padding: 18px; margin-bottom: 20px }
+.rp-end-tip-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px }
+.rp-end-tip-title i { color: var(--accent) }
+.rp-end-tips ul { padding-left: 0; margin: 0; list-style: none }
+.rp-end-tips li { font-size: 13px; color: var(--text-secondary); padding: 4px 0 4px 18px; position: relative; line-height: 1.5 }
+.rp-end-tips li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary) }
+.rp-end-actions { display: flex; gap: 12px; justify-content: center }
+
+.diff-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, .55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeIn .2s ease }
+.diff-overlay.diff-closing { animation: fadeOut .25s ease forwards }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes fadeOut { to { opacity: 0 } }
+.diff-modal { background: #fff; border-radius: 20px; box-shadow: 0 24px 64px rgba(0, 0, 0, .18); padding: 40px 36px 36px; max-width: 520px; width: 92%; position: relative; animation: modalSlideUp .3s var(--ease) }
+@keyframes modalSlideUp { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: translateY(0) } }
+.diff-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: none; background: transparent; color: var(--text-muted); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s }
+.diff-close:hover { background: #f1f5f9; color: var(--text-primary) }
+.diff-modal-header { text-align: center; margin-bottom: 28px }
+.diff-modal-header .rp-card-icon { width: 52px; height: 52px; border-radius: 16px; font-size: 22px; margin: 0 auto 14px }
+.diff-modal-title { font-size: 22px; font-weight: 700; color: var(--text-primary); margin: 0 0 6px }
+.diff-modal-sub { font-size: 14px; color: var(--text-secondary); margin: 0 }
+.diff-options { display: flex; flex-direction: column; gap: 10px }
+.diff-option { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 14px; border: 1.5px solid var(--card-border); background: #fff; cursor: pointer; transition: all .2s var(--ease); text-align: left; width: 100% }
+.diff-option:hover { border-color: var(--primary); background: rgba(37, 99, 235, .03); transform: translateX(4px) }
+.diff-option:active { transform: scale(.98) }
+.diff-option-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0 }
+.diff-option-icon.debutant { background: rgba(34, 197, 94, .1); color: #16a34a }
+.diff-option-icon.intermediaire { background: rgba(245, 158, 11, .1); color: #d97706 }
+.diff-option-icon.expert { background: rgba(239, 68, 68, .1); color: #dc2626 }
+.diff-option-info { flex: 1; min-width: 0 }
+.diff-option-name { display: block; font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px }
+.diff-option-desc { display: block; font-size: 12.5px; color: var(--text-secondary); line-height: 1.4 }
+.diff-option-dots { display: flex; gap: 4px; flex-shrink: 0 }
+.diff-dot { width: 8px; height: 8px; border-radius: 50%; background: #e2e8f0; transition: background .2s }
+.diff-dot.active { background: #64748b }
+.diff-option:hover .diff-dot.active { background: var(--primary) }
+.diff-option[data-diff="debutant"]:hover .diff-dot.active { background: #16a34a }
+.diff-option[data-diff="intermediaire"]:hover .diff-dot.active { background: #d97706 }
+.diff-option[data-diff="expert"]:hover .diff-dot.active { background: #dc2626 }
+.rp-info-diff.diff-debutant { background: rgba(34, 197, 94, .1); color: #16a34a }
+.rp-info-diff.diff-intermediaire { background: rgba(245, 158, 11, .1); color: #d97706 }
+.rp-info-diff.diff-expert { background: rgba(239, 68, 68, .1); color: #dc2626 }
+
+@media (max-width: 900px) {
+  .rp-chat-layout { flex-direction: column; height: auto; margin: -20px -16px }
+  .rp-chat-layout.rp-chat-fullwidth { margin: -14px -14px }
+  .rp-chat-sidebar { width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--card-border); max-height: 200px; overflow-y: auto; padding: 16px; flex-direction: row; flex-wrap: wrap; gap: 12px }
+  .rp-info-card { flex: 1; min-width: 200px }
+  .rp-info-section { display: none }
+  .rp-back-btn { width: auto }
+  .rp-chat-main { height: 60vh }
+  .rp-chat-layout.rp-chat-fullwidth .rp-chat-main { height: calc(100vh - 140px) }
+  .rp-msg { max-width: 90% }
+  .rp-context-drawer-inner { grid-template-columns: 1fr; gap: 12px }
+  .rp-context-col-wide { border-left: none; border-right: none; padding: 0; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 12px 0 }
+  .rp-topbar-pills { gap: 4px }
+  .rp-topbar-xp { display: none }
+}
+@media (max-width: 768px) {
+  .rp-grid { grid-template-columns: 1fr }
+  .rp-card { padding: 20px }
+  .rp-card-title { font-size: 16px }
+  .rp-card-desc { font-size: 12px }
+  .rp-chat-layout { margin: -20px -14px }
+  .rp-chat-layout.rp-chat-fullwidth { margin: -14px -14px }
+  .rp-topbar-name .rp-topbar-role { display: none }
+  .rp-topbar-scenario { display: none }
+  .rp-msg-bubble { padding: 10px 14px; font-size: 13px }
+  .rp-msg-avatar { width: 30px; height: 30px; font-size: 10px }
+  .rp-input-bar { padding: 10px 12px; gap: 8px }
+  .rp-input { padding: 10px 12px; font-size: 13px; border-radius: 12px }
+  .rp-send-btn, .rp-mic-btn, .rp-hint-btn { width: 38px; height: 38px; font-size: 14px }
+  .rp-end-card { padding: 20px; margin: 12px auto }
+  .rp-end-card h3 { font-size: 17px }
+  .rp-end-card p { font-size: 13px }
+  .rp-end-xp { font-size: 16px }
+  .rp-end-tips { padding: 14px }
+  .rp-end-actions { flex-direction: column; gap: 8px }
+  .rp-end-actions .btn { width: 100%; justify-content: center }
+  .rp-messages { padding: 16px 12px; gap: 12px }
+  .rp-chat-main { position: relative; }
+  .rp-chat-topbar { position: relative; z-index: 11; }
+  .rp-context-drawer { position: absolute; left: 0; right: 0; z-index: 10; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .rp-context-drawer-inner { padding: 12px 16px; gap: 12px; }
+  .rp-chat-layout.rp-chat-fullwidth { position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; height: auto !important; margin: 0 !important; z-index: 1000 !important; border-radius: 0 !important; }
+}
+@media (max-width: 480px) {
+  .diff-modal { padding: 24px 16px 20px }
+  .diff-modal-title { font-size: 18px }
+  .diff-option { padding: 12px 14px; gap: 10px }
+  .diff-option-icon { width: 36px; height: 36px; font-size: 15px; border-radius: 10px }
+  .diff-option-name { font-size: 14px }
+  .diff-option-desc { font-size: 11px }
+  .rp-chat-topbar { padding: 8px 10px; gap: 6px }
+  .rp-topbar-back { width: 32px; height: 32px; font-size: 12px }
+  .rp-topbar-context-toggle { width: 32px; height: 32px; font-size: 13px }
+  .rp-topbar-pills { gap: 3px }
+  .rp-turn-counter { font-size: 10px; padding: 3px 7px }
+  .rp-chat-diff-badge { font-size: 10px; padding: 2px 8px }
+  .rp-topbar-name { font-size: 13px }
+  .rp-msg { max-width: 92% }
+  .rp-input-bar { padding: 8px 10px; gap: 6px }
+  .rp-send-btn, .rp-mic-btn, .rp-hint-btn { width: 36px; height: 36px; font-size: 13px }
+}

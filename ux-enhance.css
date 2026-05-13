@@ -1,0 +1,889 @@
+/* ============================================
+   Symbiose Formation — UX Enhancement v1.0
+   Réorganisation sidebar, header XP, progress
+   ============================================ */
+
+/* -------------------------------------------
+   1. SIDEBAR — Nettoyage & Compactage
+   ------------------------------------------- */
+
+/* Rendre la sidebar plus compacte et centrée sur la navigation */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* Logo plus compact */
+.sidebar-header {
+  padding: 16px 20px 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.sidebar-header .logo {
+  gap: 10px !important;
+}
+
+.sidebar-header .logo-icon {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 16px !important;
+}
+
+.sidebar-header .logo-text {
+  font-size: 1.2rem !important;
+}
+
+.sidebar-header .logo-sub {
+  font-size: 0.65rem !important;
+}
+
+/* User section — ultra compact */
+.user-section {
+  padding: 10px 16px 8px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.user-info {
+  gap: 10px !important;
+}
+
+.user-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  font-size: 0.7rem !important;
+}
+
+.user-details {
+  line-height: 1.2 !important;
+}
+
+.user-details > *:first-child {
+  font-size: 0.85rem !important;
+}
+
+.user-level {
+  font-size: 0.65rem !important;
+  opacity: 0.7;
+}
+
+/* CACHER les éléments gamification de la sidebar */
+.level-shield-bar,
+#levelShieldBar {
+  display: none !important;
+}
+
+.xp-bar,
+.xp-bar-header,
+.xp-bar-bg {
+  display: none !important;
+}
+
+.sidebar-badges-row,
+#sidebarBadgesRow {
+  display: none !important;
+}
+
+/* -------------------------------------------
+   2. NAVIGATION — Progress Indicators
+   ------------------------------------------- */
+
+/* Sections nav plus aérées */
+.sidebar nav {
+  padding: 8px 0 !important;
+  flex: 1;
+}
+
+.nav-section {
+  margin-top: 12px !important;
+}
+
+.nav-title {
+  font-size: 0.6rem !important;
+  letter-spacing: 1.5px !important;
+  padding: 4px 20px !important;
+  opacity: 0.5;
+}
+
+/* Nav items avec indicateur de progression */
+.nav-item {
+  padding: 8px 16px 8px 20px !important;
+  font-size: 0.82rem !important;
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  margin: 1px 0 !important;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
+
+.nav-item.active {
+  background: rgba(79, 128, 255, 0.15) !important;
+  border-left-color: #4f80ff !important;
+}
+
+/* Icônes de nav plus petites et uniformes */
+.nav-item i.fas {
+  width: 18px !important;
+  text-align: center;
+  font-size: 0.78rem !important;
+  opacity: 0.7;
+}
+
+.nav-item.active i.fas {
+  opacity: 1;
+}
+
+/* Indicateur de progression circulaire */
+.nav-item .nav-progress {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-item .nav-progress.not-started {
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-item .nav-progress.in-progress {
+  background: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
+}
+
+.nav-item .nav-progress.completed {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+/* Cacher les anciens checkmarks */
+.nav-check {
+  display: none !important;
+}
+
+/* Badge count à côté de "Badges" dans la nav */
+.badge-count {
+  font-size: 0.65rem !important;
+  background: rgba(255,255,255,0.15) !important;
+  padding: 1px 6px !important;
+  border-radius: 8px !important;
+  margin-left: 4px !important;
+}
+
+/* Bouton déconnexion */
+.nav-logout {
+  margin: auto 12px 12px !important;
+  padding: 8px 16px !important;
+  font-size: 0.75rem !important;
+  opacity: 0.6;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.nav-logout:hover {
+  opacity: 1;
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+/* -------------------------------------------
+   3. HEADER — XP Bar intégrée
+   ------------------------------------------- */
+
+.top-header {
+  padding: 0 24px !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: #fff !important;
+}
+
+.header-left {
+  flex: 0 0 auto !important;
+}
+
+.header-title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+
+/* Nouvelle barre XP dans le header */
+#headerXpBar {
+  flex: 1;
+  max-width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+#headerXpBar .hxp-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6366f1;
+  white-space: nowrap;
+  min-width: 52px;
+}
+
+#headerXpBar .hxp-track {
+  flex: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+#headerXpBar .hxp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+#headerXpBar .hxp-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: xpShimmer 2s infinite;
+}
+
+@keyframes xpShimmer {
+  0% { /* transform removed - handled by JS */ }
+  100% { transform: translateX(100%); }
+}
+
+#headerXpBar .hxp-level {
+  font-size: 0.65rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* Header right — ajustements */
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0;
+}
+
+.header-streak {
+  font-size: 0.8rem !important;
+  padding: 4px 10px !important;
+  border-radius: 16px !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+}
+
+.header-progress-ring {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.header-ring-text {
+  font-size: 0.55rem !important;
+}
+
+.header-notif {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.header-avatar {
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 0.7rem !important;
+}
+
+/* -------------------------------------------
+   4. MAIN CONTENT — Ajustements
+   ------------------------------------------- */
+
+.main-content {
+  padding: 24px 32px !important;
+}
+
+/* Module step indicator */
+.module-step {
+  font-size: 0.7rem !important;
+  letter-spacing: 1px !important;
+  color: #6366f1 !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+/* Tabs de contenu */
+.module-tabs,
+.content-tabs {
+  gap: 4px !important;
+}
+
+.module-tabs button,
+.content-tabs button,
+.tab-btn {
+  padding: 8px 18px !important;
+  font-size: 0.8rem !important;
+  border-radius: 20px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* -------------------------------------------
+   5. ANIMATIONS — Gamification
+   ------------------------------------------- */
+
+/* XP gain notification */
+@keyframes xpPopIn {
+  0% { transform: translateY(10px) scale(0.8); opacity: 0; }
+  50% { transform: translateY(-5px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes xpPopOut {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-20px) scale(0.8); opacity: 0; }
+}
+
+.xp-toast {
+  position: fixed;
+  top: 70px;
+  right: 24px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+  z-index: 10000;
+  animation: xpPopIn 0.4s ease-out forwards;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xp-toast.hiding {
+  animation: xpPopOut 0.3s ease-in forwards;
+}
+
+.xp-toast .xp-toast-icon {
+  font-size: 1.2rem;
+}
+
+/* Badge unlock notification */
+@keyframes badgeUnlock {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  60% { transform: scale(1.2) rotate(10deg); }
+  80% { transform: scale(0.95) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.badge-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 32px 48px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 10001;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.badge-toast .badge-icon {
+  font-size: 3rem;
+  animation: badgeUnlock 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.badge-toast .badge-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.badge-toast .badge-desc {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.badge-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* -------------------------------------------
+   6. PROGRESS RING amélioré (header)
+   ------------------------------------------- */
+
+.header-progress-ring svg circle {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* -------------------------------------------
+   7. RESPONSIVE — Mobile
+   ------------------------------------------- */
+
+@media (max-width: 768px) {
+  #headerXpBar {
+    display: none;
+  }
+
+  .sidebar {
+    /* transform removed - handled by JS */
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 16px !important;
+  }
+}
+
+/* -------------------------------------------
+   8. SCROLLBAR sidebar
+   ------------------------------------------- */
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* =============================================
+   MOBILE RESPONSIVE - v1.0
+   ============================================= */
+
+/* --- Hamburger button (hidden on desktop) --- */
+.hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #1e293b;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  font-family: system-ui, sans-serif;
+}
+.hamburger-btn:active {
+  background: rgba(0,0,0,0.08);
+}
+
+/* --- Sidebar overlay (hidden on desktop) --- */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* =============================================
+   MEDIA QUERY: max-width 768px
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  /* Sidebar: hidden off-screen, slides in */
+  aside.sidebar#sidebar {
+  transform: none !important;
+
+    position: fixed !important;
+    top: 0 !important;
+    left: -100vw !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    transition: left 0.3s ease !important;
+    overflow-y: auto !important;
+  }
+  aside.sidebar#sidebar.sidebar-open, aside.sidebar#sidebar.open {
+    left: 0 !important;
+  }
+
+  /* Main wrapper full width */
+  .main-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .app-container {
+    flex-direction: column !important;
+  }
+
+  /* Header compact */
+  .top-header#topHeader {
+    padding: 0 8px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    overflow: hidden !important;
+  }
+
+  /* Hide rank progress row */
+  #unifiedHeader {
+    display: none !important;
+  }
+
+  /* Header left - page title */
+  .header-left {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .header-left .page-title,
+  .header-left span {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* XP bar compact */
+  #headerXpBar {
+    font-size: 11px !important;
+    flex-shrink: 0 !important;
+    max-width: 80px !important;
+    overflow: hidden !important;
+  }
+
+  /* User profile compact */
+  .header-right {
+    flex-shrink: 0 !important;
+  }
+  .user-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 11px !important;
+  }
+  .user-name { font-size: 11px !important; }
+  .user-rank { font-size: 10px !important; }
+
+  /* Main content */
+  .main-content#mainContent {
+    padding: 12px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Typography */
+  h1 { font-size: 22px !important; }
+  h2 { font-size: 18px !important; }
+
+  /* Video responsive */
+  iframe {
+    max-width: 100% !important;
+  }
+
+  /* Cards responsive */
+  .module-card, .scenario-card {
+    padding: 12px !important;
+  }
+
+  /* Roleplay chat area */
+  #rpMessages {
+    max-height: 60vh !important;
+  }
+  #rpInputArea {
+    padding: 8px !important;
+  }
+  #rpInputArea input,
+  #rpInputArea textarea {
+    font-size: 16px !important; /* prevent iOS zoom */
+  }
+
+  /* Evaluation results */
+  .eval-results {
+    padding: 12px !important;
+  }
+  .eval-category {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+}
+
+/* =============================================
+   MOBILE ROLEPLAY - Full-screen chat experience
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Main content: allow normal scroll, but lock when roleplay is active */
+  .main-content {
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Only lock overflow when roleplay chat is displayed */
+  .main-content:has(.rp-chat-layout) {
+    height: calc(100vh - 50px) !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+
+  /* Roleplay layout: full height column */
+  .rp-chat-layout {
+    flex-direction: column !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Compact the sidebar/header: single row with back + title */
+  .rp-chat-sidebar {
+    flex-direction: row !important;
+    align-items: center !important;
+    height: auto !important;
+    max-height: 52px !important;
+    min-height: 52px !important;
+    padding: 8px 12px !important;
+    gap: 10px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    border-right: none !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Back button: compact icon only */
+  .rp-back-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+  }
+  .rp-back-btn span { display: none !important; }
+
+  /* Info card: inline compact */
+  .rp-info-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+    height: auto !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .rp-info-card .rp-info-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+  }
+  .rp-info-card .rp-info-icon svg,
+  .rp-info-card .rp-info-icon i {
+    font-size: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .rp-info-card h3 {
+    font-size: 14px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .rp-info-card .rp-info-diff {
+    font-size: 11px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Hide detail sections on mobile */
+  .rp-chat-sidebar .rp-info-section {
+    display: none !important;
+  }
+
+  /* Chat main area: fill remaining space */
+  .rp-chat-main {
+    flex: 1 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  /* Chat header: compact */
+  .rp-chat-header {
+    padding: 8px 12px !important;
+    min-height: auto !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    gap: 8px !important;
+  }
+
+  .rp-chat-header .rp-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 12px !important;
+  }
+
+  .rp-chat-header .rp-char-name {
+    font-size: 14px !important;
+  }
+
+  .rp-chat-header .rp-char-status {
+    font-size: 11px !important;
+  }
+
+  /* Messages area: fill all available space */
+  .rp-messages {
+    flex: 1 !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Message bubbles: mobile-friendly */
+  .rp-message .rp-bubble {
+    max-width: 85% !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Input bar: sticky at bottom, prominent */
+  .rp-input-bar {
+    flex-shrink: 0 !important;
+    padding: 8px !important;
+    gap: 6px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    background: #fff !important;
+    /* Safe area for iPhone notch */
+    padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Text input: full width */
+  .rp-input-bar input,
+  .rp-input-bar textarea {
+    font-size: 16px !important; /* prevents iOS zoom */
+    padding: 10px 14px !important;
+    border-radius: 24px !important;
+    flex: 1 !important;
+    min-height: 44px !important;
+  }
+
+  /* Action buttons: bigger tap targets */
+  .rp-input-bar button {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 50% !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Mic/record button: make it stand out */
+  .rp-input-bar .rp-mic-btn,
+  .rp-input-bar button[title*="micro"],
+  .rp-input-bar button[title*="Micro"],
+  .rp-input-bar button[aria-label*="micro"] {
+    background: #ef4444 !important;
+    color: #fff !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    font-size: 20px !important;
+    box-shadow: 0 2px 8px rgba(239,68,68,0.3) !important;
+  }
+
+  /* Send button: prominent */
+  .rp-input-bar .rp-send-btn,
+  .rp-input-bar button[type="submit"] {
+    background: #2563eb !important;
+    color: #fff !important;
+  }
+
+  /* Evaluation popup on mobile */
+  .rp-eval-overlay,
+  .eval-modal {
+    padding: 16px !important;
+  }
+  .rp-eval-card,
+  .eval-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+}

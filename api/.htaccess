@@ -1,0 +1,25 @@
+# Block direct access to config and internal files
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "rate_limit.php">
+  Require all denied
+</Files>
+
+<Files "db.php">
+  Require all denied
+</Files>
+
+# Only allow POST on API endpoints
+<FilesMatch "^(chat|evaluate|help)\.php$">
+  <LimitExcept POST>
+    Require all denied
+  </LimitExcept>
+</FilesMatch>
+
+# Only allow POST on API endpoints
+<FilesMatch "^(login|state)\.php$">
+  <LimitExcept POST>
+    Require all denied
+  </LimitExcept>
+</FilesMatch>

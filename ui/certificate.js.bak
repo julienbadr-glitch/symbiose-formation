@@ -1,0 +1,150 @@
+import { getState, getLevel } from '../state.js?v=81';
+import { navigateTo, $ } from '../router.js?v=81';
+
+/**
+ * Returns mention level based on exam score.
+ * @param {number} score - Exam score percentage.
+ * @returns {object} Object with text and css class.
+ */
+function getMention(score) {
+  if (score >= 90) return { text: 'Excellent', cls: 'excellent' };
+  if (score >= 80) return { text: 'Tr\u00e8s Bien', cls: 'tres-bien' };
+  return { text: 'Bien', cls: 'bien' };
+}
+
+/**
+ * Generates a unique certificate ID.
+ * @returns {string} Certificate ID string.
+ */
+function generateCertId() {
+  const rand = Math.floor(10000 + Math.random() * 90000);
+  return `SYMB-2026-${rand}`;
+}
+
+/**
+ * Renders the printable certificate page.
+ * @param {HTMLElement} main - The main content container.
+ */
+export function renderCertificate(main) {
+  const state = getState();
+  if (!state.examPassed) {
+    main.innerHTML = `
+      <div class="breadcrumb"><i class="fas fa-certificate"></i> Certificat</div>
+      <h1 class="view-title">Certificat</h1>
+      <div class="card">
+        <div class="exam-hero">
+          <div class="exam-hero-icon lock"><i class="fas fa-lock"></i></div>
+          <h2>Certificat verrouill\u00e9</h2>
+          <p>R\u00e9ussissez l'examen final avec un score minimum de 70% pour d\u00e9bloquer votre certificat.</p>
+          <button class="btn btn-primary" id="btnGoExam"><i class="fas fa-clipboard-check"></i> Passer l'examen</button>
+        </div>
+      </div>
+    `;
+    $('#btnGoExam').addEventListener('click', () => navigateTo('exam'));
+    return;
+  }
+
+  const dateStr = new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  const mention = getMention(state.examScore);
+  const lv = getLevel(state.xp);
+  const certId = generateCertId();
+
+  const qrRows = Array.from({ length: 7 }, () =>
+    Array.from({ length: 7 }, () => Math.random() > 0.4 ? 1 : 0)
+  );
+  qrRows[0][0] = 1; qrRows[0][1] = 1; qrRows[0][2] = 1;
+  qrRows[1][0] = 1; qrRows[2][0] = 1;
+  qrRows[0][4] = 1; qrRows[0][5] = 1; qrRows[0][6] = 1;
+  qrRows[1][6] = 1; qrRows[2][6] = 1;
+  qrRows[4][0] = 1; qrRows[5][0] = 1; qrRows[6][0] = 1;
+  qrRows[6][1] = 1; qrRows[6][2] = 1;
+  const qrSvgCells = qrRows.flatMap((row, y) =>
+    row.map((cell, x) => cell ? `<rect x="${x * 6}" y="${y * 6}" width="5" height="5" rx="1" fill="#c5a028"/>` : '')
+  ).join('');
+
+  main.innerHTML = `
+    <div class="breadcrumb no-print"><i class="fas fa-certificate"></i> Certificat</div>
+    <h1 class="view-title no-print">Votre Certificat</h1>
+    <p class="view-subtitle no-print">F\u00e9licitations ! Votre certificat est pr\u00eat. Imprimez-le pour l'encadrer.</p>
+    <div class="cert-wrapper fade-in">
+      <div class="cert-outer-border">
+        <div class="cert-inner-border">
+          <div class="cert-corner cert-corner-tl"></div>
+          <div class="cert-corner cert-corner-tr"></div>
+          <div class="cert-corner cert-corner-bl"></div>
+          <div class="cert-corner cert-corner-br"></div>
+          <div class="cert-watermark"><i class="fas fa-graduation-cap"></i></div>
+          <header class="cert-header">
+            <div class="cert-logo-row">
+              <div class="cert-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="cert-logo-text">
+                <span class="cert-brand">Symbiose</span>
+                <span class="cert-brand-sub">Acad\u00e9mie Commerciale</span>
+              </div>
+            </div>
+            <div class="cert-title-block">
+              <div class="cert-ornament-line"></div>
+              <h1 class="cert-title">CERTIFICAT DE R\u00c9USSITE</h1>
+              <div class="cert-subtitle">Programme de Formation Commerciale</div>
+              <div class="cert-ornament-line"></div>
+            </div>
+          </header>
+          <div class="cert-body">
+            <p class="cert-attests">Ce certificat atteste que</p>
+            <div class="cert-name">Charlotte Danzon</div>
+            <p class="cert-desc">a compl\u00e9t\u00e9 avec succ\u00e8s la formation<br><strong>Symbiose \u2014 Formation</strong></p>
+            <p class="cert-desc-light">et ma\u00eetrise les 8 \u00e9tapes du processus de vente commercial</p>
+            <div class="cert-mention-row">
+              <span class="cert-mention ${mention.cls}">Mention : ${mention.text}</span>
+            </div>
+          </div>
+          <div class="cert-stats-grid">
+            <div class="cert-stat-card">
+              <div class="cert-stat-icon"><i class="fas fa-percent"></i></div>
+              <div class="cert-stat-value">${state.examScore}%</div>
+              <div class="cert-stat-label">Score obtenu</div>
+            </div>
+            <div class="cert-stat-card">
+              <div class="cert-stat-icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="cert-stat-value">${lv.name}</div>
+              <div class="cert-stat-label">Niveau atteint</div>
+            </div>
+            <div class="cert-stat-card">
+              <div class="cert-stat-icon"><i class="fas fa-bolt"></i></div>
+              <div class="cert-stat-value">${state.xp}</div>
+              <div class="cert-stat-label">XP total</div>
+            </div>
+            <div class="cert-stat-card">
+              <div class="cert-stat-icon"><i class="fas fa-award"></i></div>
+              <div class="cert-stat-value">${state.unlockedBadges.length}/8</div>
+              <div class="cert-stat-label">Badges obtenus</div>
+            </div>
+          </div>
+          <footer class="cert-footer">
+            <div class="cert-footer-left">
+              <div class="cert-qr-block">
+                <svg viewBox="0 0 42 42" width="56" height="56">${qrSvgCells}</svg>
+              </div>
+              <div class="cert-id">${certId}</div>
+            </div>
+            <div class="cert-footer-center">
+              <div class="cert-date">D\u00e9livr\u00e9 le ${dateStr}</div>
+            </div>
+            <div class="cert-footer-right">
+              <div class="cert-sig">
+                <div class="cert-sig-line"></div>
+                <div class="cert-sig-name">Direction Symbiose</div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="cert-print-row no-print fade-in" style="animation-delay:.2s">
+      <button class="cert-print-btn" id="btnPrint">
+        <i class="fas fa-print"></i> Imprimer le certificat
+      </button>
+    </div>
+  `;
+  $('#btnPrint').addEventListener('click', () => window.print());
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /data/
+Sitemap: https://mercato-formation.fr/sitemap.xml

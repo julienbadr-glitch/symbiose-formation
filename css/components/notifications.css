@@ -1,0 +1,44 @@
+#notifications { position: fixed; top: 16px; right: 16px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none }
+.notif { padding: 14px 22px; border-radius: var(--radius); font-weight: 600; font-size: 15px; color: #fff; box-shadow: var(--shadow-lg); pointer-events: auto; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px) }
+.notif.xp { background: linear-gradient(135deg, var(--primary), #3b82f6); animation: notifIn .4s var(--ease), xpPulse .3s .1s ease, notifOut .6s ease 2.4s forwards }
+.notif.combo { background: linear-gradient(135deg, var(--accent), var(--pink)); animation: notifIn .4s var(--ease), notifOut .6s ease 2.4s forwards }
+.notif.levelup { background: linear-gradient(135deg, var(--success), var(--primary)); animation: notifIn .4s var(--ease), notifOut .6s ease 3.4s forwards }
+.notif.badge-notif { background: linear-gradient(135deg, var(--accent), var(--pink)); animation: notifIn .4s var(--ease), notifOut .6s ease 3.4s forwards }
+@keyframes notifIn { from { transform: translateX(400px) scale(.8); opacity: 0 } to { transform: translateX(0) scale(1); opacity: 1 } }
+@keyframes notifOut { to { transform: translateY(-30px) scale(.9); opacity: 0 } }
+@keyframes xpPulse { 0% { transform: scale(1) } 50% { transform: scale(1.05) } 100% { transform: scale(1) } }
+
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9998 }
+.confetti-piece { position: absolute; top: -10px; border-radius: 2px; animation: confettiFall var(--duration) linear forwards; will-change: transform, opacity }
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0) scale(1); opacity: 1 }
+  25% { opacity: 1 }
+  100% { transform: translateY(105vh) rotate(var(--spin)) scale(.6); opacity: 0 }
+}
+
+.combo-overlay { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9997; pointer-events: none; text-align: center }
+.combo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; color: transparent; background: linear-gradient(135deg, var(--accent), var(--pink), var(--purple)); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 0 30px rgba(245, 158, 11, .3)); animation: comboAppear .6s cubic-bezier(.17, .67, .29, 1.5) forwards }
+.combo-sub { font-size: 18px; font-weight: 600; color: #b45309; margin-top: 4px; opacity: 0; animation: comboFadeIn .3s .15s ease forwards }
+@keyframes comboAppear { 0% { transform: scale(0) rotate(-10deg); opacity: 0 } 60% { transform: scale(1.3) rotate(3deg); opacity: 1 } 100% { transform: scale(1) rotate(0); opacity: 1 } }
+@keyframes comboFadeIn { to { opacity: 1 } }
+
+.badge-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; background: rgba(0, 0, 0, .5); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(6px) }
+.badge-popup-content { background: var(--card-bg); border: 2px solid var(--accent); border-radius: 24px; padding: 48px; text-align: center; max-width: 380px; width: 90%; animation: badgePopIn .5s cubic-bezier(.17, .67, .29, 1.5); box-shadow: 0 24px 64px rgba(0, 0, 0, .15) }
+.badge-popup-icon { font-size: 72px; margin-bottom: 16px; animation: badgePulse 2s infinite }
+.badge-popup-title { font-size: 12px; color: #b45309; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; margin-bottom: 8px }
+.badge-popup-name { font-size: 24px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; margin-bottom: 8px; color: var(--text-primary) }
+.badge-popup-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5 }
+.badge-popup-btn { padding: 12px 32px; background: linear-gradient(135deg, var(--accent), #fbbf24); color: #111; border: none; border-radius: var(--radius-sm); font-weight: 700; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all .2s var(--ease) }
+.badge-popup-btn:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(245, 158, 11, .3) }
+@keyframes badgePopIn { 0% { transform: scale(0) rotate(-5deg); opacity: 0 } 100% { transform: scale(1) rotate(0); opacity: 1 } }
+@keyframes badgePulse { 0%, 100% { transform: scale(1) } 50% { transform: scale(1.15) } }
+
+@media (max-width: 768px) {
+  #notifications { right: 10px; top: 10px; left: 10px }
+  .notif { font-size: 13px; padding: 10px 16px }
+  .combo-text { font-size: 48px }
+  .badge-popup-content { padding: 32px 24px; border-radius: 20px }
+  .badge-popup-icon { font-size: 56px }
+  .badge-popup-name { font-size: 20px }
+  .badge-popup-desc { font-size: 13px }
+}

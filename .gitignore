@@ -1,0 +1,8 @@
+db-config.php
+.user.ini
+.env
+backups/
+_backups/
+node_modules/
+*.log
+.DS_Store

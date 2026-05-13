@@ -1,0 +1,27 @@
+{
+    "xp": 1175,
+    "completedSteps": [],
+    "unlockedBadges": [
+        "on-fire",
+        "perfect-quiz"
+    ],
+    "quizAnswered": {
+        "1": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    "comboStreak": 5,
+    "examScore": null,
+    "examPassed": false,
+    "examDuration": null,
+    "currentView": "exam",
+    "activeTabs": {
+        "1": "quiz"
+    },
+    "_lastSaved": "2026-03-27T15:44:23+01:00",
+    "_email": "laure.leleu@mercato-emploi.com"
+}

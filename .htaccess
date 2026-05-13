@@ -1,0 +1,90 @@
+
+# SECURITY PATCH 2026-03-30
+Options -Indexes
+
+<Files "_deploy.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</Files>
+
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "DENY"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE "application/atom+xml" "application/javascript" "application/json" "application/ld+json" "application/manifest+json" "application/rdf+xml" "application/rss+xml" "application/schema+json" "application/vnd.geo+json" "application/vnd.ms-fontobject" "application/x-font-ttf" "application/x-javascript" "application/x-web-app-manifest+json" "application/xhtml+xml" "application/xml" "font/eot" "font/opentype" "image/bmp" "image/svg+xml" "image/vnd.microsoft.icon" "image/x-icon" "text/cache-manifest" "text/css" "text/html" "text/javascript" "text/plain" "text/vcard" "text/vnd.rim.location.xloc" "text/vtt" "text/x-component" "text/x-cross-domain-policy" "text/xml"
+
+# SECTION BEGIN GIT PROTECTION
+RedirectMatch 404 /\.git
+# SECTION END GIT PROTECTION
+
+# SECTION BEGIN SECURITY HEADERS
+<IfModule mod_headers.c>
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # Clickjacking protection
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # XSS protection for older browsers
+  Header always set X-XSS-Protection "1; mode=block"
+  # Content Security Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; connect-src 'self' https://api.anthropic.com; img-src 'self' data:; frame-ancestors 'self'; frame-src 'self' https://player.vimeo.com"
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Permissions policy
+  Header always set Permissions-Policy "camera=(), microphone=(self), geolocation=(), payment=()"
+  # Strict Transport Security (HTTPS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+# SECTION END SECURITY HEADERS
+
+# SECTION BEGIN API RATE LIMITING
+<IfModule mod_rewrite.c>
+  # Block direct access to sensitive files
+  RewriteRule ^\.env$ - [F,L]
+</IfModule>
+
+# Protect PHP source files from direct viewing
+<FilesMatch "\.(php)$">
+  <IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+  </IfModule>
+</FilesMatch>
+
+# Block direct access to config files
+<Files "config.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</Files>
+
+# Block access to sensitive files
+<FilesMatch "(^\.env|\.log$|\.bak|\.sql$|\.ini|\.db|\.sqlite$|\.zip$|\.old$)">
+  Require all denied
+</FilesMatch>
+# SECTION END API RATE LIMITING
+
+# ===== PERFORMANCE: Compression gzip =====
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ===== PERFORMANCE: Cache headers =====
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
